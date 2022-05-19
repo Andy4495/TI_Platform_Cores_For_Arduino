@@ -24,18 +24,18 @@ Located in the `json` folder.
 
 ( <<< Add explanation on file name convention, reference Arduino spec. Consider shortening the names while still meeting the spec. >>>)
 
-| Package Index File                    | MSP430 Board Vers | Tiva Board Vers | Notes |
-| ------------------                                | ----- | -----           | ----- |
-| `package_energia_index.json`                      | 1.0.5 | 1.0.3           | Available for [download][9] from [energia.nu][1] |
-| `package_msp430_elf_GCC_index.json`               |       |                 | See [Note 1](#Notes) below |
-| `package_Energia23_index.json`                    | 1.0.6 | 1.0.3           | Full package index JSON, as-installed by Energia23 |
-| `package_E23-updated_index.json`                  | 1.0.7 | 1.0.4           | Package index file from Energia23 after updating application with latest MSP430 and Tiva board versions ??? |
-| `package_energia_minimal_F5529_105_index.json`    | 1.0.5 | N/A             | Minimal index. Only defines MSP430F5529 and installs from this repo. |
-| `package_energia_minimal_F5529_107_index.json`    | 1.0.7 | N/A             | Minimal index. Only defines MSP430F5529 and installs from this repo. |
-| `package_energia_minimal_G2_105_index.json`       | 1.0.5 | N/A             | Minimal index. Only defines MSP430G2 and installs from this repo. |
-| `package_energia_minimal_G2_107_index.json`       | 1.0.7 | N/A             | Minimal index. Only defines MSP430G2 and installs from this repo. |
-| `package_energia_minimal_TM4C123_103_index.json`  | N/A   | 1.0.3           | Minimal index. Only defines TM4C123 and installs from this repo. |
-| `package_energia_minimal_TM4C123_104_index.json`  | N/A   | 1.0.4           | Minimal index. Only defines TM4C123 and installs from this repo. |
+| Package Index File                 | MSP430 Board Version | Tiva Board Version | Notes |
+| ------------------                                | ----- | -----              | ----- |
+| `package_energia_index.json`                      | 1.0.5 | 1.0.3              | Available for [download][9] from [energia.nu][1] |
+| `package_msp430_elf_GCC_index.json`               |       |                    | See [Note 1](#Note) below |
+| `package_Energia23_index.json`                    | 1.0.6 | 1.0.3              | Full package index JSON, as-installed by Energia23 |
+| `package_E23-updated_index.json`                  | 1.0.7 | 1.0.4              | Package index file from Energia23 after updating application with latest MSP430 and Tiva board versions ??? |
+| `package_energia_minimal_F5529_105_index.json`    | 1.0.5 | N/A                | Minimal index. Only defines MSP430F5529 and installs from this repo. |
+| `package_energia_minimal_F5529_107_index.json`    | 1.0.7 | N/A                | Minimal index. Only defines MSP430F5529 and installs from this repo. |
+| `package_energia_minimal_G2_105_index.json`       | 1.0.5 | N/A                | Minimal index. Only defines MSP430G2 and installs from this repo. |
+| `package_energia_minimal_G2_107_index.json`       | 1.0.7 | N/A                | Minimal index. Only defines MSP430G2 and installs from this repo. |
+| `package_energia_minimal_TM4C123_103_index.json`  | N/A   | 1.0.3              | Minimal index. Only defines TM4C123 and installs from this repo. |
+| `package_energia_minimal_TM4C123_104_index.json`  | N/A   | 1.0.4              | Minimal index. Only defines TM4C123 and installs from this repo. |
 
 #### Note
 
