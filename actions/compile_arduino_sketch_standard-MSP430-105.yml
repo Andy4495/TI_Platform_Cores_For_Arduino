@@ -1,0 +1,25 @@
+# From: https://github.com/marketplace/actions/compile-arduino-sketches
+# Uses: https://github.com/arduino/compile-sketches
+name: Arduino Compile Sketches
+
+on: 
+  push:
+
+jobs:
+  compile-sketches: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: arduino/compile-sketches@v1
+        with:
+          fqbn: 'energia:msp430:MSP-EXP430G2553LP'
+          platforms: |
+            - name: 'energia:msp430'
+              version: 1.0.5
+              source-url: 'http://energia.nu/packages/package_energia_index.json'
+          sketch-paths: |
+            - .
+          verbose: true
+          enable-warnings-report: true
+          libraries: |
+            - source-path: ./

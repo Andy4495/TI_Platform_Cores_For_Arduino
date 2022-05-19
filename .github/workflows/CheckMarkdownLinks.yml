@@ -1,0 +1,21 @@
+# GitHub Action from: https://github.com/gaurav-nelson/github-action-markdown-link-check
+# Uses code from: https://github.com/tcort/markdown-link-check
+name: Check Markdown Links
+
+on: 
+  push:
+  schedule:
+    # Modify the cron time to a somewhat random day/time to avoid having all your repos running at the same time
+    # Run 5th day of every month at 4:41 AM (See https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07)
+    - cron: "41 4 5 * *"
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        base-branch: main
+        use-verbose-mode: yes
+            

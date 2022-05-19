@@ -1,0 +1,353 @@
+{
+  "packages": [
+    {
+      "name": "energia", 
+      "maintainer": "Energia", 
+      "websiteURL": "http://www.energia.nu/", 
+      "email": "make@energia.nu", 
+      "help": {
+        "online": "http://energia.nu/reference"
+      }, 
+      "platforms": [
+        {
+          "name": "Energia MSP430 boards (elf-GCC)", 
+          "architecture": "msp430elf", 
+          "version": "2.0.7", 
+          "category": "Energia", 
+          "url": "http://energia.nu/downloads/download_core.php?file=msp430elf-2.0.7.tar.bz2", 
+          "archiveFileName": "msp430elf-2.0.7.tar.bz2", 
+          "checksum": "SHA-256:1afbf4368f17627c34b30d550b91f121fc9b41884dcc0ce700531d8e1e4808d8", 
+          "size": "2239988", 
+          "boards": [
+            {
+              "name": "MSP-EXP430F5529"
+            }, 
+            {
+              "name": "MSP-EXP430FR2433"
+            }, 
+            {
+              "name": "MSP-EXP430FR4133"
+            }, 
+            {
+              "name": "MSP-EXP430FR5969"
+            }, 
+            {
+              "name": "MSP-EXP430FR6989"
+            }, 
+            {
+              "name": "MSP-EXP430FR5739"
+            }, 
+            {
+              "name": "MSP-EXP430FR2355"
+            }, 
+            {
+              "name": "MSP-EXP430FR2231"
+            }, 
+            {
+              "name": "MSP-EXP430G2"
+            }, 
+            {
+              "name": "MSP-EXP430G2ET"
+            }, 
+            {
+              "name": "MSP-EXP430FR5994"
+            }
+          ], 
+          "toolsDependencies": [
+            {
+              "packager": "energia", 
+              "name": "msp430-elf-gcc", 
+              "version": "8.3.0.16"
+            }, 
+            {
+              "packager": "energia", 
+              "name": "dslite", 
+              "version": "9.3.0.1863"
+            }, 
+            {
+              "packager": "energia", 
+              "name": "ino2cpp", 
+              "version": "1.0.4"
+            }, 
+            {
+              "packager": "energia", 
+              "name": "mspdebug", 
+              "version": "0.24"
+            }
+          ]
+        }, 
+        {
+          "name": "Energia MSP430 boards (elf-GCC)", 
+          "architecture": "msp430elf", 
+          "version": "2.0.9", 
+          "category": "Energia", 
+          "url": "http://energia.nu/downloads/download_core.php?file=msp430elf-2.0.9.tar.bz2", 
+          "archiveFileName": "msp430elf-2.0.9.tar.bz2", 
+          "checksum": "SHA-256:524ecdf001bb04c4e2e52c003cc8249fa4c2f74c9ca4f3cf0d505c519a6ae21a", 
+          "size": "2240166", 
+          "boards": [
+            {
+              "name": "MSP-EXP430F5529"
+            }, 
+            {
+              "name": "MSP-EXP430FR2433"
+            }, 
+            {
+              "name": "MSP-EXP430FR4133"
+            }, 
+            {
+              "name": "MSP-EXP430FR5969"
+            }, 
+            {
+              "name": "MSP-EXP430FR6989"
+            }, 
+            {
+              "name": "MSP-EXP430FR5739"
+            }, 
+            {
+              "name": "MSP-EXP430FR2355"
+            }, 
+            {
+              "name": "MSP-EXP430FR2231"
+            }, 
+            {
+              "name": "MSP-EXP430G2"
+            }, 
+            {
+              "name": "MSP-EXP430G2ET"
+            }, 
+            {
+              "name": "MSP-EXP430FR5994"
+            }
+          ], 
+          "toolsDependencies": [
+            {
+              "packager": "energia", 
+              "name": "msp430-elf-gcc", 
+              "version": "9.2.0.50"
+            }, 
+            {
+              "packager": "energia", 
+              "name": "dslite", 
+              "version": "9.3.0.1863"
+            }, 
+            {
+              "packager": "energia", 
+              "name": "ino2cpp", 
+              "version": "1.0.4"
+            }, 
+            {
+              "packager": "energia", 
+              "name": "mspdebug", 
+              "version": "0.24"
+            }
+          ]
+        }, 
+        {
+          "name": "Energia MSP430 boards (elf-GCC)", 
+          "architecture": "msp430elf", 
+          "version": "2.0.10", 
+          "category": "Energia", 
+          "url": "http://energia.nu/downloads/download_core.php?file=msp430elf-2.0.10.tar.bz2", 
+          "archiveFileName": "msp430elf-2.0.10.tar.bz2", 
+          "checksum": "SHA-256:98e949dd9ce9cba21de57a4e8fbb59e0b928cc61adb6daeede023e776c6734c5", 
+          "size": "2240047", 
+          "boards": [
+            {
+              "name": "MSP-EXP430F5529"
+            }, 
+            {
+              "name": "MSP-EXP430FR2433"
+            }, 
+            {
+              "name": "MSP-EXP430FR4133"
+            }, 
+            {
+              "name": "MSP-EXP430FR5969"
+            }, 
+            {
+              "name": "MSP-EXP430FR6989"
+            }, 
+            {
+              "name": "MSP-EXP430FR5739"
+            }, 
+            {
+              "name": "MSP-EXP430FR2355"
+            }, 
+            {
+              "name": "MSP-EXP430FR2231"
+            }, 
+            {
+              "name": "MSP-EXP430G2"
+            }, 
+            {
+              "name": "MSP-EXP430G2ET"
+            }, 
+            {
+              "name": "MSP-EXP430FR5994"
+            }
+          ], 
+          "toolsDependencies": [
+            {
+              "packager": "energia", 
+              "name": "msp430-elf-gcc", 
+              "version": "9.2.0.50"
+            }, 
+            {
+              "packager": "energia", 
+              "name": "dslite", 
+              "version": "9.3.0.1863"
+            }, 
+            {
+              "packager": "energia", 
+              "name": "ino2cpp", 
+              "version": "1.0.4"
+            }, 
+            {
+              "packager": "energia", 
+              "name": "mspdebug", 
+              "version": "0.24"
+            }
+          ]
+        }
+      ], 
+      "tools": [
+        {
+          "name": "msp430-elf-gcc", 
+          "version": "8.3.0.16", 
+          "systems": [
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/windows/msp430-elf-gcc-8.3.0.16_win32.tar.bz2", 
+              "checksum": "SHA-256:a38783cbfe4bdfa0dd794527e23210fe9bb319611b8d3b985d7d1c3b0a7f6e0d", 
+              "host": "i686-mingw32", 
+              "archiveFileName": "msp430-elf-gcc-8.3.0.16_win32.tar.bz2", 
+              "size": "69711648"
+            }, 
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/macosx/msp430-elf-gcc-8.3.0.16_macos.tar.bz2", 
+              "checksum": "SHA-256:bcd60c7349eaeb78d55584e8348befffed175a390d84ef8ba03b4b0dda10b5bf", 
+              "host": "x86_64-apple-darwin", 
+              "archiveFileName": "msp430-elf-gcc-8.3.0.16_macos.tar.bz2", 
+              "size": "77710725"
+            }, 
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-elf-gcc-8.3.0.16_linux64.tar.bz2", 
+              "checksum": "SHA-256:968cb369a5885452b407836f846f9a6efbe7ce6649c4c2348a13445ccc8e9a47", 
+              "host": "x86_64-pc-linux-gnu", 
+              "archiveFileName": "msp430-elf-gcc-8.3.0.16_linux64.tar.bz2", 
+              "size": "73921438"
+            }
+          ]
+        }, 
+        {
+          "name": "dslite", 
+          "version": "9.3.0.1863", 
+          "systems": [
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/windows/dslite-9.3.0.1863-i686-mingw32.tar.bz2", 
+              "checksum": "SHA-256:02dc51f3807533ec692b89a459c76f23fc2ffab9c36bc731f84e189477f1602a", 
+              "host": "i686-mingw32", 
+              "archiveFileName": "dslite-9.3.0.1863-i686-mingw32.tar.bz2", 
+              "size": "35315591"
+            }, 
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-9.3.0.1863-x86_64_apple-darwin.tar.bz2", 
+              "checksum": "SHA-256:29c655eae489189fa131cca467141577be05d1017164fcf2d0018358998b72c1", 
+              "host": "x86_64-apple-darwin", 
+              "archiveFileName": "dslite-9.3.0.1863-x86_64-apple-darwin.tar.bz2", 
+              "size": "18245589"
+            }, 
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-9.3.0.1863-i386-x86_64-pc-linux-gnu.tar.bz2", 
+              "checksum": "SHA-256:13bd5f340dadebbf5fb4cdf21ab2f6af5b21e4c30fb766d23ab499a68cdd0632", 
+              "host": "x86_64-pc-linux-gnu", 
+              "archiveFileName": "dslite-9.3.0.1863-i386-x86_64-pc-linux-gnu.tar.bz2", 
+              "size": "19698040"
+            }
+          ]
+        }, 
+        {
+          "name": "mspdebug", 
+          "version": "0.24", 
+          "systems": [
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/windows/mspdebug-0.24-i686-mingw32.tar.bz2", 
+              "checksum": "SHA-256:7b3dfb269b58f692d03080a641f543dfe01bcfcef43935c2bb31e2839e284e73", 
+              "host": "i686-mingw32", 
+              "archiveFileName": "mspdebug-0.24-i686-mingw32.tar.bz2", 
+              "size": "1058435"
+            }, 
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/macosx/mspdebug-0.24-x86_64-apple-darwin.tar.bz2", 
+              "checksum": "SHA-256:5e0dc170ff259c4fc50a2bd591b1c10c648b9d8ad5770c03ed4228128e206fc0", 
+              "host": "x86_64-apple-darwin", 
+              "archiveFileName": "mspdebug-0.24-x86_64-apple-darwin.tar.bz2", 
+              "size": "171307"
+            }, 
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2", 
+              "checksum": "SHA-256:ec6131053a4ddd35b43d44591732313182e3487ffd77181df02ce23f0860a2e5", 
+              "host": "x86_64-pc-linux-gnu", 
+              "archiveFileName": "mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2", 
+              "size": "147947"
+            }
+          ]
+        }, 
+        {
+          "name": "ino2cpp", 
+          "version": "1.0.4", 
+          "systems": [
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.4.tar.bz2", 
+              "checksum": "SHA-256:f1409b404eb650931ab138aea642451d0706deb19210331d3bd62bfe79099f17", 
+              "host": "i686-mingw32", 
+              "archiveFileName": "ino2cpp-1.0.4.tar.bz2", 
+              "size": "537535"
+            }, 
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.4.tar.bz2", 
+              "checksum": "SHA-256:f1409b404eb650931ab138aea642451d0706deb19210331d3bd62bfe79099f17", 
+              "host": "x86_64-apple-darwin", 
+              "archiveFileName": "ino2cpp-1.0.4.tar.bz2", 
+              "size": "537535"
+            }, 
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.4.tar.bz2", 
+              "checksum": "SHA-256:f1409b404eb650931ab138aea642451d0706deb19210331d3bd62bfe79099f17", 
+              "host": "x86_64-pc-linux-gnu", 
+              "archiveFileName": "ino2cpp-1.0.4.tar.bz2", 
+              "size": "537535"
+            }
+          ]
+        }, 
+        {
+          "name": "msp430-elf-gcc", 
+          "version": "9.2.0.50", 
+          "systems": [
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/windows/msp430-elf-gcc-9.2.0.50_win32.tar.bz2", 
+              "checksum": "SHA-256:5dd93cd29daa0ee3a07788c6a78ccd754021dcbfe0c8cebf2bdc20ad075f6e2b", 
+              "host": "i686-mingw32", 
+              "archiveFileName": "msp430-elf-gcc-9.2.0.50_win32.tar.bz2", 
+              "size": "81087291"
+            }, 
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/macosx/msp430-elf-gcc-9.2.0.50_macos.tar.bz2", 
+              "checksum": "SHA-256:053d1f98484a44482432e2e0d947c069cbb13f98bf2a4f21d5d5640fef383d9e", 
+              "host": "x86_64-apple-darwin", 
+              "archiveFileName": "msp430-elf-gcc-9.2.0.50_macos.tar.bz2", 
+              "size": "92319897"
+            }, 
+            {
+              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-elf-gcc-9.2.0.50_linux64.tar.bz2", 
+              "checksum": "SHA-256:a4d71f4b0721a2a15125211d7747ae1549122315fefa62e7fe20470aae503759", 
+              "host": "x86_64-pc-linux-gnu", 
+              "archiveFileName": "msp430-elf-gcc-9.2.0.50_linux64.tar.bz2", 
+              "size": "85735381"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
