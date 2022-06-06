@@ -120,7 +120,7 @@ Per the Energia GitHub repo, the software in this repository are released under 
 [6]: https://arduino.github.io/arduino-cli/0.21/platform-specification/
 [7]: https://arduino.github.io/arduino-cli/0.21/package_index_json-specification/
 [8]: https://forum.43oh.com/topic/13361-add-msp432-support-to-arduino/
-[9]: http://energia.nu/packages/package_energia_index.json
+[9]: https://energia.nu/packages/package_energia_index.json
 [10]: http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json
 [11]: https://forum.43oh.com/topic/31134-error-compiling-for-board-msp-exp430f5529lp/
 [12]: https://energia.nu/packages/package_index.json
