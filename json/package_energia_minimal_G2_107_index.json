@@ -15,7 +15,7 @@
             "version": "1.0.7",
             "category": "Energia",
             "url": "https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/src/msp430-1.0.7.tar.bz2",
-            "archiveFileName": "msp430-1.0.5.tar.bz2",
+            "archiveFileName": "msp430-1.0.7.tar.bz2",
             "checksum": "SHA-256:c49b885630ffce8c44311f701c322158cc4b8b700d831091cb114d58300922da",
             "size": "2246999",
             "boards": [
