@@ -5,6 +5,9 @@ https://github.com/energia/Energia
 https://github.com/energia/msp430-lg-core
 https://github.com/energia/tivac-core
 
+For consistency, all the files in this repository are licensed per 
+the GNU Lesser General Public License as listed below.
+
 .....................................................................
 
 		  GNU LESSER GENERAL PUBLIC LICENSE
