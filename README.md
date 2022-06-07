@@ -103,14 +103,20 @@ Located in the [`actions`][15] directory. Workflow YAML files should be placed i
 - Arduino [Package Index JSON Specification][7]
 - GitHub documentation for managing GitHub Actions [workflows][22]
 - Compile Arduino Sketches GitHub [action][20]
-- Additional Board Manager URLs:
-  - MSP430/Tiva standard [JSON][9]
-  - MSP430 elf compiler [JSON][10]
+- Arduino JSON package index [file][16]
+- Board Manager URLs:
+  - MSP430/Tiva standard: <https://energia.nu/packages/package_energia_index.json>
+    - This is the "official" URL, but specifies older board package versions.
+  - MPS430/Tiva with latest board versions: <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_latest_index.json>
+    - This specifies the latest official board versions. The original file is available [here][12]. The above URL has the same file contents, but the name is changed to conform to the [spec][7].
+  - MSP430 boards using later compiler version: <http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json>
     - [Thread][11] explaining why MSP430 elf compiler option is availble.
+  - SparkFun board manager URL: <https://raw.githubusercontent.com/sparkfun/Arduino_Boards/main/IDE_Board_Manager/package_sparkfun_index.json>
+    - Not directly related to this repo, but this is another URL I have configured in my setup. See SparkFun's [repo][18] for more info.
 
 ## License
 
-Per the Energia GitHub repo, the software in this repository are released under the GNU [Lesser General Public License v2.1][102]. See the file [`LICENSE.txt`][101] in this repository.
+The majority of the files in this repo are either a copy or a derivation of Energia platform cores ([msp430][3] and [tiva][4]), which are licensed under the GNU [Lesser General Public License v2.1][102] per [Energia][19]. For consistency, the non-Energia derived software and files in this repository are also released released under LGPL v2.1. See the file [`LICENSE.txt`][101] in this repository.
 
 [1]: https://energia.nu/
 [2]: https://github.com/energia/Energia
@@ -127,6 +133,10 @@ Per the Energia GitHub repo, the software in this repository are released under 
 [13]: ./json
 [14]: ./boards
 [15]: ./actions
+[16]: http://downloads.arduino.cc/packages/package_index.json
+[17]: ./json/package_energia_latest_index.json
+[18]: https://github.com/sparkfun/Arduino_Boards/
+[19]: https://github.com/energia/Energia/blob/master/license.txt
 [20]: https://github.com/marketplace/actions/compile-arduino-sketches
 [21]: https://github.com/marketplace/actions/markdown-link-check
 [22]: https://docs.github.com/en/actions/using-workflows
