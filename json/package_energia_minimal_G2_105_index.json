@@ -14,7 +14,7 @@
             "architecture": "msp430",
             "version": "1.0.5",
             "category": "Energia",
-            "url": "https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/src/msp430-1.0.5.tar.bz2",
+            "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp430-1.0.5.tar.bz2",
             "archiveFileName": "msp430-1.0.5.tar.bz2",
             "checksum": "SHA-256:f40371d7e5140be6ce671aa33ca686b6d0fdfe6fd480dcb5d8dd79a87ce23305",
             "size": "2077472",

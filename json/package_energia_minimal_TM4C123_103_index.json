@@ -14,7 +14,7 @@
             "architecture": "tivac",
             "version": "1.0.3",
             "category": "Energia",
-            "url": "https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/src/tivac-1.0.3.tar.bz2",
+            "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/tivac-1.0.3.tar.bz2",
             "archiveFileName": "tivac-1.0.3.tar.bz2",
             "checksum": "SHA-256:d36684ab78ad516c65177d0402919814ab3681fff070d52e8036c3a13a5167ab",
             "size": "2239118",
