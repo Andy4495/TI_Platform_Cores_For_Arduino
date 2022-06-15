@@ -25,7 +25,7 @@
             {
               "packager":"energia",
               "name":"arm-none-eabi-gcc",
-              "version":"6.3.1-20170620"
+              "version":"8.3.1-20190703"
             }
          ]
         }
@@ -33,17 +33,16 @@
       "tools": [
         {
           "name": "arm-none-eabi-gcc",
-          "version": "6.3.1-20170620",
+          "version": "8.3.1-20190703",
           "systems": [
             {
               "host": "x86_64-pc-linux-gnu",
-              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/gcc-arm-none-eabi-6.3.1-20170620-x86_64-pc-linux-gnu.tar.bz2",
-              "archiveFileName": "gcc-arm-none-eabi-6.3.1-20170620-x86_64-pc-linux-gnu.tar.bz2",
-              "checksum": "SHA-256:0a98e8cf843c41fdfdfb74cfe5b27e7b0c6054ee92ea1277812513334b6ce02a",
-              "size": "100490382"
-            }
+              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/gcc-arm-none-eabi-8.3.1-20190703-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName": "gcc-arm-none-eabi-8.3.1-20190703-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum": "SHA-256:8c9aa2728a12e8fad7dfb2647438e7ea4937dde1c3f771c5970466d8cc7e3397",
+              "size": "106503151"
+           }
           ]
-
         }
       ]
     }
