@@ -16,7 +16,7 @@ jobs:
           platforms: |
             - name: 'energia:tivac'
               version: 1.0.3
-              source-url: 'https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Aduino/main/json/package_energia_minimal_TM4C123_103_index.json'
+              source-url: 'https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_minimal_TM4C123_103_index.json'
           sketch-paths: |
             - .
           verbose: true
