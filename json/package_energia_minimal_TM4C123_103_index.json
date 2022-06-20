@@ -19,7 +19,8 @@
             "checksum": "SHA-256:d36684ab78ad516c65177d0402919814ab3681fff070d52e8036c3a13a5167ab",
             "size": "2239118",
             "boards": [
-              {"name": "EK-TM4C123GXL"}
+              {"name": "EK-TM4C123GXL"},
+              {"name": "EK-TM4C1294XL"}
             ],
             "toolsDependencies": [
               {
