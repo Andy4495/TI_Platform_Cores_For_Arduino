@@ -19,7 +19,17 @@
             "checksum": "SHA-256:c49b885630ffce8c44311f701c322158cc4b8b700d831091cb114d58300922da",
             "size": "2246999",
             "boards": [
-              {"name": "MSP-EXP430G2"}
+              {"name": "MSP-EXP430F5529"},
+              {"name": "MSP-EXP430FR2433"},
+              {"name": "MSP-EXP430FR4133"},
+              {"name": "MSP-EXP430FR5969"},
+              {"name": "MSP-EXP430FR6989"},
+              {"name": "MSP-EXP430FR5739"},
+              {"name": "MSP-EXP430FR2355"},
+              {"name": "MSP-EXP430FR2231"},
+              {"name": "MSP-EXP430G2"},
+              {"name": "MSP-EXP430G2ET"},
+              {"name": "MSP-EXP430FR5994"}
             ],
             "toolsDependencies": [
               {
