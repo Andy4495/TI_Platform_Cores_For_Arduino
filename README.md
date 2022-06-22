@@ -4,13 +4,13 @@
 
 This repository contains JSON index files and hadware platform cores for the Texas Instruments MSP430 and Tiva C microcontrollers for use with the Arduino IDE or CLI.
 
-[Platform cores][6] are used to add support for new boards to the [Arduino development software][5]. The cores in this repo were originally developed for the [Energia IDE][1], which is a fork of the Arduino IDE specifically for Texas Instruments processors. Software for many TI processors can now be developed directly using the Arduino IDE once the appropriate platform core is installed. A notable exception is MSP432, which does not work with the Arduino builder according to this [thread][8].
+[Platform cores][6] are used to add support for boards to the [Arduino development software][5]. The cores in this repo were originally developed for the [Energia IDE][1], which is a fork of the Arduino IDE specifically for Texas Instruments processors. Software for many TI processors can now be developed directly using the Arduino IDE once the appropriate platform core is installed. A notable exception is MSP432, which does not work with the Arduino builder according to this [thread][8].
 
 In addition to being able to use the Arduino IDE/CLI to develop for TI processors, it is also possible to use the `compile-arduino-sketches` [GitHub action][20] to automatically verify that sketches compile whenever they are checked into GitHub. Since the action uses the Arduino CLI, all you need to do is configure the workflow to install the appropriate platform core to have the action compile for TI processors.
 
-Because compiling a sketch does not need all the data and tools required for a full development environment, I created some slimmed-down [platform index files][7] used by Arduino to load the cores. Just a single board is defined, and only the compiler for that board is downloaded (no debugger or other tools are configured).
+Because compiling a sketch does not need all the data and tools required for a full development environment, I created some slimmed-down [platform index files][7] used by Arduino to load the cores. Only boards from a related family are defined, and only the compiler for that family of boards is downloaded (no debugger or other tools are configured).
 
-These "minimal" platform configurations should slightly speed up build times for the compile-arduino-sketches action and may also help reduce timeout errors when running the compile-sketches action. I periodically receive the following error when running the workflow with an MSP or Tiva build:
+These "minimal" platform configurations should slightly speed up download and run times for the compile-arduino-sketches action and may also help reduce timeout errors when running the compile-sketches action. I periodically receive the following error when running the workflow with an MSP or Tiva build when using the offical package file:
 
 ```text
 ERRO[0130] Error updating indexes: Error downloading index 'http://energia.nu/packages/package_energia_index.json': Get "http://energia.nu/packages/package_energia_index.json": dial tcp 107.180.20.87:80: connect: connection timed out
@@ -30,12 +30,10 @@ The Package Index file names need to follow the convention specified in the Ardu
 | `package_Energia23_index.json`                    | 1.0.6 | 1.0.3              | Version installed by Energia23. |
 | `package_energia_latest_index.json`               | 1.0.7 | 1.0.4              | See [Note 1](#Note) below. |
 | `package_msp430_elf_GCC_index.json`               |       |                    | See [Note 2](#Note) below. |
-| `package_energia_minimal_F5529_105_index.json`    | 1.0.5 | N/A                | Minimal index. Only defines MSP430F5529 and installs from this repo. |
-| `package_energia_minimal_F5529_107_index.json`    | 1.0.7 | N/A                | Minimal index. Only defines MSP430F5529 and installs from this repo. |
-| `package_energia_minimal_G2_105_index.json`       | 1.0.5 | N/A                | Minimal index. Only defines MSP430G2 and installs from this repo. |
-| `package_energia_minimal_G2_107_index.json`       | 1.0.7 | N/A                | Minimal index. Only defines MSP430G2 and installs from this repo. |
-| `package_energia_minimal_TM4C123_103_index.json`  | N/A   | 1.0.3              | Minimal index. Only defines TM4C123 and installs from this repo. |
-| `package_energia_minimal_TM4C123_104_index.json`  | N/A   | 1.0.4              | Minimal index. Only defines TM4C123 and installs from this repo. |
+| `package_energia_minimal_MSP_105_index.json`      | 1.0.5 | N/A                | Minimal index. Only defines MSP430 boards and installs from this repo. |
+| `package_energia_minimal_MSP_107_index.json`      | 1.0.7 | N/A                | Minimal index. Only defines MSP430 boards and installs from this repo. |
+| `package_energia_minimal_TM4C_103_index.json`     | N/A   | 1.0.3              | Minimal index. Only defines TM4C boards and installs from this repo. |
+| `package_energia_minimal_TM4C_104_index.json`     | N/A   | 1.0.4              | Minimal index. Only defines TM4C boards and installs from this repo. |
 
 #### Note
 

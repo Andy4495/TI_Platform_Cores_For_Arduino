@@ -16,7 +16,7 @@ jobs:
           platforms: |
             - name: 'energia:msp430'
               version: 1.0.5
-              source-url: 'https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Aduino/main/json/package_energia_minimal_G2_105_index.json'
+              source-url: 'https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Aduino/main/json/package_energia_minimal_MSP_105_index.json'
           sketch-paths: |
             - .
           verbose: true
