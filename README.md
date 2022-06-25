@@ -26,7 +26,7 @@ The Package Index file names need to follow the convention specified in the Ardu
 
 | Package Index File                 | MSP430 Board Version | Tiva Board Version | Notes |
 | ------------------                                | ----- | -----              | ----- |
-| `package_energia_index.json`                      | 1.0.5 | 1.0.3              | Version available as a [board manager URL][9] from Energia team. |
+| `package_energia_index.json`                      | 1.0.5 | 1.0.3              | Version downloaded from official [board manager URL][9] from Energia. |
 | `package_Energia23_index.json`                    | 1.0.6 | 1.0.3              | Version installed by Energia23. |
 | `package_energia_latest_index.json`               | 1.0.7 | 1.0.4              | See [Note 1](#Note) below. |
 | `package_msp430_elf_GCC_index.json`               |       |                    | See [Note 2](#Note) below. |
@@ -38,9 +38,25 @@ The Package Index file names need to follow the convention specified in the Ardu
 #### Note
 
 1. This version of the package index is [loaded][12] by Energia23 when using the Board Manager menu item in Energia. Note that the filename loaded as-is (`platform_index.json`) does not conform to the [Package Index Specification][7] naming convention. It is renamed here with a valid name.
-2. `package_msp430_elf_GCC_index.json` is an alternate package index file which defines 2.0.x versions of the msp430 platform. The 2.0.x vesions are not part of the official Energia application and use a much newer GCC compiler (V2.x) which supports C99. This package index file only includes definitions for msp430 and not any other platforms. This [thread][11] explains the differences and the file can be [downloaded][10] from the Energia team.
+2. `package_msp430_elf_GCC_index.json` is an alternate package index file which defines 2.0.x versions of the msp430 platform. The 2.0.x vesions are not part of the official Energia application and use a much newer GCC compiler (V2.x) which supports C99. This package index file only includes definitions for msp430 and not any other platforms. This [thread][11] explains the differences and the file can be [downloaded][10] from the Energia.
 
-### Board Platform Compiler and Tool Versions
+### Board Package Files
+
+Located in the [`boards`][14] directory. 
+
+These files are referenced by the package index json files.
+
+- `msp430-1.0.5.tar.bz2`
+- `msp430-1.0.6.tar.bz2`
+- `msp430-1.0.7.tar.bz2`
+- `msp430elf-2.0.7.tar.bz2`
+- `msp430elf-2.0.10.tar.bz2`
+- `tivac-1.0.3.tar.bz2`
+- `tivac-1.0.4.tar.bz2`
+
+#### Board Platform Compiler and Tool Versions
+
+The tools are specific to the board package platform and version. Due to their size and licensing restrictions, tools are not part of this repository and must be downloaded from Energia.
 
 | Board Version | Compiler                         | dslite     | mspdebug | ino2cpp |
 | ------------- | --------                         | ------     | -------- | ------- |
@@ -52,23 +68,15 @@ The Package Index file names need to follow the convention specified in the Ardu
 | Tiva 1.0.4    | arm-none-eabi-gcc 8.3.1-20190703 | 9.3.0.1863 | N/A      | N/A     |
 | Tiva 1.0.3    | arm-none-eabi-gcc 6.3.1-20170620 | 7.2.0.2096 | N/A      | N/A     |
 
-### Board Package Files
+### GitHub Workflow Action Definition Files
 
-Located in the [`boards`][14] directory.
+Located in the [`actions`][15] directory. 
 
-- `msp430-1.0.5.tar.bz2`
-- `msp430-1.0.6.tar.bz2`
-- `msp430-1.0.7.tar.bz2`
-- `msp430elf-2.0.7.tar.bz2`
-- `msp430elf-2.0.10.tar.bz2`
-- `tivac-1.0.3.tar.bz2`
-- `tivac-1.0.4.tar.bz2`
+These files contain example yaml configuration files for [arduino-compile-sketches][23] actions for MSP and Tiva platforms.
 
-### GitHub Workflow Definition YAML Files
+You can generally use the latest version of the board package for the platform you are compiling. Configuration files for older platform versions are included in case there is a specific compatibility issue with a particular sketch or library.
 
-This repo contains more configurations than you will probably ever need. You can generally use the latest version of the board package for the platform you are compiling. The older versions are included in case there is a specific compatibility issue with a particular sketch or library.
-
-Located in the [`actions`][15] directory. Workflow YAML files should be placed in the `.github/workflows` directory in your repo.
+[Workflow action][24] files should be placed in the `.github/workflows` directory in your repo.
 
 - `compile_arduino_sketch_standard-MSP430-105.yml`
   - Compile for MSP430G2 using the standard Energia platform index and board packages version 1.0.5 downloaded from energia.nu
@@ -93,7 +101,7 @@ Located in the [`actions`][15] directory. Workflow YAML files should be placed i
 
 ## References
 
-- Energia [IDE][1] and [repo][2]
+- Energia IDE [application][1] and source code [repo][2]
 - Energia MSP430 core [repo][3]
 - Energia Tiva C core [repo][4]
 - Arduino [Platform Specification][6]
@@ -110,7 +118,9 @@ Located in the [`actions`][15] directory. Workflow YAML files should be placed i
   - MSP430 boards using later compiler version: <http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json>
     - [Thread][11] explaining why MSP430 elf compiler option is availble.
   - SparkFun board manager URL: <https://raw.githubusercontent.com/sparkfun/Arduino_Boards/main/IDE_Board_Manager/package_sparkfun_index.json>
-    - Not directly related to this repo, but this is another URL I have configured in my setup. See SparkFun's [repo][18] for more info.
+    - Includes [definitions for SparkFun products][18].
+    - This one may not be very useful. In particular, ESP8266 platform doesn't work correctly.
+  - ESP8266 board manager URL: <http://arduino.esp8266.com/stable/package_esp8266com_index.json>
 
 ## License
 
@@ -138,6 +148,8 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [20]: https://github.com/marketplace/actions/compile-arduino-sketches
 [21]: https://github.com/marketplace/actions/markdown-link-check
 [22]: https://docs.github.com/en/actions/using-workflows
+[23]: https://github.com/marketplace/actions/compile-arduino-sketches
+[24]: https://docs.github.com/en/actions
 [100]: https://choosealicense.com/licenses/lgpl-2.1/
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
