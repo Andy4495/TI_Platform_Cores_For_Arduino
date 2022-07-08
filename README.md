@@ -42,7 +42,7 @@ The Package Index file names need to follow the convention specified in the Ardu
 
 ### Board Package Files
 
-Located in the [`boards`][14] directory. 
+Located in the [`boards`][14] directory.
 
 These files are referenced by the package index json files.
 
@@ -70,7 +70,7 @@ The tools are specific to the board package platform and version. Due to their s
 
 ### GitHub Workflow Action Definition Files
 
-Located in the [`actions`][15] directory. 
+Located in the [`actions`][15] directory.
 
 These files contain example yaml configuration files for [arduino-compile-sketches][23] actions for MSP and Tiva platforms.
 
@@ -98,6 +98,13 @@ You can generally use the latest version of the board package for the platform y
   - Compile for TM4C123 with minimal package index file and tivac board package 1.0.3 downloaded from this repo.
 - `compile_arduino_sketch_minimal-TM4C123-104.yml`
   - Compile for TM4C123 with minimal package index file and tivac board package 1.0.4 downloaded from this repo.
+
+## Energia Application Libraries
+
+The Energia IDE includes several libraries at the application level of the IDE instead of in the platform cores. This means that if you use the Arduino IDE/CLI and install an MSP430 or Tiva core, you don't end up getting every library that you would when using the Energia IDE. Most of the libraries included with the Energia application are either readily available as an Arduino library or are obsolete. However, two libraries in particular are specific to the platforms supported by Energia. I have created stand-alone repositories for these libraries:
+
+- [LCD_SharpBoosterPack_SPI][25]
+- [OneMsTaskTimer][26]
 
 ## References
 
@@ -150,6 +157,8 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [22]: https://docs.github.com/en/actions/using-workflows
 [23]: https://github.com/marketplace/actions/compile-arduino-sketches
 [24]: https://docs.github.com/en/actions
+[25]: https://github.com/Andy4495/LCD_SharpBoosterPack_SPI
+[26]: https://github.com/Andy4495/OneMsTaskTimer
 [100]: https://choosealicense.com/licenses/lgpl-2.1/
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
