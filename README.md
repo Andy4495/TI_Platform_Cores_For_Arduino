@@ -24,16 +24,18 @@ Located in the [`json`][13] folder.
 
 The Package Index file names need to follow the convention specified in the Arduino [Package Index Specification][7]. Specifically, the file name needs be of the form `package_YOURNAME_PACKAGENAME_index.json`. The prefix `package_` and suffix `_index.json` are mandatory, while the choice of `YOURNAME_PACKAGENAME` is left to the packager.
 
-| Package Index File                 | MSP430 Board Version | Tiva Board Version | Notes |
-| ------------------                                | ----- | -----              | ----- |
-| `package_energia_index.json`                      | 1.0.5 | 1.0.3              | Version downloaded from official [board manager URL][9] from Energia. |
-| `package_Energia23_index.json`                    | 1.0.6 | 1.0.3              | Version installed by Energia23. |
-| `package_energia_latest_index.json`               | 1.0.7 | 1.0.4              | See [Note 1](#Note) below. |
-| `package_msp430_elf_GCC_index.json`               |       |                    | See [Note 2](#Note) below. |
-| `package_energia_minimal_MSP_105_index.json`      | 1.0.5 | N/A                | Minimal index. Only defines MSP430 boards and installs from this repo. |
-| `package_energia_minimal_MSP_107_index.json`      | 1.0.7 | N/A                | Minimal index. Only defines MSP430 boards and installs from this repo. |
-| `package_energia_minimal_TM4C_103_index.json`     | N/A   | 1.0.3              | Minimal index. Only defines TM4C boards and installs from this repo. |
-| `package_energia_minimal_TM4C_104_index.json`     | N/A   | 1.0.4              | Minimal index. Only defines TM4C boards and installs from this repo. |
+| Package Index File                       | MSP430 Board Version | Tiva Board Version | Notes |
+| ------------------                                      | ----- | -----              | ----- |
+| `package_energia_index.json`                            | 1.0.5 | 1.0.3              | Version downloaded from official [board manager URL][9] from Energia. |
+| `package_Energia23_index.json`                          | 1.0.6 | 1.0.3              | Version installed by Energia23. |
+| `package_energia_latest_index.json`                     | 1.0.7 | 1.0.4              | See [Note 1](#Note) below. |
+| `package_msp430_elf_GCC_index.json`                     |       |                    | See [Note 2](#Note) below. |
+| `package_energia_minimal_MSP_105_index.json`            | 1.0.5 | N/A                | MSP430 boards only and installs from this repo. |
+| `package_energia_minimal_MSP_107_index.json`            | 1.0.7 | N/A                | MSP430 boards only and installs from this repo. |
+| `package_energia_minimal_MSP_107_alternate_index.json`  | 1.0.7 | N/A                | MSP430 boards only, installs from this repo, compiler from Release. |
+| `package_energia_minimal_TM4C_103_index.json`           | N/A   | 1.0.3              | TM4C boards only and installs from this repo. |
+| `package_energia_minimal_TM4C_104_index.json`           | N/A   | 1.0.4              | TM4C boards only and installs from this repo. |
+| `package_energia_minimal_TM4C_104_alternate_index.json` | N/A   | 1.0.4              | TM4C boards only, installs from this repo, compiler from Release. |
 
 #### Note
 
@@ -56,7 +58,7 @@ These files are referenced by the package index json files.
 
 #### Board Platform Compiler and Tool Versions
 
-The tools are specific to the board package platform and version. Due to their size and licensing restrictions, tools are not part of this repository and must be downloaded from Energia.
+The tools are specific to the board package platform and version.
 
 | Board Version | Compiler                         | dslite     | mspdebug | ino2cpp |
 | ------------- | --------                         | ------     | -------- | ------- |
