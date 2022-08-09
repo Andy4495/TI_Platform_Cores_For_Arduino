@@ -1,0 +1,70 @@
+{
+  "packages": [
+    {
+      "name": "energia",
+      "maintainer": "Energia",
+      "websiteURL": "http://www.energia.nu/",
+      "email": "make@energia.nu",
+      "help": {
+        "online": "http://energia.nu/reference"
+      },
+      "platforms": [
+        {
+          "name": "Energia MSP432 EMT RED boards",
+          "architecture": "msp432r",
+          "version": "5.29.1",
+          "category": "Energia",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432r-5.29.1.tar.bz2",
+          "archiveFileName": "msp432r-5.29.1.tar.bz2",
+          "checksum": "SHA-256:193ecf9fc08910440e9037d58ea1921e1f3bcf4c922df881b0c8d8afa3727cc8",
+          "size": "32331638",
+          "boards": [
+            {"name": "MSP_EXP432P401R"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager":"energia",
+              "name":"arm-none-eabi-gcc",
+              "version":"6.3.1-20170620"
+            },
+            {
+              "packager":"energia",
+              "name":"ino2cpp",
+              "version":"1.0.6"
+            }
+          ]
+        }
+      ],
+      "tools": [
+        {
+          "name": "arm-none-eabi-gcc",
+          "version": "6.3.1-20170620",
+          "systems": [
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/gcc-arm-none-eabi-6.3.1-20170620-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName": "gcc-arm-none-eabi-6.3.1-20170620-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum": "SHA-256:0a98e8cf843c41fdfdfb74cfe5b27e7b0c6054ee92ea1277812513334b6ce02a",
+              "size": "100490382"
+            }
+          ]
+        },
+        {
+          "name":"ino2cpp",
+          "version":"1.0.6",
+          "systems":
+          [
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.6.tar.bz2",
+              "checksum":"SHA-256:9be2bfa55b272d7f98aff8cc9540368fc54ef8aaa4379071bd5ff14ff7e0a62b",
+              "size":"483712"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

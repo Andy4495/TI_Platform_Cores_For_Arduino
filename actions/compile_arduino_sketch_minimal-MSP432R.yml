@@ -1,0 +1,25 @@
+# From: https://github.com/marketplace/actions/compile-arduino-sketches
+# Uses: https://github.com/arduino/compile-sketches
+name: Arduino Compile Sketches
+
+on: 
+  push:
+
+jobs:
+  compile-sketches: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: arduino/compile-sketches@v1
+        with:
+          fqbn: 'energia:msp432r:MSP-EXP432P401R'
+          platforms: |
+            - name: 'energia:msp432r'
+              version: 5.29.1
+              source-url: 'https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_minimal_MSP432r_index.json'
+          sketch-paths: |
+            - .
+          verbose: true
+          enable-warnings-report: true
+          libraries: |
+            - source-path: ./
