@@ -2,7 +2,7 @@
 
 [![Check Markdown Links](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/CheckMarkdownLinks.yml/badge.svg)](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/CheckMarkdownLinks.yml)
 
-This repository contains JSON index files and hadware platform cores for the Texas Instruments MSP430 and Tiva C microcontrollers for use with the Arduino IDE or CLI.
+This repository contains JSON index files and hadware platform cores for the Texas Instruments MSP430, MSP432, and Tiva C microcontrollers for use with the Arduino IDE or CLI.
 
 [Platform cores][6] are used to add support for boards to the [Arduino development software][5]. The cores in this repo were originally developed for the [Energia IDE][1], which is a fork of the Arduino IDE specifically for Texas Instruments processors. Software for many TI processors can now be developed directly using the Arduino IDE once the appropriate platform core is installed.
 
@@ -18,9 +18,9 @@ ERRO[0130] Error updating indexes: Error downloading index 'http://energia.nu/pa
 
 ## MSP432 Support
 
-The official Energia board package for MSP432 does not work with the Arduino IDE/CLI due to an issue with the arduino-builder. This is documented in a [thread][8] and this unmerged [pull request][61] Since arduino-builder is now [deprecated][62], it is unlikely that this pull request will ever be merged. The main issue has to do with accessing a temporary path from within the build scripts. The Energia builder makes use of a variable called "build.project_path" which is not available with the arduino-builder. However, a global predefined property named "build.source.path" is available for use in [`platform.txt`][6] and defines the path needed for building MSP432 with Arduino.
+The official Energia board package for MSP432 does not work with the Arduino IDE/CLI due to an issue with the arduino-builder. This is documented in a [thread][8] and this unmerged [pull request][61]. Since arduino-builder is now [deprecated][62], it is unlikely that this pull request will ever be merged. The main issue has to do with accessing a temporary path from within the build scripts. The Energia builder makes use of a variable called "build.project_path" which is not available with the arduino-builder. However, a global predefined property named "build.source.path" is available for use in [`platform.txt`][6] and defines the path needed for building MSP432 with Arduino.
 
-In addition, the `into2cpp` tool as part of the MSP432 build process makes some assumptions on the availability and location of java during the build process. This can cause issues when building locally with Arduino and when running the [compile-arduino-sketches][20] GitHub action both locally using [nektos/act][63] and on GitHub's servers.
+In addition, the `ino2cpp` tool used during of the MSP432 build process makes some assumptions on the availability and location of java during the build process. This can cause issues when building locally with Arduino and when running the [compile-arduino-sketches][20] GitHub action both locally using [nektos/act][63] and on GitHub's servers.
 
 Therefore, the following changes are needed to `platform.txt` in the MSP432 board package:
 
@@ -42,9 +42,9 @@ I ran the following steps to create the new board package using MacOS:
 4. Duplicate `platform.txt` and rename the copy to `platform orig.txt`
 5. Update `platform.txt` as noted above
 6. Rename the parent folder to `msp432r-core-5.29.1`
-7. Recompress the folder with: `tar cvyf msp432r-5.29.1.tar.bz2 msp432r-core-5.29.1`
-8. Calculate SHA-256 checksum with: `shasum -a 256 msp432r-5.29.0.tar.bz2`
-9. Note the new file's size with: `ls -l msp432r-5.29.0.tar.bz2`
+7. Recompress the updated folder: `tar cvyf msp432r-5.29.1.tar.bz2 msp432r-core-5.29.1`
+8. Calculate SHA-256 checksum: `shasum -a 256 msp432r-5.29.0.tar.bz2`
+9. Note the new file's size: `ls -l msp432r-5.29.0.tar.bz2`
 10. Udpate appropriate key values `url`, `archiveFileName`, `checksum`, and `size` in the package index file
 
 ## Repository Contents
