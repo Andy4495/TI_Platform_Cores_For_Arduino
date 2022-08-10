@@ -1,0 +1,660 @@
+{
+  "packages": [
+    {
+      "name": "energia",
+      "maintainer": "Energia",
+      "websiteURL": "http://www.energia.nu/",
+      "email": "make@energia.nu",
+      "help": {
+        "online": "http://energia.nu/reference"
+      },
+      "platforms": [
+        {
+          "name": "Energia MSP430 boards",
+          "architecture": "msp430",
+          "version": "1.0.7",
+          "category": "Energia",
+          "url": "http://energia.nu/downloads/download_core.php?file=msp430-1.0.7.tar.bz2",
+          "archiveFileName": "msp430-1.0.7.tar.bz2",
+          "checksum": "SHA-256:c49b885630ffce8c44311f701c322158cc4b8b700d831091cb114d58300922da",
+          "size": "2246999",
+          "boards": [
+            {"name": "MSP-EXP430F5529"},
+            {"name": "MSP-EXP430FR2433"},
+            {"name": "MSP-EXP430FR4133"},
+            {"name": "MSP-EXP430FR5969"},
+            {"name": "MSP-EXP430FR6989"},
+            {"name": "MSP-EXP430FR5739"},
+            {"name": "MSP-EXP430FR2355"},
+            {"name": "MSP-EXP430FR2231"},
+            {"name": "MSP-EXP430G2"},
+            {"name": "MSP-EXP430G2ET"},
+            {"name": "MSP-EXP430FR5994"}
+          ],
+          "toolsDependencies": [
+            {
+
+              "packager":"energia",
+              "name":"msp430-gcc",
+              "version":"4.6.6"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"9.3.0.1863"
+            },
+            {
+              "packager":"energia",
+              "name":"mspdebug",
+              "version":"0.24"
+            }
+         ]
+        },
+        {
+          "name": "Energia MSP432E Ethernet RED boards",
+          "architecture": "msp432e",
+          "version": "5.19.0",
+          "category": "Energia",
+          "url": "http://energia.nu/downloads/download_core.php?file=msp432e-5.19.0.tar.bz2",
+          "archiveFileName": "msp432e-5.19.0.tar.bz2",
+          "checksum": "SHA-256:9d4a549ab2a5e810ee9da352dfe12b757d79a6ef2a0b9161a9c43e7fd0d42e33",
+          "size": "35290227",
+          "boards": [
+            {"name": "MSP_EXP432E401Y"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager":"energia",
+              "name":"arm-none-eabi-gcc",
+              "version":"6.3.1-20170620"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"8.0.0.1202"
+            },
+            {
+              "packager":"energia",
+              "name":"ino2cpp",
+              "version":"1.0.3"
+            }
+          ]
+        },
+        {
+          "name": "Energia MSP432 EMT RED boards",
+          "architecture": "msp432r",
+          "version": "5.29.1",
+          "category": "Energia",
+          "url": "http://energia.nu/downloads/download_core.php?file=msp432r-5.29.0.tar.bz2",
+          "archiveFileName": "msp432r-5.29.1.tar.bz2",
+          "checksum": "SHA-256:193ecf9fc08910440e9037d58ea1921e1f3bcf4c922df881b0c8d8afa3727cc8",
+          "size": "32331638",
+          "boards": [
+            {"name": "MSP_EXP432P401R"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager":"energia",
+              "name":"arm-none-eabi-gcc",
+              "version":"6.3.1-20170620"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"9.2.0.1793"
+            },
+            {
+              "packager":"energia",
+              "name":"ino2cpp",
+              "version":"1.0.6"
+            }
+          ]
+        },
+        {
+          "name": "Energia TivaC boards",
+          "architecture": "tivac",
+          "version": "1.0.4",
+          "category": "Energia",
+          "url": "http://energia.nu/downloads/download_core.php?file=tivac-1.0.4.tar.bz2",
+          "archiveFileName": "tivac-1.0.4.tar.bz2",
+          "checksum": "SHA-256:5d735138d10a721856787560331022a3eea2ff947caaa7c4512b2d0214d45244",
+          "size": "2763650",
+          "boards": [
+            {"name": "EK-TM4C123GXL"},
+            {"name": "EK-TM4C1294XL"},
+            {"name": "EK-LM4F120XL"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager":"energia",
+              "name":"arm-none-eabi-gcc",
+              "version":"8.3.1-20190703"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"9.3.0.1863"
+            }
+          ]
+        },
+        {
+          "name": "Energia CC13xx boards",
+          "architecture": "cc13xx",
+          "version": "4.9.1",
+          "category": "Energia",
+          "url": "http://energia.nu/downloads/download_core.php?file=cc13xx-4.9.1.tar.bz2",
+          "archiveFileName": "cc13xx-4.9.1.tar.bz2",
+          "checksum": "SHA-256:9e1324c1f42ecb9b5f54b7eb33af40440809cda768e120e2d22a9d87a30d4b37",
+          "size": "24263837",
+          "boards": [
+            {"name": "LAUNCHXL_CC1310"},
+            {"name": "LAUNCHXL_CC1350"},
+            {"name": "CC1350STK"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager":"energia",
+              "name":"arm-none-eabi-gcc",
+              "version":"4.8.4-20140725"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"7.1.0.1917"
+            },
+            {
+              "packager":"energia",
+              "name":"ino2cpp",
+              "version":"1.0.2"
+            }
+          ]
+        },
+        {
+          "name": "Energia CC3220 EMT boards",
+          "architecture": "cc3220emt",
+          "version": "5.6.2",
+          "category": "Energia",
+          "url": "http://energia.nu/downloads/download_core.php?file=cc3220emt-5.6.2.tar.bz2",
+          "archiveFileName": "cc3220emt-5.6.2.tar.bz2",
+          "checksum": "SHA-256:be0c700217218db893a504234c5dea5b9618ab7e23dfe9a370db59784de2994e",
+          "size": "25967822",
+          "boards": [
+            {"name": "CC3220S-LAUNCHXL"},
+            {"name": "CC3220SF-LAUNCHXL"}
+          ],
+          "toolsDependencies": [
+            {
+
+              "packager":"energia",
+              "name":"arm-none-eabi-gcc",
+              "version":"6.3.1-20170620"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"7.4.0.1099"
+            },
+            {
+              "packager":"energia",
+              "name":"ino2cpp",
+              "version":"1.0.3"
+            }
+          ]
+        },
+        {
+          "name": "Energia CC3200 boards",
+          "architecture": "cc3200",
+          "version": "1.0.3",
+          "category": "Energia",
+          "url": "http://energia.nu/downloads/download_core.php?file=cc3200-1.0.3.tar.bz2",
+          "archiveFileName": "cc3200-1.0.3.tar.bz2",
+          "checksum": "SHA-256:69f9ac0980bac4ebb8803a161786215228557eba49051af86e980aa8c422cdca",
+          "size": "1790853",
+          "boards": [
+            {"name": "CC3200-LAUNCHXL"},
+            {"name": "RedBearLab CC3200"},
+            {"name": "RedBearLab WiFi Mini"},
+            {"name": "RedBearLab WiFi Micro"}
+          ],
+          "toolsDependencies": [
+            {
+
+              "packager":"energia",
+              "name":"arm-none-eabi-gcc",
+              "version":"4.8.4-20140725"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"6.2.1.1594"
+            },
+            {
+              "packager":"energia",
+              "name":"cc3200prog",
+              "version":"1.1.4"
+            }
+          ]
+        }
+      ],
+      "tools": [
+        {
+          "name":"msp430-gcc",
+          "version":"4.6.6",
+          "systems":
+          [
+            {
+              "host":"i686-mingw32",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/msp430-gcc-4.6.6-i686-mingw32.tar.bz2",
+              "archiveFileName":"msp430-gcc-4.6.6-i686-mingw32.tar.bz2",
+              "checksum":"SHA-256:3dbfe6453f461ae5d7599c3cf1144dc400852b6d788d298f3dd0004283a9202a",
+              "size":"30818330"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/msp430-gcc-4.6.6-i386-apple-darwin11.tar.bz2",
+              "archiveFileName":"msp430-gcc-4.6.6-i386-apple-darwin11.tar.bz2",
+              "checksum":"SHA-256:82d4df153a9d64a507a48ed3b5db9e21eeb069809976c8b69946801252b622bb",
+              "size":"32574759"
+            },
+            {
+              "host": "x86_64-linux-gnu",
+              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-gcc-4.6.6-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName": "msp430-gcc-4.6.6-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum": "SHA-256:41fbcb3cc73679186989e1fb27cb4578e9164f07d134e650e23089198b87cbfd",
+              "size": "98503002"
+            }
+          ]
+        },
+        {
+          "name": "arm-none-eabi-gcc",
+          "version": "8.3.1-20190703",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "https://s3.amazonaws.com/energiaUS/tools/windows/gcc-arm-none-eabi-8.3.1-20190703-windows.tar.bz2",
+              "archiveFileName": "gcc-arm-none-eabi-8.3.1-20190703-windows.tar.bz2",
+              "checksum": "SHA-256:3f0440376df0c66bd4c9ce7de78e6c4155c92fdb6758c7f5b699c357a618c9e8",
+              "size": "115480830"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "https://s3.amazonaws.com/energiaUS/tools/macosx/gcc-arm-none-eabi-8.3.1-20190703-mac.tar.bz2",
+              "archiveFileName": "gcc-arm-none-eabi-8.3.1-20190703-mac.tar.bz2",
+              "checksum": "SHA-256:fba079fcb5350fbb838b8310d5b61499c962861583091060e13ce0d21827d6e7",
+              "size": "110983957"
+            },
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/gcc-arm-none-eabi-8.3.1-20190703-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName": "gcc-arm-none-eabi-8.3.1-20190703-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum": "SHA-256:8c9aa2728a12e8fad7dfb2647438e7ea4937dde1c3f771c5970466d8cc7e3397",
+              "size": "106503151"
+            }
+          ]
+        },
+        {
+          "name": "arm-none-eabi-gcc",
+          "version": "6.3.1-20170620",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "https://s3.amazonaws.com/energiaUS/tools/windows/gcc-arm-none-eabi-6.3.1-20170620-windows.tar.bz2",
+              "archiveFileName": "gcc-arm-none-eabi-6.3.1-20170620-windows.tar.bz2",
+              "checksum": "SHA-256:c28a5c2a5272d09bf396c2dcd4c3188ae0dd8ec04d0ce8f581b1995141fc9044",
+              "size": "110277553"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "https://s3.amazonaws.com/energiaUS/tools/macosx/gcc-arm-none-eabi-6.3.1-20170620-mac.tar.bz2",
+              "archiveFileName": "gcc-arm-none-eabi-6.3.1-20170620-mac.tar.bz2",
+              "checksum": "SHA-256:70ed9ad76f90f33a14bf47d1c2643ee5374dadef820ab38bf2ad9c3c1981aee1",
+              "size": "104268677"
+            },
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/gcc-arm-none-eabi-6.3.1-20170620-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName": "gcc-arm-none-eabi-6.3.1-20170620-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum": "SHA-256:0a98e8cf843c41fdfdfb74cfe5b27e7b0c6054ee92ea1277812513334b6ce02a",
+              "size": "100490382"
+            }
+          ]
+        },
+        {
+          "name": "arm-none-eabi-gcc",
+          "version": "4.8.4-20140725",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "archiveFileName": "gcc-arm-none-eabi-4.8.4-20140725-windows.tar.gz",
+              "url": "https://s3.amazonaws.com/energiaUS/tools/windows/gcc-arm-none-eabi-4.8.4-20140725-windows.tar.gz",
+              "checksum": "SHA-256:2ab5a6ad2a32f976d17b7ef9222623e6f9881be908047cb05730ccd89eb79a1d",
+              "size": "82014307"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "https://s3.amazonaws.com/energiaUS/tools/macosx/gcc-arm-none-eabi-4.8.4-20140725-mac.tar.bz2",
+              "archiveFileName": "gcc-arm-none-eabi-4.8.4-20140725-mac.tar.bz2",
+              "checksum": "SHA-256:66c9261fdd6d646931dfe940e8daf38d3b11cfba8a7e714c7a3811146b6dc9c7",
+              "size": "52518522"
+            },
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/gcc-arm-none-eabi-4.8.4-20140725-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName": "gcc-arm-none-eabi-4.8.4-20140725-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum": "SHA-256:00636c299e7a420212cdc1643d5c52d3e82eb66c8ce0e4693327cd1e936b52db",
+              "size": "68654066"
+            }
+          ]
+        },
+        {
+          "name":"ino2cpp",
+          "version":"1.0.6",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.6.tar.bz2",
+              "checksum":"SHA-256:9be2bfa55b272d7f98aff8cc9540368fc54ef8aaa4379071bd5ff14ff7e0a62b",
+              "size":"483712"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.6.tar.bz2",
+              "checksum":"SHA-256:9be2bfa55b272d7f98aff8cc9540368fc54ef8aaa4379071bd5ff14ff7e0a62b",
+              "size":"483712"
+            },
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.6.tar.bz2",
+              "checksum":"SHA-256:9be2bfa55b272d7f98aff8cc9540368fc54ef8aaa4379071bd5ff14ff7e0a62b",
+              "size":"483712"
+            }
+          ]
+        },
+        {
+          "name":"ino2cpp",
+          "version":"1.0.3",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.3.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.3.tar.bz2",
+              "checksum":"SHA-256:562c9364db80affc5a5b51a79b70950680c77d7ee62244e18bc8b6f7c114fdeb",
+              "size":"485132"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.3.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.3.tar.bz2",
+              "checksum":"SHA-256:562c9364db80affc5a5b51a79b70950680c77d7ee62244e18bc8b6f7c114fdeb",
+              "size":"485132"
+            },
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.3.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.3.tar.bz2",
+              "checksum":"SHA-256:562c9364db80affc5a5b51a79b70950680c77d7ee62244e18bc8b6f7c114fdeb",
+              "size":"485132"
+            }
+          ]
+        },
+        {
+          "name":"ino2cpp",
+          "version":"1.0.2",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.2.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.2.tar.bz2",
+              "checksum":"SHA-256:6f63041767f4f15b1da7b62aa3086e6912f9e05b19bfdf512d573bcc9ac7c9a5",
+              "size":"484493"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.2.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.2.tar.bz2",
+              "checksum":"SHA-256:6f63041767f4f15b1da7b62aa3086e6912f9e05b19bfdf512d573bcc9ac7c9a5",
+              "size":"484493"
+            },
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.2.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.2.tar.bz2",
+              "checksum":"SHA-256:6f63041767f4f15b1da7b62aa3086e6912f9e05b19bfdf512d573bcc9ac7c9a5",
+              "size":"484493"
+            }
+          ]
+        },
+        {
+          "name":"dslite",
+          "version":"9.3.0.1863",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/dslite-9.3.0.1863-i686-mingw32.tar.bz2",
+              "archiveFileName":"dslite-9.3.0.1863-i686-mingw32.tar.bz2",
+              "checksum":"SHA-256:02dc51f3807533ec692b89a459c76f23fc2ffab9c36bc731f84e189477f1602a",
+              "size":"35315591"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-9.3.0.1863-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"dslite-9.3.0.1863-x86_64-apple-darwin.tar.bz2",
+              "checksum":"SHA-256:29c655eae489189fa131cca467141577be05d1017164fcf2d0018358998b72c1",
+              "size":"18245589"
+            },
+            {
+              "host":"x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-9.3.0.1863-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"dslite-9.3.0.1863-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:13bd5f340dadebbf5fb4cdf21ab2f6af5b21e4c30fb766d23ab499a68cdd0632",
+              "size":"19698040"
+            }
+          ]
+        },
+        {
+          "name":"dslite",
+          "version":"9.2.0.1793",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/dslite-9.2.0.1793-i686-mingw32.tar.bz2",
+              "archiveFileName":"dslite-9.2.0.1793-mingw32.tar.bz2",
+              "checksum":"SHA-256:14ad093a5b98f7410be1d7860e805e1adf912ff692618c972a663b8250021dc1",
+              "size":"36577760"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-9.2.0.1793-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"dslite-9.2.0.1793-x86_64-apple-darwin.tar.bz2",
+              "checksum":"SHA-256:bbca8c869b31848708403781293b8473d5087363fde7ba688116d23161d0427c",
+              "size":"18218665"
+            },
+            {
+              "host":"x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-9.2.0.1793-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"dslite-9.2.0.1793-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:92be08518c696ec815f3f8d340f44b5d23555e5d704c2d7e327e804ff8aaf3db",
+              "size":"19511633"
+            }
+          ]
+        },
+        {
+          "name":"dslite",
+          "version":"8.0.0.1202",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/dslite-8.0.0.1202-i686-mingw32.tar.bz2",
+              "archiveFileName":"dslite-8.0.0.1202-mingw32.tar.bz2",
+              "checksum":"SHA-256:88d45eac72682d35e907cefe101b9b32557d70a5044b872d2ac22594b87ae919",
+              "size":"33554889"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-8.0.0.1202-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"dslite-8.0.0.1202-x86_64-apple-darwin.tar.bz2",
+              "checksum":"SHA-256:19ccf9a603a528c7b84237fbbcad4fdeb97dff6ff02177086cb3da9eac36041d",
+              "size":"16963904"
+            },
+            {
+              "host":"x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-8.0.0.1202-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"dslite-8.0.0.1202-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:8d84a25eab60624fd216d1e8e76948ac6a218ff81cff5118c3942dc67ab78acb",
+              "size":"18783730"
+            }
+          ]
+        },
+        {
+          "name":"dslite",
+          "version":"7.4.0.1099",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/dslite-7.4.0.1099-i686-mingw32.tar.bz2",
+              "archiveFileName":"dslite-7.4.0.1099-i686-mingw32.tar.bz2",
+              "checksum":"SHA-256:298f2d6df8f1122ce8ea437586dfba9c54d394144fdf7853509437a49b642bb8",
+              "size":"33486116"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-7.4.0.1099-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"dslite-7.4.0.1099-x86_64-apple-darwin.tar.bz2",
+              "checksum":"SHA-256:445bfbf65a709e2e031c2670b7b0300d11b25f6a58953037f27b09c341fd7fc4",
+              "size":"17016539"
+            },
+            {
+              "host":"x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-7.4.0.1099-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"dslite-7.4.0.1099-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:187aeafd49f76d841f68d5fa9cac0dcdfce9aa401fd2f2b67bd9da5c14833f67",
+              "size":"18597835"
+            }
+          ]
+        },
+        {
+          "name":"dslite",
+          "version":"7.1.0.1917",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/dslite-7.1.0.1917-i686-mingw32.zip",
+              "archiveFileName":"dslite-7.1.0.1917-mingw32.zip",
+              "checksum":"SHA-256:e8ef665bfeaa9264a98771ea89d14f977e8e448116372f6883bb74dc703424a8",
+              "size":"36225191"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-7.1.0.1917-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"dslite-7.1.0.1917-x86_64-apple-darwin.tar.bz2",
+              "checksum":"SHA-256:629fe0c3c5f066b9dd62e065ac8ba80c5fd260d15d6fe32006e200b9a58343ac",
+              "size":"15384479"
+            },
+            {
+              "host":"x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-7.1.0.1917-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"dslite-7.1.0.1917-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:89fa13bec5e5504ccaef25a7d87464cf784c14870e66d7e149b8308839ab83de",
+              "size":"17793290"
+            }
+          ]
+        },
+        {
+          "name":"dslite",
+          "version":"6.2.1.1594",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/dslite-6.2.1.1594-i686-mingw32.zip",
+              "archiveFileName":"dslite-6.2.1.1594-i686-mingw32.zip",
+              "checksum":"SHA-256:aa523ddddbb23fb93fd2705990a10021b3b1ad6553d6149159fc9c0f68b56824",
+              "size":"33819921"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-6.2.1.1594-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"dslite-6.2.1.1594-x86_64-apple-darwin.tar.bz2",
+              "checksum":"SHA-256:f872f284b090d9c635812ef588645c498eadd1dc8ab8d867b54895d57ddf0127",
+              "size":"14735532"
+            },
+            {
+              "host":"x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-6.2.1.1594-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"dslite-6.2.1.1594-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:dfa17d2c26699e1480a13bd7f2941541417c59276ee38d30848e4606e1fba33b",
+              "size":"20539172"
+            }
+          ]
+        },
+        {
+          "name":"mspdebug",
+          "version":"0.24",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+             "url":"https://s3.amazonaws.com/energiaUS/tools/windows/mspdebug-0.24-i686-mingw32.tar.bz2",
+              "archiveFileName":"mspdebug-0.24-i686-mingw32.tar.bz2",
+              "checksum":"SHA-256:7b3dfb269b58f692d03080a641f543dfe01bcfcef43935c2bb31e2839e284e73",
+              "size":"1058435"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/mspdebug-0.24-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"mspdebug-0.24-x86_64-apple-darwin.tar.bz2",
+              "checksum":"SHA-256:5e0dc170ff259c4fc50a2bd591b1c10c648b9d8ad5770c03ed4228128e206fc0",
+              "size":"171307"
+            },
+            {
+              "host":"x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:ec6131053a4ddd35b43d44591732313182e3487ffd77181df02ce23f0860a2e5",
+              "size":"147947"
+            }
+          ]
+        },
+        {
+          "name":"cc3200prog",
+          "version":"1.1.4",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/cc3200prog-1.1.4-i686-mingw32.zip",
+              "archiveFileName":"cc3200prog-1.1.4-i686-mingw32.zip",
+              "checksum":"SHA-256:9701cf08a34c727355261eec502dfa44386b34b2d9cde863eb20c347d7a24f97",
+              "size":"400542"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/cc3200prog-1.1.4-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"cc3200prog-1.1.4-x86_64-apple-darwin.tar.bz2",
+              "checksum":"SHA-256:1d499a54ad083869fcc54da60ec4d55f03011fe3bb3d45dd75b5e687694befdd",
+              "size":"164785"
+            },
+            {
+              "host":"x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/cc3200prog-1.1.4-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"cc3200prog-1.1.4-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:892a1ba158ee184451597cd8d1aad32f293dc4279e59deace08e2a67c6b93707",
+              "size":"134860"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

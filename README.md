@@ -1,8 +1,30 @@
-# Texas Instruments MSP430 and Tiva C Series Cores for Arduino IDE
+# Using Arduino to Develop With Texas Instruments Processors
 
 [![Check Markdown Links](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/CheckMarkdownLinks.yml/badge.svg)](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/CheckMarkdownLinks.yml)
 
-This repository contains JSON index files and hadware platform cores for the Texas Instruments MSP430, MSP432, and Tiva C microcontrollers for use with the Arduino IDE or CLI.
+The Arduino Boards Manager makes it possible to load other processor families besides the original AVR-based Arduino boards. This repo contains instructions and relevant files for loading processor cores for Texas Instruments LaunchPad products in the MSP430, MSP432, and Tiva families. This allows development using TI LaunchPads using the Arduino IDE or CLI instead of the [Energia IDE][1].
+
+Energia was originally developed in 2012 as a fork from Arduino specifically to support Texas Instruments LaunchPads. Unfortunately, it no longer appears to be under active development, with the last version released in 2019. The good news is that the processor cores used by Energia are compatible with Arduino. This means that **Arduino can be used as a replacement for Energia**, allowing for continued software development using TI’s LaunchPad products.
+
+## Loading a LaunchPad Board into Arduino IDE
+
+1. Open the Arduino Preferences pane.
+2. Click on the box next to the text field labeled `Additional Boards Manager URLs`.
+3. Add the following URL (on a line of its own) to the list:
+  <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json>
+4. Click OK to close the window and OK to close the Preferences pane
+5. Open `Tools->Board->Boards Manager...` menu item
+6. Select the board platform you wish to install:
+    - Use the search box at the top to make it easier to find the board (e.g., "MSP430")
+    - Hover the mouse over the board platform you want, and click "Install"
+    - It can take several minutes to install a board package
+7. Once the board package is installed, you can select the board you want with the `Tools->Board` menu.
+
+## Texas Instruments Platform Cores for Arduino IDE
+
+With the apparent end of development of the [Energia IDE][1], I created this repository as an archive of the key files and packages needed to develop for various Texas Instruments LaunchPads.
+
+This repository contains tested JSON index files and hadware platform cores for the Texas Instruments MSP430, MSP432 (red), and Tiva C microcontrollers for use with the Arduino IDE or CLI. In addition, platform cores for msp432e (ethernet), cc13xx, cc3220emt, and cc3200 are also included but have not been tested.
 
 [Platform cores][6] are used to add support for boards to the [Arduino development software][5]. The cores in this repo were originally developed for the [Energia IDE][1], which is a fork of the Arduino IDE specifically for Texas Instruments processors. Software for many TI processors can now be developed directly using the Arduino IDE once the appropriate platform core is installed.
 
@@ -16,11 +38,11 @@ These "minimal" platform configurations should slightly speed up the run times f
 ERRO[0130] Error updating indexes: Error downloading index 'http://energia.nu/packages/package_energia_index.json': Get "http://energia.nu/packages/package_energia_index.json": dial tcp 107.180.20.87:80: connect: connection timed out
 ```
 
-## MSP432 Support
+### MSP432 Support
 
 The official Energia board package for MSP432 does not work with the Arduino IDE/CLI due to an issue with the arduino-builder. This is documented in a [thread][8] and this unmerged [pull request][61]. Since arduino-builder is now [deprecated][62], it is unlikely that this pull request will ever be merged. The main issue has to do with accessing a temporary path from within the build scripts. The Energia builder makes use of a variable called "build.project_path" which is not available with the arduino-builder. However, a global predefined property named "build.source.path" is available for use in [`platform.txt`][6] and defines the path needed for building MSP432 with Arduino.
 
-In addition, the `ino2cpp` tool used during of the MSP432 build process makes some assumptions on the availability and location of java during the build process. This can cause issues when building locally with Arduino and when running the [compile-arduino-sketches][20] GitHub action both locally using [nektos/act][63] and on GitHub's servers.
+In addition, the `ino2cpp` tool used during the MSP432 build process makes some assumptions on the availability and location of java during the build process. This can cause issues when building locally with Arduino and when running the [compile-arduino-sketches][20] GitHub action both locally using [nektos/act][63] and on GitHub's servers.
 
 Therefore, the following changes are needed to `platform.txt` in the MSP432 board package:
 
@@ -32,7 +54,7 @@ Therefore, the following changes are needed to `platform.txt` in the MSP432 boar
 
 I created a new MSP432 boards package version 5.29.1 based off of version 5.29.0. The only differences are the above changes to the `platform.txt` file. To use this updated boards package with Arduino, use this board manager URL: <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_devlopment_MSP432r_index.json>
 
-### Details on Generating a Board Package
+#### Details on Generating a Board Package
 
 I ran the following steps to create the new board package using MacOS:
 
@@ -47,9 +69,9 @@ I ran the following steps to create the new board package using MacOS:
 9. Note the new file's size: `ls -l msp432r-5.29.0.tar.bz2`
 10. Udpate appropriate key values `url`, `archiveFileName`, `checksum`, and `size` in the package index file
 
-## Repository Contents
+### Repository Contents
 
-### Package Index JSON Files
+#### Package Index JSON Files
 
 Located in the [`json`][13] folder.
 
@@ -60,6 +82,7 @@ The Package Index file names need to follow the convention specified in the Ardu
 | `package_energia_index.json`                            | 1.0.5  | 1.0.3              | Official [board manager URL][9] version from Energia. |
 | `package_Energia23_index.json`                          | 1.0.6  | 1.0.3              | Version installed by Energia23. |
 | `package_energia_latest_index.json`                     | 1.0.7  | 1.0.4              | See [Note 1](#Note) below. |
+| `package_energia_optimized_index.json`                  | 1.0.7  | 1.0.4              | Latest version of each board only. Use as Board Manger URL. |
 | `package_msp430_elf_GCC_index.json`                     |        |                    | See [Note 2](#Note) below. |
 | `package_energia_minimal_MSP_105_index.json`            | 1.0.5  | N/A                | MSP430 boards only and installs from this repo. |
 | `package_energia_minimal_MSP_107_index.json`            | 1.0.7  | N/A                | MSP430 boards only and installs from this repo. |
@@ -70,12 +93,12 @@ The Package Index file names need to follow the convention specified in the Ardu
 | `package_energia_devlopment_MSP432r_index.json`         | 5.29.1 | N/A                | MSP432P401R board only, use with local Arduino IDE/CLI. |
 | `package_energia_minimal_MSP432r_index.json`            | 5.29.1 | N/A                | MSP432P401R board only, installs minimal tools.  |
 
-#### Note
+##### Note
 
 1. This version of the package index is [loaded][12] by Energia23 when using the Board Manager menu item in Energia. Note that the filename loaded as-is (`platform_index.json`) does not conform to the [Package Index Specification][7] naming convention. It is renamed here with a valid name.
 2. `package_msp430_elf_GCC_index.json` is an alternate package index file which defines 2.0.x versions of the msp430 platform. The 2.0.x vesions are not part of the official Energia application and use a much newer GCC compiler (V2.x) which supports C99. This package index file only includes definitions for msp430 and not any other platforms. This [thread][11] explains the differences and the file can be [downloaded][10] from the Energia.
 
-### Board Package Files
+#### Board Package Files
 
 Located in the [`boards`][14] directory.
 
@@ -90,7 +113,7 @@ These files are referenced by the package index json files.
 - `tivac-1.0.3.tar.bz2`
 - `tivac-1.0.4.tar.bz2`
 
-#### Board Platform Compiler and Tool Versions
+##### Board Platform Compiler and Tool Versions
 
 The tools are specific to the board package platform and version.
 
@@ -120,7 +143,16 @@ The tools are specific to the board package platform and version.
 | ino2cpp 1.0.4                    | [Wndows][54] | [MacOS][54] | [Linux][54] |
 | ino2cpp 1.0.6                    | [Wndows][64] | [MacOS][65] | [Linux][66] |
 
-### GitHub Workflow Action Definition Files
+##### Additional Board Package Files
+
+In addition to the board package files listed above, the following board packages are included in this repo, but have not been tested:
+
+- `cc13xx-4.9.1.tar.bz2`
+- `cc3200-1.0.3.tar.bz2`
+- `cc3220emt-5.6.2.tar.bz2`
+- `msp432e-5.19.0.tar.bz2`
+
+#### GitHub Workflow Action Definition Files
 
 Located in the [`actions`][15] directory.
 
@@ -155,7 +187,7 @@ You can generally use the latest version of the board package for the platform y
 
 ## Energia Application Libraries
 
-The Energia IDE includes several libraries at the application level of the IDE instead of in the platform cores. This means that if you use the Arduino IDE/CLI and install an MSP4 or Tiva core, you don't end up getting every library that you would when using the Energia IDE. Most of the libraries included with the Energia application are either readily available as an Arduino library or are obsolete. However, two libraries in particular are specific to the platforms supported by Energia. I have created stand-alone repositories for these libraries:
+The Energia IDE includes several libraries at the application level of the IDE instead of in the platform cores. This means that if you use the Arduino IDE/CLI and install an MSP or Tiva core, you don't end up getting every library that you would when using the Energia IDE. Most of the libraries included with the Energia application are either readily available as an Arduino library or are obsolete. However, two libraries in particular are specific to the platforms supported by Energia. I have created stand-alone repositories for these libraries:
 
 - [LCD_SharpBoosterPack_SPI][25]
 - [OneMsTaskTimer][26]
@@ -173,29 +205,35 @@ The Energia IDE includes several libraries at the application level of the IDE i
 - Compile Arduino Sketches GitHub [action][20]
 - Arduino JSON package index [file][16]
 - Board Manager URLs:
-  - MSP430/Tiva standard:
+  - Optimized LaunchPad URL:
+    - <https://energia.nu/packages/package_energia_optimized_index.json>
+    - Streamlined version which defines only the latest version of each platform.
+    - This the URL you would most likely use with the Arduino IDE.
+  - Standard Energia URL:
     - <https://energia.nu/packages/package_energia_index.json>
     - This is the "official" URL, but specifies older board package versions.
-  - MPS430/Tiva with latest board versions:
+    - This would only be used in specialized cases, and is mainly here for archival purposes.
+  - Standard Energia URL with latest board versions:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_latest_index.json>
-    - This specifies the latest official board versions. The original file is available [here][12]. The above URL has the same file contents, but the name is changed to conform to the [spec][7].
+    - This specifies the latest official board versions (along with all the older board version). The original file is available [here][12]. The above URL has the same file contents, but the name is changed to conform to the [spec][7].
   - MSP430 boards using later compiler version:
     - <http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json>
     - [Thread][11] explaining why MSP430 elf compiler option is availble.
+    - MSP432 board manager URL when using local Arduino IDE/CLI:
+    - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_devlopment_MSP432r_index.json>
+    - Includes only the MSP432 (red) platform definitions.
+  - MSP432 board manager URL when using with `compile-arduino-sketches` GitHub action:
+    - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_minimal_MSP432r_index.json>
   - SparkFun board manager URL:
     - <https://raw.githubusercontent.com/sparkfun/Arduino_Boards/main/IDE_Board_Manager/package_sparkfun_index.json>
     - Includes [definitions for SparkFun products][18].
-    - This one may not be very useful. In particular, ESP8266 platform defined by SparkFun doesn't work correctly.
+    - This URL is not be very useful. In particular, ESP8266 platform defined by SparkFun doesn't work correctly.
   - ESP8266 board manager URL:
     - <http://arduino.esp8266.com/stable/package_esp8266com_index.json>
-  - MSP432 board manager URL when using local Arduino IDE/CLI:
-    - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_devlopment_MSP432r_index.json>
-  - MSP432 board manager URL when using with `compile-arduino-sketches` GitHub action:
-    - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_minimal_MSP432r_index.json>
 
 ## License
 
-The majority of the files in this repo are either a copy or a derivation of Energia platform cores ([msp430][3], [msp432][67] and [tiva][4]), which are licensed under the GNU [Lesser General Public License v2.1][102] per [Energia][19]. For consistency, the non-Energia derived software and files in this repository are also released released under LGPL v2.1. See the file [`LICENSE.txt`][101] in this repository.
+The majority of the files in this repo are either a copy or a derivation of Energia platform cores, which are licensed under the GNU [Lesser General Public License v2.1][102] per [Energia][19]. For consistency, the non-Energia derived software and files in this repository are also released released under LGPL v2.1. See the file [`LICENSE.txt`][101] in this repository.
 
 [1]: https://energia.nu/
 [2]: https://github.com/energia/Energia

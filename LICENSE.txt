@@ -5,6 +5,10 @@ https://github.com/energia/Energia
 https://github.com/energia/msp430-lg-core
 https://github.com/energia/tivac-core
 https://github.com/energia/msp432r-core
+https://github.com/energia/cc3200-core
+https://github.com/energia/msp432e-core
+https://github.com/energia/cc13xx-core
+https://github.com/energia/cc3200emt-core
 
 For consistency, all the files in this repository are licensed per 
 the GNU Lesser General Public License as listed below.
