@@ -1,9 +1,10 @@
-Per the Energia GitHub repo, the Energia cores are licensed per the
+Per the Energia GitHub repo, the Energia platform cores are licensed per the
 GNU Lesser General Public License. 
 
 https://github.com/energia/Energia
 https://github.com/energia/msp430-lg-core
 https://github.com/energia/tivac-core
+https://github.com/energia/msp432r-core
 
 For consistency, all the files in this repository are licensed per 
 the GNU Lesser General Public License as listed below.
