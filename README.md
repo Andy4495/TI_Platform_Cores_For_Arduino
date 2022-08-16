@@ -100,9 +100,9 @@ The Package Index file names need to follow the convention specified in the Ardu
 
 #### Board Package Files
 
-Located in the [`boards`][14] directory.
+Located in the [`boards`][14] directory. These files are referenced by the package index json files.
 
-These files are referenced by the package index json files.
+These are copies of the board package files avaialble from Energia (with the excpetion of the mps432r package as explained above).
 
 - `msp430-1.0.5.tar.bz2`
 - `msp430-1.0.6.tar.bz2`
@@ -206,7 +206,7 @@ The Energia IDE includes several libraries at the application level of the IDE i
 - Arduino JSON package index [file][16]
 - Board Manager URLs:
   - Optimized LaunchPad URL:
-    - <https://energia.nu/packages/package_energia_optimized_index.json>
+    - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json>
     - Streamlined version which defines only the latest version of each platform.
     - This the URL you would most likely use with the Arduino IDE.
   - Standard Energia URL:
@@ -219,7 +219,7 @@ The Energia IDE includes several libraries at the application level of the IDE i
   - MSP430 boards using later compiler version:
     - <http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json>
     - [Thread][11] explaining why MSP430 elf compiler option is availble.
-    - MSP432 board manager URL when using local Arduino IDE/CLI:
+  - MSP432 board manager URL when using local Arduino IDE/CLI:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_devlopment_MSP432r_index.json>
     - Includes only the MSP432 (red) platform definitions.
   - MSP432 board manager URL when using with `compile-arduino-sketches` GitHub action:
