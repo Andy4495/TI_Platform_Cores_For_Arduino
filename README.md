@@ -2,7 +2,7 @@
 
 [![Check Markdown Links](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/CheckMarkdownLinks.yml/badge.svg)](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/CheckMarkdownLinks.yml)
 
-The Arduino Boards Manager makes it possible to load other processor families besides the original AVR-based Arduino boards. This repo contains instructions and relevant files for loading processor cores for Texas Instruments LaunchPad products in the MSP430, MSP432, and Tiva families. This allows development using TI LaunchPads using the Arduino IDE or CLI instead of the [Energia IDE][1].
+The [Arduino Boards Manager][69] makes it possible to load other processor families besides the original AVR-based Arduino boards. This repo contains instructions and relevant files for loading processor cores for Texas Instruments LaunchPad products in the MSP430, MSP432, and Tiva families. This allows development using TI LaunchPads using the Arduino IDE or CLI instead of the [Energia IDE][1].
 
 Energia was originally developed in 2012 as a fork from Arduino specifically to support Texas Instruments LaunchPads. Unfortunately, it no longer appears to be under active development, with the last version released in 2019. The good news is that the processor cores used by Energia are compatible with Arduino. This means that **Arduino can be used as a replacement for Energia**, allowing for continued software development using TI’s LaunchPad products.
 
@@ -204,6 +204,7 @@ The Energia IDE includes several libraries at the application level of the IDE i
 - GitHub documentation for managing GitHub Actions [workflows][22]
 - Compile Arduino Sketches GitHub [action][20]
 - Arduino JSON package index [file][16]
+- Unofficial list of Arduino 3rd Party [Board Manager URLs][68]
 - Board Manager URLs:
   - Optimized LaunchPad URL:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json>
@@ -299,6 +300,8 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [65]: https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2
 [66]: https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2
 [67]: https://github.com/energia/msp432r-core
+[68]: https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-support-urls
+[69]: https://support.arduino.cc/hc/en-us/articles/360016119519-Add-boards-to-Arduino-IDE
 [100]: https://choosealicense.com/licenses/lgpl-2.1/
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
