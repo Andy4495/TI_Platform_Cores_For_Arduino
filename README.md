@@ -58,10 +58,10 @@ I created a new MSP432 boards package version 5.29.1 based off of version 5.29.0
 
 I ran the following steps to create the new board package using MacOS:
 
-1. Download version 5.29.0 (<http://energia.nu/downloads/download_core.php?file=msp432r-5.29.0.tar.bz2>)
+1. Download version 5.29.0 (<https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432r-5.29.0.tar.bz2>)
 2. Decompress and extract files (in MacOS, this can be done by double-clicking the downloaded file)
 3. Change directory into the extracted folder
-4. Duplicate `platform.txt` and rename the copy to `platform orig.txt`
+4. Duplicate `platform.txt` and rename the copy to `platform_orig.txt`
 5. Update `platform.txt` as noted above
 6. Rename the parent folder to `msp432r-core-5.29.1`
 7. Recompress the updated folder: `tar cvyf msp432r-5.29.1.tar.bz2 msp432r-core-5.29.1`
@@ -81,9 +81,9 @@ The Package Index file names need to follow the convention specified in the Ardu
 | ------------------                                      | ------ | -----              | ----- |
 | `package_energia_index.json`                            | 1.0.5  | 1.0.3              | Official [board manager URL][9] version from Energia. |
 | `package_Energia23_index.json`                          | 1.0.6  | 1.0.3              | Version installed by Energia23. |
-| `package_energia_latest_index.json`                     | 1.0.7  | 1.0.4              | See [Note 1](#Note) below. |
+| `package_energia_latest_index.json`                     | 1.0.7  | 1.0.4              | See [Note 1](#note) below. |
 | `package_energia_optimized_index.json`                  | 1.0.7  | 1.0.4              | Latest version of each board only. Use as Board Manger URL. |
-| `package_msp430_elf_GCC_index.json`                     |        |                    | See [Note 2](#Note) below. |
+| `package_msp430_elf_GCC_index.json`                     |        |                    | See [Note 2](#note) below. |
 | `package_energia_minimal_MSP_105_index.json`            | 1.0.5  | N/A                | MSP430 boards only and installs from this repo. |
 | `package_energia_minimal_MSP_107_index.json`            | 1.0.7  | N/A                | MSP430 boards only and installs from this repo. |
 | `package_energia_minimal_MSP_107_alternate_index.json`  | 1.0.7  | N/A                | MSP430 boards only, installs from this repo, compiler from Release. |
@@ -95,7 +95,7 @@ The Package Index file names need to follow the convention specified in the Ardu
 
 ##### Note
 
-1. This version of the package index is [loaded][12] by Energia23 when using the Board Manager menu item in Energia. Note that the filename loaded as-is (`platform_index.json`) does not conform to the [Package Index Specification][7] naming convention. It is renamed here with a valid name.
+1. This version of the package index is [loaded][12] by Energia23 when using the Board Manager menu item in Energia. Note that the filename loaded as-is (`platform_index.json`) does not conform to the [Package Index Specification][7] naming convention. It is renamed [in this repo][17] with a valid name.
 2. `package_msp430_elf_GCC_index.json` is an alternate package index file which defines 2.0.x versions of the msp430 platform. The 2.0.x vesions are not part of the official Energia application and use a much newer GCC compiler (V2.x) which supports C99. This package index file only includes definitions for msp430 and not any other platforms. This [thread][11] explains the differences and the file can be [downloaded][10] from the Energia.
 
 #### Board Package Files
@@ -151,6 +151,8 @@ In addition to the board package files listed above, the following board package
 - `cc3200-1.0.3.tar.bz2`
 - `cc3220emt-5.6.2.tar.bz2`
 - `msp432e-5.19.0.tar.bz2`
+- `msp432r-5.29.0.tar.bz2`
+  - This file is provided for historical purposes since it was used as a baseline to create verstion 5.29.1. It will not work correctly with Arduino as mentioned [above](#msp432-support).
 
 #### GitHub Workflow Action Definition Files
 
@@ -256,7 +258,6 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [18]: https://github.com/sparkfun/Arduino_Boards/
 [19]: https://github.com/energia/Energia/blob/master/license.txt
 [20]: https://github.com/marketplace/actions/compile-arduino-sketches
-[21]: https://github.com/marketplace/actions/markdown-link-check
 [22]: https://docs.github.com/en/actions/using-workflows
 [23]: https://github.com/marketplace/actions/compile-arduino-sketches
 [24]: https://docs.github.com/en/actions
@@ -302,9 +303,9 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [67]: https://github.com/energia/msp432r-core
 [68]: https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-support-urls
 [69]: https://support.arduino.cc/hc/en-us/articles/360016119519-Add-boards-to-Arduino-IDE
-[100]: https://choosealicense.com/licenses/lgpl-2.1/
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-[200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino
+[//]: # ([200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino)
 
 [//]: # (This is a way to hack a comment in Markdown. This will not be displayed when rendered.)
+[//]: # (The board download links from energia.nu are not consistently working. Previous link for board msp432r 5.29.0 was: http://energia.nu/downloads/download_core.php?file=msp432r-5.29.0.tar.bz2 )
