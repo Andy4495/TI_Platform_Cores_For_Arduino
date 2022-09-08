@@ -217,7 +217,7 @@ The Energia IDE includes several libraries at the application level of the IDE i
     - This is the "official" URL, but specifies older board package versions.
     - This would only be used in specialized cases, and is mainly here for archival purposes.
   - Standard Energia URL with latest board versions:
-    - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_latest_index.json>
+    - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_latest_index.json>
     - This specifies the latest official board versions (along with all the older board version). The original file is available [here][12]. The above URL has the same file contents, but the name is changed to conform to the [spec][7].
   - MSP430 boards using later compiler version:
     - <http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json>
