@@ -32,7 +32,7 @@ In addition to being able to use the Arduino IDE/CLI to develop for TI processor
 
 Because compiling a sketch does not need all the data and tools required for a full development environment, I created some slimmed-down [platform index files][7] used by Arduino to load the cores. Only boards from a related family are defined, and only the compiler for that family of boards is downloaded (no debugger or other tools are configured).
 
-These "minimal" platform configurations should slightly speed up the run times for the compile-arduino-sketches action and may also help reduce timeout errors when running the compile-sketches action. I periodically receive the following error when running the workflow with an MSP or Tiva build when using the offical Energia board package file:
+These "minimal" platform configurations should slightly speed up the run times for the compile-arduino-sketches action and may also help reduce timeout errors when running the compile-sketches action. If your GitHub action exits with the following error when running a build using the official Energial board package file, try replacing it with the corresponding "minimal" file from this repo:
 
 ```text
 ERRO[0130] Error updating indexes: Error downloading index 'http://energia.nu/packages/package_energia_index.json': Get "http://energia.nu/packages/package_energia_index.json": dial tcp 107.180.20.87:80: connect: connection timed out
@@ -49,10 +49,23 @@ Therefore, the following changes are needed to `platform.txt` in the MSP432 boar
 - Update `recipe.hooks.sketch.prebuild.1.pattern` definition to change `{build.project_path}` to `{build.source.path}`
 - Change `java.path.macosx` value to `/usr/bin/java`
 - Change `build.ino2cpp.cmd.linux` value to `"/usr/bin/java"`
-- Update `version` to `5.29.1`
-- Update `version.string` to `5291`
+- Change `build.ino2cpp.cmd.windows` value to `"java"`
+- Update `version` to `5.29.2`
+- Update `version.string` to `5292`
 
-I created a new MSP432 boards package version 5.29.1 based off of version 5.29.0. The only differences are the above changes to the `platform.txt` file. To use this updated boards package with Arduino, use this board manager URL: <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_devlopment_MSP432r_index.json>
+I created a new MSP432 boards package version 5.29.2 based off of version 5.29.0. The only differences are the above changes to the `platform.txt` file. To use this updated boards package with Arduino, use one of these board manager URLs:
+
+<https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_development_MSP432r_index.json>
+
+- Only defines MSP432
+
+<https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json>
+
+- Defines MSP432, MSP430, and Tiva boards
+
+#### Extra Step Needed for Windows
+
+In order for MSP432 builds to work on Windows, it is necessary to install Java. I have successfully tested the 5.29.2 board package with both the [Microsoft][70] and [Temurin][71] Java distributions.
 
 #### Details on Generating a Board Package
 
@@ -63,10 +76,10 @@ I ran the following steps to create the new board package using MacOS:
 3. Change directory into the extracted folder
 4. Duplicate `platform.txt` and rename the copy to `platform_orig.txt`
 5. Update `platform.txt` as noted above
-6. Rename the parent folder to `msp432r-core-5.29.1`
-7. Recompress the updated folder: `tar cvyf msp432r-5.29.1.tar.bz2 msp432r-core-5.29.1`
-8. Calculate SHA-256 checksum: `shasum -a 256 msp432r-5.29.0.tar.bz2`
-9. Note the new file's size: `ls -l msp432r-5.29.0.tar.bz2`
+6. Rename the parent folder to `msp432r-core-5.29.2`
+7. Recompress the updated folder: `tar cvyf msp432r-5.29.2.tar.bz2 msp432r-core-5.29.2`
+8. Calculate SHA-256 checksum: `shasum -a 256 msp432r-5.29.2.tar.bz2`
+9. Note the new file's size: `ls -l msp432r-5.29.2.tar.bz2`
 10. Udpate appropriate key values `url`, `archiveFileName`, `checksum`, and `size` in the package index file
 
 ### Repository Contents
@@ -90,8 +103,8 @@ The Package Index file names need to follow the convention specified in the Ardu
 | `package_energia_minimal_TM4C_103_index.json`           | N/A    | 1.0.3              | TM4C boards only and installs from this repo. |
 | `package_energia_minimal_TM4C_104_index.json`           | N/A    | 1.0.4              | TM4C boards only and installs from this repo. |
 | `package_energia_minimal_TM4C_104_alternate_index.json` | N/A    | 1.0.4              | TM4C boards only, installs from this repo, compiler from Release. |
-| `package_energia_devlopment_MSP432r_index.json`         | 5.29.1 | N/A                | MSP432P401R board only, use with local Arduino IDE/CLI. |
-| `package_energia_minimal_MSP432r_index.json`            | 5.29.1 | N/A                | MSP432P401R board only, installs minimal tools.  |
+| `package_energia_development_MSP432r_index.json`        | 5.29.2 | N/A                | MSP432P401R board only, use with local Arduino IDE/CLI. |
+| `package_energia_minimal_MSP432r_index.json`            | 5.29.2 | N/A                | MSP432P401R board only, installs minimal tools.  |
 
 ##### Note
 
@@ -102,14 +115,14 @@ The Package Index file names need to follow the convention specified in the Ardu
 
 Located in the [`boards`][14] directory. These files are referenced by the package index json files.
 
-These are copies of the board package files avaialble from Energia (with the excpetion of the mps432r package as explained above).
+These are copies of the board package files avaialble from Energia (with the exception of the mps432r packages as explained above).
 
 - `msp430-1.0.5.tar.bz2`
 - `msp430-1.0.6.tar.bz2`
 - `msp430-1.0.7.tar.bz2`
 - `msp430elf-2.0.7.tar.bz2`
 - `msp430elf-2.0.10.tar.bz2`
-- `msp432r-5.29.1.tar.bz2`
+- `msp432r-5.29.2.tar.bz2`
 - `tivac-1.0.3.tar.bz2`
 - `tivac-1.0.4.tar.bz2`
 
@@ -124,7 +137,7 @@ The tools are specific to the board package platform and version.
 | MSP430 1.0.5   | msp430-gcc 4.6.6                 | 8.2.0.1400 | 0.24     | N/A     |
 | MSP430 2.0.10  | msp430-elf-gcc 9.2.0.50          | 9.3.0.1863 | 0.24     | 1.0.4   |
 | MSP430 2.0.7   | msp430-elf-gcc 8.3.0.16          | 9.3.0.1863 | 0.24     | 1.0.4   |
-| MSP432 5.29.1  | arm-none-eabi-gcc 6.3.1-20170620 | 9.2.0.1793 | N/A      | 1.0.6   |
+| MSP432 5.29.2  | arm-none-eabi-gcc 6.3.1-20170620 | 9.2.0.1793 | N/A      | 1.0.6   |
 | Tiva 1.0.4     | arm-none-eabi-gcc 8.3.1-20190703 | 9.3.0.1863 | N/A      | N/A     |
 | Tiva 1.0.3     | arm-none-eabi-gcc 6.3.1-20170620 | 7.2.0.2096 | N/A      | N/A     |
 
@@ -145,14 +158,21 @@ The tools are specific to the board package platform and version.
 
 ##### Additional Board Package Files
 
-In addition to the board package files listed above, the following board packages are included in this repo, but have not been tested:
+In addition to the board package files listed above, the following board packages are included in this repo
+
+These have not been tested:
 
 - `cc13xx-4.9.1.tar.bz2`
 - `cc3200-1.0.3.tar.bz2`
 - `cc3220emt-5.6.2.tar.bz2`
 - `msp432e-5.19.0.tar.bz2`
+
+These are included for historical purposes:
+
 - `msp432r-5.29.0.tar.bz2`
-  - This file is provided for historical purposes since it was used as a baseline to create verstion 5.29.1. It will not work correctly with Arduino as mentioned [above](#msp432-support).
+  - Used as a baseline to create verstions 5.29.1 and 5.29.2. It will not work correctly with Arduino as mentioned [above](#msp432-support).
+- `msp432r-5.29.1.tar.bz2`
+  - This file is has fixes for Linux and MacOS, but does not include the fix for Windows.
 
 #### GitHub Workflow Action Definition Files
 
@@ -181,7 +201,7 @@ You can generally use the latest version of the board package for the platform y
 - `compile_arduino_sketch_minimal-MSP430F5529-107.yml`
   - Compile for MSP430F5529 with minimal package index file and board package 1.0.7 downloaded from this repo.
 - `compile_arduino_sketch_minimal-MSP432R.yml`
-  - Compile for MSP432P401 with minimal package index file and board package 5.29.1 downloaded from this repo.
+  - Compile for MSP432P401 with minimal package index file and board package 5.29.2 downloaded from this repo.
 - `compile_arduino_sketch_minimal-TM4C123-103.yml`
   - Compile for TM4C123 with minimal package index file and tivac board package 1.0.3 downloaded from this repo.
 - `compile_arduino_sketch_minimal-TM4C123-104.yml`
@@ -211,7 +231,7 @@ The Energia IDE includes several libraries at the application level of the IDE i
   - Optimized LaunchPad URL:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json>
     - Streamlined version which defines only the latest version of each platform.
-    - This the URL you would most likely use with the Arduino IDE.
+    - **This the URL you would most likely use with the Arduino IDE.**
   - Standard Energia URL:
     - <https://energia.nu/packages/package_energia_index.json>
     - This is the "official" URL, but specifies older board package versions.
@@ -223,7 +243,7 @@ The Energia IDE includes several libraries at the application level of the IDE i
     - <http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json>
     - [Thread][11] explaining why MSP430 elf compiler option is availble.
   - MSP432 board manager URL when using local Arduino IDE/CLI:
-    - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_devlopment_MSP432r_index.json>
+    - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_development_MSP432r_index.json>
     - Includes only the MSP432 (red) platform definitions.
   - MSP432 board manager URL when using with `compile-arduino-sketches` GitHub action:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_minimal_MSP432r_index.json>
@@ -303,6 +323,8 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [67]: https://github.com/energia/msp432r-core
 [68]: https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-support-urls
 [69]: https://support.arduino.cc/hc/en-us/articles/360016119519-Add-boards-to-Arduino-IDE
+[70]: https://www.microsoft.com/openjdk
+[71]: https://adoptium.net
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 [//]: # ([200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino)

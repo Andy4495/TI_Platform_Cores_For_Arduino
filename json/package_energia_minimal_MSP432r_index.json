@@ -12,12 +12,12 @@
         {
           "name": "Energia MSP432 EMT RED boards",
           "architecture": "msp432r",
-          "version": "5.29.1",
+          "version": "5.29.2",
           "category": "Energia",
-          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432r-5.29.1.tar.bz2",
-          "archiveFileName": "msp432r-5.29.1.tar.bz2",
-          "checksum": "SHA-256:193ecf9fc08910440e9037d58ea1921e1f3bcf4c922df881b0c8d8afa3727cc8",
-          "size": "32331638",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432r-5.29.2.tar.bz2",
+          "archiveFileName": "msp432r-5.29.2.tar.bz2",
+          "checksum": "SHA-256:62eb0a76a60d88234df3fb807adaf997f21231825b167d4479587744a091c702",
+          "size": "32332248",
           "boards": [
             {"name": "MSP_EXP432P401R"}
           ],
