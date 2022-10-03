@@ -16,7 +16,7 @@ jobs:
           java-version: '17'
           java-package: 'jre'
       - run: | 
-          if [ ! -f /usr/bin/java ] ; then ln -s $JAVA_HOME/bin/java /usr/bin/java ; fi
+          if [ ! -f /usr/bin/java ] ; then ln -s `which java` /usr/bin/java ; fi
       - uses: arduino/compile-sketches@v1
         with:
           fqbn: 'energia:msp432r:MSP-EXP432P401R'
