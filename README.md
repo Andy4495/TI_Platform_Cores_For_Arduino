@@ -247,12 +247,13 @@ The Energia IDE includes several libraries at the application level of the IDE i
     - Includes only the MSP432 (red) platform definitions.
   - MSP432 board manager URL when using with `compile-arduino-sketches` GitHub action:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_minimal_MSP432r_index.json>
-  - SparkFun board manager URL:
-    - <https://raw.githubusercontent.com/sparkfun/Arduino_Boards/main/IDE_Board_Manager/package_sparkfun_index.json>
-    - Includes [definitions for SparkFun products][18].
-    - This URL is not be very useful. In particular, ESP8266 platform defined by SparkFun doesn't work correctly.
   - ESP8266 board manager URL:
     - <http://arduino.esp8266.com/stable/package_esp8266com_index.json>
+  - Arduino board manager URL (can be useful when configuring build matrix):
+    - <https://downloads.arduino.cc/packages/package_index.json>
+  - STM32 board manager URL:
+    - <https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json>
+    - Note that many of the devices in this package require [additional options][72] as part of the FQBN, for example: `STMicroelectronics:stm32:GenF1:pnum=BLUEPILL_F103C8`
 
 ## License
 
@@ -275,7 +276,6 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [15]: ./actions
 [16]: http://downloads.arduino.cc/packages/package_index.json
 [17]: ./json/package_energia_latest_index.json
-[18]: https://github.com/sparkfun/Arduino_Boards/
 [19]: https://github.com/energia/Energia/blob/master/license.txt
 [20]: https://github.com/marketplace/actions/compile-arduino-sketches
 [22]: https://docs.github.com/en/actions/using-workflows
@@ -325,6 +325,7 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [69]: https://support.arduino.cc/hc/en-us/articles/360016119519-Add-boards-to-Arduino-IDE
 [70]: https://www.microsoft.com/openjdk
 [71]: https://adoptium.net
+[72]: https://arduino.github.io/arduino-cli/0.26/platform-specification/#custom-board-options
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 [//]: # ([200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino)
