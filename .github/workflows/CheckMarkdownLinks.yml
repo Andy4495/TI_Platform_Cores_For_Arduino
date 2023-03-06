@@ -8,6 +8,12 @@ on:
     # Modify the cron time to a somewhat random day/time to avoid having all your repos running at the same time
     # Run 5th day of every month at 4:41 AM (See https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07)
     - cron: "41 4 5 * *"
+  workflow_dispatch:
+    inputs:
+      message:
+        description: Message to display in job summary
+        required: false
+        type: string
 
 jobs:
   markdown-link-check:
@@ -19,4 +25,9 @@ jobs:
         base-branch: main
         use-verbose-mode: yes
         # config file is used to flag HTTP result code 429 as a valid "alive" result
-        config-file: './.github/workflows/mlc_config.json'           
+        config-file: './.github/workflows/mlc_config.json'
+    - name: Print the job summary
+      if: ${{ inputs.message }}
+      run: |
+         echo ${{ inputs.message }} >>$GITHUB_STEP_SUMMARY
+  
