@@ -2,16 +2,16 @@
 
 [![Check Markdown Links](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/CheckMarkdownLinks.yml/badge.svg)](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/CheckMarkdownLinks.yml)
 
-The [Arduino Boards Manager][69] makes it possible to load other processor families besides the original AVR-based Arduino boards. This repo contains instructions and relevant files for loading processor cores for Texas Instruments LaunchPad products in the MSP430, MSP432, and Tiva families. This allows development using TI LaunchPads using the Arduino IDE or CLI instead of the [Energia IDE][1].
+The [Arduino Boards Manager][69] makes it possible to load other processor families besides the original AVR-based Arduino boards. This repo contains instructions and relevant files for loading processor cores for Texas Instruments LaunchPad products in the MSP430, MSP432, and Tiva families. This allows development for TI LaunchPads using the Arduino IDE or CLI instead of the [Energia IDE][1].
 
-Energia was originally developed in 2012 as a fork from Arduino specifically to support Texas Instruments LaunchPads. Unfortunately, it no longer appears to be under active development, with the last version released in 2019. The good news is that the processor cores used by Energia are compatible with Arduino. This means that **Arduino can be used as a replacement for Energia**, allowing for continued software development using TI’s LaunchPad products.
+Energia was originally developed in 2012 as a fork from Arduino specifically to support Texas Instruments LaunchPads. Unfortunately, it is [no longer under active development][73], with the last version released in 2019. The good news is that the processor cores used by Energia are compatible with Arduino. This means that **Arduino can be used as a replacement for Energia**, allowing for continued software development using TI’s LaunchPad products.
 
 ## Loading a LaunchPad Board into Arduino IDE
 
 1. Open the Arduino Preferences pane.
 2. Click on the box next to the text field labeled `Additional Boards Manager URLs`.
 3. Add the following URL (on a line of its own) to the list:
-  <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json>
+  `https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json`
 4. Click OK to close the window and OK to close the Preferences pane
 5. Open `Tools->Board->Boards Manager...` menu item
 6. Select the board platform you wish to install:
@@ -19,10 +19,22 @@ Energia was originally developed in 2012 as a fork from Arduino specifically to 
     - Hover the mouse over the board platform you want, and click "Install"
     - It can take several minutes to install a board package
 7. Once the board package is installed, you can select the board you want with the `Tools->Board` menu.
+8. If developing for MSP432 on Windows, it is also necessary to [install java](#extra-step-needed-for-windows).
 
-## Texas Instruments Platform Cores for Arduino IDE
+## Energia Application Libraries
 
-With the apparent end of development of the [Energia IDE][1], I created this repository as an archive of the key files and packages needed to develop for various Texas Instruments LaunchPads.
+The Energia IDE includes several libraries at the application level of the IDE instead of in the platform cores. This means that if you use the Arduino IDE/CLI and install an MSP or Tiva core, you don't end up getting every library that you would when using the Energia IDE. Most of the libraries included with the Energia application are either readily available as an Arduino library or are obsolete. However, two libraries in particular are specific to the platforms supported by Energia. I have created stand-alone repositories for these libraries:
+
+- [LCD_SharpBoosterPack_SPI][25]
+- [OneMsTaskTimer][26]
+
+## More Detailed Information
+
+The following sections contain more details on the board packages, sample GitHub action files, and the descriptions of the various files included in this repo.
+
+### Texas Instruments Platform Cores for Arduino IDE
+
+With the end of development of the Energia IDE, I created this repository as an archive of the key files and packages needed to develop for various Texas Instruments LaunchPads.
 
 This repository contains tested JSON index files and hadware platform cores for the Texas Instruments MSP430, MSP432 (red), and Tiva C microcontrollers for use with the Arduino IDE or CLI. In addition, platform cores for msp432e (ethernet), cc13xx, cc3220emt, and cc3200 are also included but have not been tested.
 
@@ -40,7 +52,9 @@ ERRO[0130] Error updating indexes: Error downloading index 'http://energia.nu/pa
 
 ### MSP432 Support
 
-The official Energia board package for MSP432 does not work with the Arduino IDE/CLI due to an issue with the arduino-builder. This is documented in a [thread][8] and this unmerged [pull request][61]. Since arduino-builder is now [deprecated][62], it is unlikely that this pull request will ever be merged. The main issue has to do with accessing a temporary path from within the build scripts. The Energia builder makes use of a variable called "build.project_path" which is not available with the arduino-builder. However, a global predefined property named "build.source.path" is available for use in [`platform.txt`][6] and defines the path needed for building MSP432 with Arduino.
+This repo fixes an issue with MSP432 board package. The official Energia board package for MSP432 does not work with the Arduino IDE/CLI due to an issue with the arduino-builder.
+
+The issue is documented in a [thread][8] and this unmerged [pull request][61]. Since arduino-builder is now [deprecated][62], it is unlikely that this pull request will ever be merged. The main issue has to do with accessing a temporary path from within the build scripts. The Energia builder makes use of a variable called "build.project_path" which is not available with the arduino-builder. However, a global predefined property named "build.source.path" is available for use in [`platform.txt`][6] and defines the path needed for building MSP432 with Arduino.
 
 In addition, the `ino2cpp` tool used during the MSP432 build process makes some assumptions on the availability and location of java during the build process. This can cause issues when building locally with Arduino and when running the [compile-arduino-sketches][20] GitHub action both locally using [nektos/act][63] and on GitHub's servers.
 
@@ -53,15 +67,7 @@ Therefore, the following changes are needed to `platform.txt` in the MSP432 boar
 - Update `version` to `5.29.2`
 - Update `version.string` to `5292`
 
-I created a new MSP432 boards package version 5.29.2 based off of version 5.29.0. The only differences are the above changes to the `platform.txt` file. To use this updated boards package with Arduino, use one of these board manager URLs:
-
-<https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_development_MSP432r_index.json>
-
-- Only defines MSP432
-
-<https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json>
-
-- Defines MSP432, MSP430, and Tiva boards
+I created a new MSP432 board package version 5.29.2 based off of version 5.29.0. The only differences are the above changes to the `platform.txt` file. The board manager URL reference [above](#loading-a-launchpad-board-into-arduino-ide) includes the updated MSP432 board package.
 
 #### Extra Step Needed for Windows
 
@@ -207,13 +213,6 @@ You can generally use the latest version of the board package for the platform y
 - `compile_arduino_sketch_minimal-TM4C123-104.yml`
   - Compile for TM4C123 with minimal package index file and tivac board package 1.0.4 downloaded from this repo.
 
-## Energia Application Libraries
-
-The Energia IDE includes several libraries at the application level of the IDE instead of in the platform cores. This means that if you use the Arduino IDE/CLI and install an MSP or Tiva core, you don't end up getting every library that you would when using the Energia IDE. Most of the libraries included with the Energia application are either readily available as an Arduino library or are obsolete. However, two libraries in particular are specific to the platforms supported by Energia. I have created stand-alone repositories for these libraries:
-
-- [LCD_SharpBoosterPack_SPI][25]
-- [OneMsTaskTimer][26]
-
 ## References
 
 - Energia IDE [application][1] and source code [repo][2]
@@ -326,6 +325,7 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [70]: https://www.microsoft.com/openjdk
 [71]: https://adoptium.net
 [72]: https://arduino.github.io/arduino-cli/0.26/platform-specification/#custom-board-options
+[73]: https://github.com/energia/Energia#readme
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 [//]: # ([200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino)
