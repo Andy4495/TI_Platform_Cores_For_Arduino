@@ -2,7 +2,7 @@
 
 [![Check Markdown Links](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/CheckMarkdownLinks.yml/badge.svg)](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/CheckMarkdownLinks.yml)
 
-The [Arduino Boards Manager][69] makes it possible to load other processor families besides the original AVR-based Arduino boards. This repo contains instructions and relevant files for loading processor cores for Texas Instruments LaunchPad products in the MSP430, MSP432, and Tiva families. This allows development for TI LaunchPads using the Arduino IDE or CLI instead of the [Energia IDE][1].
+The [Arduino Boards Manager][69] makes it possible to load other processor families besides the original AVR-based Arduino boards. This repo contains instructions and relevant files for loading processor cores for Texas Instruments LaunchPad products in the MSP430, MSP432, and Tiva families. This allows development for TI LaunchPads using the Arduino [IDE][80] or [CLI][81] instead of the [Energia IDE][1].
 
 Energia was originally developed in 2012 as a fork from Arduino specifically to support Texas Instruments LaunchPads. Unfortunately, it is [no longer under active development][73], with the last version released in 2019. The good news is that the processor cores used by Energia are compatible with Arduino. This means that **Arduino can be used as a replacement for Energia**, allowing for continued software development using TI’s LaunchPad products.
 
@@ -35,7 +35,7 @@ The following sections contain more details on the board packages, sample GitHub
 
 With the end of development of the Energia IDE, I created this repository as an archive of the key files and packages needed to develop for various Texas Instruments LaunchPads.
 
-This repository contains tested JSON index files and hadware platform cores for the Texas Instruments MSP430, MSP432 (red), and Tiva C microcontrollers for use with the Arduino IDE or CLI. In addition, platform cores for msp432e (ethernet), cc13xx, cc3220emt, and cc3200 are also included but have not been tested.
+This repository contains tested JSON index files and hadware platform cores for the Texas Instruments MSP430, MSP432, and Tiva C microcontrollers for use with the Arduino IDE or CLI. In addition, platform cores for msp432e (ethernet), cc13xx, cc3220emt, and cc3200 are also included but have not been tested.
 
 [Platform cores][6] are used to add support for boards to the [Arduino development software][5]. The cores in this repo were originally developed for the [Energia IDE][1], which is a fork of the Arduino IDE specifically for Texas Instruments processors. Software for many TI processors can now be developed directly using the Arduino IDE once the appropriate platform core is installed.
 
@@ -51,34 +51,36 @@ ERRO[0130] Error updating indexes: Error downloading index 'http://energia.nu/pa
 
 ### MSP432 Support
 
-The official Energia board package for MSP432 does not work with the Arduino IDE/CLI due to an issue with the arduino-builder. It also requires Java as part of the build process.
+GitHub user [ndroid][75] created MSP432 board package version [5.29.4][74] based on the Energia version 5.29.1 board package. 5.29.4 adds support for the MSP432P4111 LaunchPad and fixes several issues with the board package as described in the [change log][79].
 
-GitHub user [ndroid][75] created MSP432 board package version [5.29.4][74] based on 5.29.1 which no longer requires Java for building. It also updates the ARM compiler to 8.3.1 and ino2cpp to 1.0.7 and adds support for the MSP432P4111 LaunchPad.
+#### Details on MSP432 Board Packages 5.29.1 and 5.29.2 Created by Andy4495
 
-#### Details on MSP432 Board Packages 5.29.1 and 5.29.2
+*This section is provided to document the creation of updated MSP432 board packages that turned out to be unnecessary.*
 
-The issue with the offical MSP432 board package version 5.29.0 is documented in a [thread][8] and this unmerged [pull request][61]. Since arduino-builder is now [deprecated][62], it is unlikely that this pull request will ever be merged. The main issue has to do with accessing a temporary path from within the build scripts. The Energia builder makes use of a variable called "build.project_path" which is not available with the arduino-builder. However, a global predefined property named "build.source.path" is available for use in [`platform.txt`][6] and defines the path needed for building MSP432 with Arduino.
+At the time I created this repo, the latest Energia-supplied board package for MSP432 that I could find was version 5.29.0. That version (and all earlier versions) has an issue that made it incompatible with the Arduino build tools, as documented in this [thread][8] and this unmerged [pull request][61]. The issue has to do with accessing a temporary path from within the build scripts. The Energia builder makes use of a variable called "build.project_path" which is not available with the arduino-builder. However, a global predefined property named "build.source.path" is available for use in [`platform.txt`][6] and defines the path needed for building MSP432 with Arduino.
 
-In addition, the `ino2cpp` tool version 1.0.6 used during the MSP432 build process makes some assumptions on the availability and location of Java during the build process. This can cause issues when building locally with Arduino and when running the [compile-arduino-sketches][20] GitHub action both locally using [nektos/act][63] and on GitHub's servers. This Java dependency has been removed in version 1.0.7.
+In addition, the `ino2cpp` tool version 1.0.6 used during the MSP432 build process makes some assumptions on the availability and location of Java during the build process. This can cause issues when building locally with Arduino and when running the [compile-arduino-sketches][20] GitHub action both locally using [nektos/act][63] and on GitHub's servers.
 
-Therefore, the following changes are needed to `platform.txt` in the MSP432 board package:
+So I created new MSP432 board package versions 5.29.1 and 5.29.2 based off of version 5.29.0. The only differences are changes to the `platform.txt` file as listed below. Version 5.29.1 fixes the Java issue for MacOS and Linux, and version 5.29.2 also adds a fix for Windows.
 
 - Update `recipe.hooks.sketch.prebuild.1.pattern` definition to change `{build.project_path}` to `{build.source.path}`
 - Change `java.path.macosx` value to `/usr/bin/java`
 - Change `build.ino2cpp.cmd.linux` value to `"/usr/bin/java"`
-- Change `build.ino2cpp.cmd.windows` value to `"java"`
+- Change `build.ino2cpp.cmd.windows` value to `"java"` (5.29.2 only)
 - Update `version` to `5.29.2`
 - Update `version.string` to `5292`
 
-I created a new MSP432 board package version 5.29.2 based off of version 5.29.0. The only differences are the above changes to the `platform.txt` file. The board manager URL reference [above](#loading-a-launchpad-board-into-arduino-ide) includes the updated MSP432 board package.
+As it turns out, an Energia-supplied board package version 5.29.1 is available that fixes the Arduino build issue and removes the Java dependency (by using `ino2cpp` version 1.0.7).
 
-#### Extra Step Needed for Windows - No Longer Necessary
+Because I was unaware of the Energia MSP432 version 5.29.1, there are two MSP432 board packages archived in this repo with a version 5.29.1: I added suffixes to the filenames to differentiate them.
 
-If using the latest board package for MPS432 (version 5.29.4 or later), it is no longer necessary to install Java.
+##### Extra Step Needed for Windows - No Longer Necessary
+
+If using the latest board package for MPS432 (version 5.29.4 or later), it is not necessary to install Java.
 
 When using an older MSP432 board package, then Java needs to be installed on the build machine. I have successfully tested the 5.29.2 board package with both the [Microsoft][70] and [Temurin][71] Java distributions.
 
-#### Details on Generating a Board Package
+##### Details on Generating a Board Package
 
 I ran the following steps to create the new board package using MacOS:
 
@@ -186,8 +188,10 @@ These are included for historical purposes:
 
 - `msp432r-5.29.0.tar.bz2`
   - Used as a baseline to create verstions 5.29.1 and 5.29.2. It will not work correctly with Arduino as mentioned [above](#msp432-support).
-- `msp432r-5.29.1.tar.bz2`
-  - This file is has fixes for Linux and MacOS, but does not include the fix for Windows.
+- `msp432r-5.29.1-Andy4495_version.tar.bz2`
+  - Package inadvertently created to fix a build issue - see [MSP432 Support](#msp432-support) above. Note that this has the same version number as a board package provided by Energia, and has "`Andy4495_version`" added to the file name.
+- `msp432r-5.29.1-Energia_version.tar.bz2`
+  - Version provided by Energia, and is differentiated from the other 5.29.1 package with `Energia_version` added to the file name.
 
 #### GitHub Workflow Action Definition Files
 
@@ -324,7 +328,6 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [59]: https://s3.amazonaws.com/energiaUS/tools/macosx/msp430-elf-gcc-8.3.0.16_macos.tar.bz2
 [60]: https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-elf-gcc-8.3.0.16_linux64.tar.bz2
 [61]: https://github.com/arduino/arduino-builder/pull/119
-[62]: https://github.com/arduino/arduino-builder/blob/master/README.md
 [63]: https://github.com/nektos/act
 [64]: https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2
 [67]: https://github.com/energia/msp432r-core
@@ -339,9 +342,13 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [76]: https://s3.amazonaws.com/energiaUS/tools/windows/ino2cpp-1.0.7-i686-mingw32.tar.bz2
 [77]: https://s3.amazonaws.com/energiaUS/tools/macosx/ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2
 [78]: https://s3.amazonaws.com/energiaUS/tools/linux64/ino2cpp-1.0.7-x86_64-pc-linux-gnu.tar.bz2
+[79]: https://github.com/ndroid/msp432-core/tree/main#change-log
+[80]: https://www.arduino.cc/en/software
+[81]: https://arduino.github.io/arduino-cli/
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 [//]: # ([200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino)
+[//]: # ([62]: https://github.com/arduino/arduino-builder/blob/master/README.md)
 
 [//]: # (This is a way to hack a comment in Markdown. This will not be displayed when rendered.)
 [//]: # (The board download links from energia.nu are not consistently working. Previous link for board msp432r 5.29.0 was: http://energia.nu/downloads/download_core.php?file=msp432r-5.29.0.tar.bz2 )
