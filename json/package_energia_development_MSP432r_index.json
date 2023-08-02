@@ -110,7 +110,7 @@
             },
             {
               "host":"x86_64-apple-darwin",
-              "url":"http://s3.amazonaws.com/energiaUS/tools/macosx/ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2",
               "archiveFileName":"ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2",
               "checksum":"SHA-256:be0219394a6a4ea99a715435f54ad5047c7ece9f9b70f6fa118ff61f9107a044",
               "size":"101988"

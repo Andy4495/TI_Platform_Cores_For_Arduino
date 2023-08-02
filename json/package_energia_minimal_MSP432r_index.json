@@ -14,7 +14,7 @@
           "architecture": "msp432r",
           "version": "5.29.4",
           "category": "Energia",
-          "url": "https://github.com/ndroid/msp432-core/raw/main/cores/msp432-5.29.4.tar.bz2",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432-5.29.4.tar.bz2",
           "archiveFileName": "msp432-5.29.4.tar.bz2",
           "checksum": "SHA-256:1715f96e15a94eb5c26b17853bc17228c41e0619f77833313de557aa7b3970f4",
           "size": "29829567",
