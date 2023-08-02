@@ -10,16 +10,17 @@
       },
       "platforms": [
         {
-          "name": "Energia MSP432 EMT RED boards",
-          "architecture": "msp432r",
+          "name": "TI MSP432P4xx Launchpad boards",
+          "architecture": "msp432",
           "version": "5.29.4",
           "category": "Energia",
-          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432-5.29.4.tar.bz2",
+          "url": "https://github.com/ndroid/msp432-core/raw/main/cores/msp432-5.29.4.tar.bz2",
           "archiveFileName": "msp432-5.29.4.tar.bz2",
           "checksum": "SHA-256:1715f96e15a94eb5c26b17853bc17228c41e0619f77833313de557aa7b3970f4",
           "size": "29829567",
           "boards": [
-            {"name": "MSP_EXP432P401R"}
+            {"name": "MSP_EXP432P401R"},
+            {"name": "MSP_EXP432P4111"}
           ],
           "toolsDependencies": [
             {
@@ -73,7 +74,7 @@
           "version":"9.3.0.1863",
           "systems":
           [
-            {
+           {
               "host":"i686-mingw32",
               "url":"https://s3.amazonaws.com/energiaUS/tools/windows/dslite-9.3.0.1863-i686-mingw32.tar.bz2",
               "archiveFileName":"dslite-9.3.0.1863-i686-mingw32.tar.bz2",
@@ -101,7 +102,7 @@
           "version":"1.0.7",
           "systems":
           [
-            {
+           {
               "host":"i686-mingw32",
               "url":"https://s3.amazonaws.com/energiaUS/tools/windows/ino2cpp-1.0.7-i686-mingw32.tar.bz2",
               "archiveFileName":"ino2cpp-1.0.7-i686-mingw32.tar.bz2",
@@ -122,11 +123,9 @@
               "checksum":"SHA-256:d48160d8cd18936a989aaa83d494c1300ddcff4104cd386a52b9b369cf361d35",
               "size":"115559"
             }
-
           ]
         }
       ]
     }
   ]
 }
-

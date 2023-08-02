@@ -10,7 +10,7 @@
       },
       "platforms": [
         {
-          "name": "Energia MSP432 EMT RED boards",
+          "name": "Energia MSP432 Launchpad boards",
           "architecture": "msp432r",
           "version": "5.29.4",
           "category": "Energia",
@@ -19,7 +19,8 @@
           "checksum": "SHA-256:1715f96e15a94eb5c26b17853bc17228c41e0619f77833313de557aa7b3970f4",
           "size": "29829567",
           "boards": [
-            {"name": "MSP_EXP432P401R"}
+            {"name": "MSP_EXP432P401R"},
+            {"name": "MSP_EXP432P4111"}
           ],
           "toolsDependencies": [
             {
