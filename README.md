@@ -19,7 +19,6 @@ Energia was originally developed in 2012 as a fork from Arduino specifically to 
     - Hover the mouse over the board platform you want, and click "Install"
     - It can take several minutes to install a board package
 7. Once the board package is installed, you can select the board you want with the `Tools->Board` menu.
-8. If developing for MSP432 on Windows, it is also necessary to [install java](#extra-step-needed-for-windows).
 
 ## Energia Application Libraries
 
@@ -52,11 +51,15 @@ ERRO[0130] Error updating indexes: Error downloading index 'http://energia.nu/pa
 
 ### MSP432 Support
 
-This repo fixes an issue with MSP432 board package. The official Energia board package for MSP432 does not work with the Arduino IDE/CLI due to an issue with the arduino-builder.
+The official Energia board package for MSP432 does not work with the Arduino IDE/CLI due to an issue with the arduino-builder. It also requires Java as part of the build process.
 
-The issue is documented in a [thread][8] and this unmerged [pull request][61]. Since arduino-builder is now [deprecated][62], it is unlikely that this pull request will ever be merged. The main issue has to do with accessing a temporary path from within the build scripts. The Energia builder makes use of a variable called "build.project_path" which is not available with the arduino-builder. However, a global predefined property named "build.source.path" is available for use in [`platform.txt`][6] and defines the path needed for building MSP432 with Arduino.
+GitHub user [ndroid][75] created MSP432 board package version [5.29.4][74] based on 5.29.1 which no longer requires Java for building. It also updates the ARM compiler to 8.3.1 and ino2cpp to 1.0.7 and adds support for the MSP432P4111 LaunchPad.
 
-In addition, the `ino2cpp` tool used during the MSP432 build process makes some assumptions on the availability and location of java during the build process. This can cause issues when building locally with Arduino and when running the [compile-arduino-sketches][20] GitHub action both locally using [nektos/act][63] and on GitHub's servers.
+#### Details on MSP432 Board Packages 5.29.1 and 5.29.2
+
+The issue with the offical MSP432 board package version 5.29.0 is documented in a [thread][8] and this unmerged [pull request][61]. Since arduino-builder is now [deprecated][62], it is unlikely that this pull request will ever be merged. The main issue has to do with accessing a temporary path from within the build scripts. The Energia builder makes use of a variable called "build.project_path" which is not available with the arduino-builder. However, a global predefined property named "build.source.path" is available for use in [`platform.txt`][6] and defines the path needed for building MSP432 with Arduino.
+
+In addition, the `ino2cpp` tool version 1.0.6 used during the MSP432 build process makes some assumptions on the availability and location of Java during the build process. This can cause issues when building locally with Arduino and when running the [compile-arduino-sketches][20] GitHub action both locally using [nektos/act][63] and on GitHub's servers. This Java dependency has been removed in version 1.0.7.
 
 Therefore, the following changes are needed to `platform.txt` in the MSP432 board package:
 
@@ -69,9 +72,11 @@ Therefore, the following changes are needed to `platform.txt` in the MSP432 boar
 
 I created a new MSP432 board package version 5.29.2 based off of version 5.29.0. The only differences are the above changes to the `platform.txt` file. The board manager URL reference [above](#loading-a-launchpad-board-into-arduino-ide) includes the updated MSP432 board package.
 
-#### Extra Step Needed for Windows
+#### Extra Step Needed for Windows - No Longer Necessary
 
-In order for MSP432 builds to work on Windows, it is necessary to install Java. I have successfully tested the 5.29.2 board package with both the [Microsoft][70] and [Temurin][71] Java distributions.
+If using the latest board package for MPS432 (version 5.29.4 or later), it is no longer necessary to install Java.
+
+If it is necessary to use an older MSP432 board package, then Java needs to be installed on the build machine. I have successfully tested the 5.29.2 board package with both the [Microsoft][70] and [Temurin][71] Java distributions.
 
 #### Details on Generating a Board Package
 
@@ -109,8 +114,9 @@ The Package Index file names need to follow the convention specified in the Ardu
 | `package_energia_minimal_TM4C_103_index.json`           | N/A    | 1.0.3              | TM4C boards only and installs from this repo. |
 | `package_energia_minimal_TM4C_104_index.json`           | N/A    | 1.0.4              | TM4C boards only and installs from this repo. |
 | `package_energia_minimal_TM4C_104_alternate_index.json` | N/A    | 1.0.4              | TM4C boards only, installs from this repo, compiler from Release. |
-| `package_energia_development_MSP432r_index.json`        | 5.29.2 | N/A                | MSP432P401R board only, use with local Arduino IDE/CLI. |
-| `package_energia_minimal_MSP432r_index.json`            | 5.29.2 | N/A                | MSP432P401R board only, installs minimal tools.  |
+| `package_energia_development_MSP432r_index.json`        | 5.29.4 | N/A                | MSP432P401R board only, use with local Arduino IDE/CLI. |
+| `package_energia_minimal_MSP432r_index.json`            | 5.29.4 | N/A                | MSP432P401R board only, installs minimal tools.  |
+| `package_msp432_index.json`                             | 5.29.4 | N/A                | [MPS432 package index][74] created by [ndroid][75] |
 
 ##### Note
 
@@ -121,7 +127,7 @@ The Package Index file names need to follow the convention specified in the Ardu
 
 Located in the [`boards`][14] directory. These files are referenced by the package index json files.
 
-These are copies of the board package files avaialble from Energia (with the exception of the mps432r packages as explained above).
+These are copies of the board package files avaialble from Energia (with the exception of the mps432 packages as explained above).
 
 - `msp430-1.0.5.tar.bz2`
 - `msp430-1.0.6.tar.bz2`
@@ -129,6 +135,7 @@ These are copies of the board package files avaialble from Energia (with the exc
 - `msp430elf-2.0.7.tar.bz2`
 - `msp430elf-2.0.10.tar.bz2`
 - `msp432r-5.29.2.tar.bz2`
+- `msp432-5.29.4.tar.bz2`
 - `tivac-1.0.3.tar.bz2`
 - `tivac-1.0.4.tar.bz2`
 
@@ -143,6 +150,7 @@ The tools are specific to the board package platform and version.
 | MSP430 1.0.5   | msp430-gcc 4.6.6                 | 8.2.0.1400 | 0.24     | N/A     |
 | MSP430 2.0.10  | msp430-elf-gcc 9.2.0.50          | 9.3.0.1863 | 0.24     | 1.0.4   |
 | MSP430 2.0.7   | msp430-elf-gcc 8.3.0.16          | 9.3.0.1863 | 0.24     | 1.0.4   |
+| MSP432 5.29.4  | arm-none-eabi-gcc 8.3.1-20190703 | 9.3.0.1863 | N/A      | 1.0.7   |
 | MSP432 5.29.2  | arm-none-eabi-gcc 6.3.1-20170620 | 9.2.0.1793 | N/A      | 1.0.6   |
 | Tiva 1.0.4     | arm-none-eabi-gcc 8.3.1-20190703 | 9.3.0.1863 | N/A      | N/A     |
 | Tiva 1.0.3     | arm-none-eabi-gcc 6.3.1-20170620 | 7.2.0.2096 | N/A      | N/A     |
@@ -160,7 +168,8 @@ The tools are specific to the board package platform and version.
 | dslite 7.2.0.2096                | [Wndows][48] | [MacOS][49] | [Linux][50] |
 | mspdebug 0.24                    | [Wndows][51] | [MacOS][52] | [Linux][53] |
 | ino2cpp 1.0.4                    | [Wndows][54] | [MacOS][54] | [Linux][54] |
-| ino2cpp 1.0.6                    | [Wndows][64] | [MacOS][65] | [Linux][66] |
+| ino2cpp 1.0.6                    | [Wndows][64] | [MacOS][64] | [Linux][64] |
+| ino2cpp 1.0.7                    | [Wndows][76] | [MacOS][77] | [Linux][78] |
 
 ##### Additional Board Package Files
 
@@ -207,7 +216,7 @@ You can generally use the latest version of the board package for the platform y
 - `compile_arduino_sketch_minimal-MSP430F5529-107.yml`
   - Compile for MSP430F5529 with minimal package index file and board package 1.0.7 downloaded from this repo.
 - `compile_arduino_sketch_minimal-MSP432R.yml`
-  - Compile for MSP432P401 with minimal package index file and board package 5.29.2 downloaded from this repo.
+  - Compile for MSP432P401 with minimal package index file and board package 5.29.4 downloaded from this repo.
 - `compile_arduino_sketch_minimal-TM4C123-103.yml`
   - Compile for TM4C123 with minimal package index file and tivac board package 1.0.3 downloaded from this repo.
 - `compile_arduino_sketch_minimal-TM4C123-104.yml`
@@ -226,6 +235,7 @@ You can generally use the latest version of the board package for the platform y
 - Compile Arduino Sketches GitHub [action][20]
 - Arduino JSON package index [file][16]
 - Unofficial list of Arduino 3rd Party [Board Manager URLs][68]
+- Updated MSP432 [board package repo][74] created by [ndroid][75]
 - Board Manager URLs:
   - Optimized LaunchPad URL:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json>
@@ -233,17 +243,17 @@ You can generally use the latest version of the board package for the platform y
     - **This the URL you would most likely use with the Arduino IDE.**
   - Standard Energia URL:
     - <https://energia.nu/packages/package_energia_index.json>
-    - This is the "official" URL, but specifies older board package versions.
+    - This is the **official** URL published by Energia, but specifies older board package versions.
     - This would only be used in specialized cases, and is mainly here for archival purposes.
   - Standard Energia URL with latest board versions:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_latest_index.json>
-    - This specifies the latest official board versions (along with all the older board version). The original file is available [here][12]. The above URL has the same file contents, but the name is changed to conform to the [spec][7].
+    - This specifies the latest **official** board versions (along with all the older board version). The original file is available [here][12]. The above URL has the same file contents, but the name is changed to conform to the [spec][7].
   - MSP430 boards using later compiler version:
     - <http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json>
     - [Thread][11] explaining why MSP430 elf compiler option is availble.
   - MSP432 board manager URL when using local Arduino IDE/CLI:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_development_MSP432r_index.json>
-    - Includes only the MSP432 (red) platform definitions.
+    - Includes the MSP432432P401R (red) and MSPP4111 platform definitions.
   - MSP432 board manager URL when using with `compile-arduino-sketches` GitHub action:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_minimal_MSP432r_index.json>
   - ESP8266 board manager URL:
@@ -317,8 +327,6 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [62]: https://github.com/arduino/arduino-builder/blob/master/README.md
 [63]: https://github.com/nektos/act
 [64]: https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2
-[65]: https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2
-[66]: https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2
 [67]: https://github.com/energia/msp432r-core
 [68]: https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-support-urls
 [69]: https://support.arduino.cc/hc/en-us/articles/360016119519-Add-boards-to-Arduino-IDE
@@ -326,6 +334,11 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [71]: https://adoptium.net
 [72]: https://arduino.github.io/arduino-cli/0.26/platform-specification/#custom-board-options
 [73]: https://github.com/energia/Energia#readme
+[74]: https://github.com/ndroid/msp432-core/
+[75]: https://github.com/ndroid
+[76]: https://s3.amazonaws.com/energiaUS/tools/windows/ino2cpp-1.0.7-i686-mingw32.tar.bz2
+[77]: https://s3.amazonaws.com/energiaUS/tools/macosx/ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2
+[78]: https://s3.amazonaws.com/energiaUS/tools/linux64/ino2cpp-1.0.7-x86_64-pc-linux-gnu.tar.bz2
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 [//]: # ([200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino)

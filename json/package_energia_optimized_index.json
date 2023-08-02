@@ -83,12 +83,12 @@
         {
           "name": "Energia MSP432 EMT RED boards",
           "architecture": "msp432r",
-          "version": "5.29.2",
+          "version": "5.29.4",
           "category": "Energia",
-          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432r-5.29.2.tar.bz2",
-          "archiveFileName": "msp432r-5.29.2.tar.bz2",
-          "checksum": "SHA-256:62eb0a76a60d88234df3fb807adaf997f21231825b167d4479587744a091c702",
-          "size": "32332248",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432-5.29.4.tar.bz2",
+          "archiveFileName": "msp432-5.29.4.tar.bz2",
+          "checksum": "SHA-256:1715f96e15a94eb5c26b17853bc17228c41e0619f77833313de557aa7b3970f4",
+          "size": "29829567",
           "boards": [
             {"name": "MSP_EXP432P401R"}
           ],
@@ -96,17 +96,48 @@
             {
               "packager":"energia",
               "name":"arm-none-eabi-gcc",
-              "version":"6.3.1-20170620"
+              "version":"8.3.1-20190703"
             },
             {
               "packager":"energia",
               "name":"dslite",
-              "version":"9.2.0.1793"
+              "version":"9.3.0.1863"
             },
             {
               "packager":"energia",
               "name":"ino2cpp",
-              "version":"1.0.6"
+              "version":"1.0.7"
+            }
+          ]
+        },
+        {
+          "name": "TI MSP432P4xx Launchpad boards",
+          "architecture": "msp432",
+          "version": "5.29.4",
+          "category": "Energia",
+          "url": "https://github.com/ndroid/msp432-core/raw/main/cores/msp432-5.29.4.tar.bz2",
+          "archiveFileName": "msp432-5.29.4.tar.bz2",
+          "checksum": "SHA-256:1715f96e15a94eb5c26b17853bc17228c41e0619f77833313de557aa7b3970f4",
+          "size": "29829567",
+          "boards": [
+            {"name": "MSP_EXP432P401R"},
+            {"name": "MSP_EXP432P4111"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager":"energia",
+              "name":"arm-none-eabi-gcc",
+              "version":"8.3.1-20190703"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"9.3.0.1863"
+            },
+            {
+              "packager":"energia",
+              "name":"ino2cpp",
+              "version":"1.0.7"
             }
           ]
         },
@@ -348,29 +379,29 @@
         },
         {
           "name":"ino2cpp",
-          "version":"1.0.6",
+          "version":"1.0.7",
           "systems":
           [
            {
               "host":"i686-mingw32",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2",
-              "archiveFileName":"ino2cpp-1.0.6.tar.bz2",
-              "checksum":"SHA-256:9be2bfa55b272d7f98aff8cc9540368fc54ef8aaa4379071bd5ff14ff7e0a62b",
-              "size":"483712"
+              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/ino2cpp-1.0.7-i686-mingw32.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.7-i686-mingw32.tar.bz2",
+              "checksum":"SHA-256:29b3d8d4bdf2b78410af56bc831d6aa16eae5dfc3e5f4826f4fc5f2db1c31085",
+              "size":"274575"
             },
             {
               "host":"x86_64-apple-darwin",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2",
-              "archiveFileName":"ino2cpp-1.0.6.tar.bz2",
-              "checksum":"SHA-256:9be2bfa55b272d7f98aff8cc9540368fc54ef8aaa4379071bd5ff14ff7e0a62b",
-              "size":"483712"
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2",
+              "checksum":"SHA-256:be0219394a6a4ea99a715435f54ad5047c7ece9f9b70f6fa118ff61f9107a044",
+              "size":"101988"
             },
             {
               "host": "x86_64-pc-linux-gnu",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2",
-              "archiveFileName":"ino2cpp-1.0.6.tar.bz2",
-              "checksum":"SHA-256:9be2bfa55b272d7f98aff8cc9540368fc54ef8aaa4379071bd5ff14ff7e0a62b",
-              "size":"483712"
+              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/ino2cpp-1.0.7-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"ino2cpp-1.0.7-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:d48160d8cd18936a989aaa83d494c1300ddcff4104cd386a52b9b369cf361d35",
+              "size":"115559"
             }
           ]
         },
@@ -455,34 +486,6 @@
               "archiveFileName":"dslite-9.3.0.1863-i386-x86_64-pc-linux-gnu.tar.bz2",
               "checksum":"SHA-256:13bd5f340dadebbf5fb4cdf21ab2f6af5b21e4c30fb766d23ab499a68cdd0632",
               "size":"19698040"
-            }
-          ]
-        },
-        {
-          "name":"dslite",
-          "version":"9.2.0.1793",
-          "systems":
-          [
-           {
-              "host":"i686-mingw32",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/dslite-9.2.0.1793-i686-mingw32.tar.bz2",
-              "archiveFileName":"dslite-9.2.0.1793-mingw32.tar.bz2",
-              "checksum":"SHA-256:14ad093a5b98f7410be1d7860e805e1adf912ff692618c972a663b8250021dc1",
-              "size":"36577760"
-            },
-            {
-              "host":"x86_64-apple-darwin",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-9.2.0.1793-x86_64-apple-darwin.tar.bz2",
-              "archiveFileName":"dslite-9.2.0.1793-x86_64-apple-darwin.tar.bz2",
-              "checksum":"SHA-256:bbca8c869b31848708403781293b8473d5087363fde7ba688116d23161d0427c",
-              "size":"18218665"
-            },
-            {
-              "host":"x86_64-pc-linux-gnu",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-9.2.0.1793-i386-x86_64-pc-linux-gnu.tar.bz2",
-              "archiveFileName":"dslite-9.2.0.1793-i386-x86_64-pc-linux-gnu.tar.bz2",
-              "checksum":"SHA-256:92be08518c696ec815f3f8d340f44b5d23555e5d704c2d7e327e804ff8aaf3db",
-              "size":"19511633"
             }
           ]
         },
