@@ -76,7 +76,7 @@ I created a new MSP432 board package version 5.29.2 based off of version 5.29.0.
 
 If using the latest board package for MPS432 (version 5.29.4 or later), it is no longer necessary to install Java.
 
-If it is necessary to use an older MSP432 board package, then Java needs to be installed on the build machine. I have successfully tested the 5.29.2 board package with both the [Microsoft][70] and [Temurin][71] Java distributions.
+When using an older MSP432 board package, then Java needs to be installed on the build machine. I have successfully tested the 5.29.2 board package with both the [Microsoft][70] and [Temurin][71] Java distributions.
 
 #### Details on Generating a Board Package
 
