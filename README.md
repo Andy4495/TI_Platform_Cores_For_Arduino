@@ -20,12 +20,19 @@ Energia was originally developed in 2012 as a fork from Arduino specifically to 
     - It can take several minutes to install a board package
 7. Once the board package is installed, you can select the board you want with the `Tools->Board` menu.
 
-## Energia Application Libraries
+## Energia Application Libraries and Examples
 
-The Energia IDE includes several libraries at the application level of the IDE instead of in the platform cores. This means that if you use the Arduino IDE/CLI and install an MSP or Tiva core, you don't end up getting every library that you would when using the Energia IDE. Most of the libraries included with the Energia application are either readily available as an Arduino library or are obsolete. However, two libraries in particular are specific to the platforms supported by Energia. I have created stand-alone repositories for these libraries:
+The Energia IDE includes several libraries and examples at the application level of the IDE instead of in the platform cores. This means that if you use the Arduino IDE/CLI and install an MSP or Tiva core, you don't end up getting every library and example sketch that you would when using the Energia IDE. Most of the libraries and examples included with the Energia application are either readily available with Arduino or are obsolete. However, some are particular to the platforms supported by Energia and are not directly available with Arduino, so I have published standalone libraries to allow them to be loaded into Arduino.
+
+Stand-alone repositories for Energia libraries:
 
 - [LCD_SharpBoosterPack_SPI][25]
 - [OneMsTaskTimer][26]
+
+Energia example sketches packaged into libraries so that they can be loaded into the Arduino GUI:
+
+- [Energia-EducationalBP_MKII][27]
+- [Energia-MultiTasking][28]
 
 ## More Detailed Information
 
@@ -51,7 +58,9 @@ ERRO[0130] Error updating indexes: Error downloading index 'http://energia.nu/pa
 
 ### MSP432 Support
 
-GitHub user [ndroid][75] created MSP432 board package version [5.29.4][74] based on the Energia version 5.29.1 board package. 5.29.4 adds support for the MSP432P4111 LaunchPad and fixes several issues with the board package as described in the [change log][79].
+GitHub user [ndroid][75] has created updated [MSP432 board packages][74] based on the Energia version 5.29.1 board package. These updated packages add support for the MSP432P4111 LaunchPad and fix several issues with the board package as described in the [change log][79].
+
+Later versions of Energia include support for multi-tasking for MSP432 boards based on [TI-RTOS][82]. The MSP432 board package for Arduino continues to support multi-tasking, which can be accessed by using the methods demonstrated in the [Energia-MultiTasking][28] examples or through the [Galaxia library][83] created by [Rei Vilo][84].
 
 #### Details on MSP432 Board Packages 5.29.1 and 5.29.2 Created by Andy4495
 
@@ -175,9 +184,7 @@ The tools are specific to the board package platform and version.
 
 ##### Additional Board Package Files
 
-In addition to the board package files listed above, the following board packages are included in this repo
-
-These have not been tested:
+In addition to the board package files listed above, the following untested board packages are included in this repo:
 
 - `cc13xx-4.9.1.tar.bz2`
 - `cc3200-1.0.3.tar.bz2`
@@ -240,6 +247,7 @@ You can generally use the latest version of the board package for the platform y
 - Arduino JSON package index [file][16]
 - Unofficial list of Arduino 3rd Party [Board Manager URLs][68]
 - Updated MSP432 [board package repo][74] created by [ndroid][75]
+- [Galaxia multi-tasking library][83] created by [Rei Vilo][84]
 - Board Manager URLs:
   - Optimized LaunchPad URL:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json>
@@ -296,6 +304,8 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [24]: https://docs.github.com/en/actions
 [25]: https://github.com/Andy4495/LCD_SharpBoosterPack_SPI
 [26]: https://github.com/Andy4495/OneMsTaskTimer
+[27]: https://github.com/Andy4495/Energia-EducationalBP_MKII
+[28]: https://github.com/Andy4495/Energia-MultiTasking
 [30]: https://s3.amazonaws.com/energiaUS/tools/windows/msp430-gcc-4.6.6-i686-mingw32.tar.bz2
 [31]: https://s3.amazonaws.com/energiaUS/tools/macosx/msp430-gcc-4.6.6-i386-apple-darwin11.tar.bz2
 [32]: https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-gcc-4.6.6-i386-x86_64-pc-linux-gnu.tar.bz2
@@ -345,6 +355,9 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [79]: https://github.com/ndroid/msp432-core/tree/main#change-log
 [80]: https://www.arduino.cc/en/software
 [81]: https://arduino.github.io/arduino-cli/
+[82]: https://www.ti.com/tool/TI-RTOS-MCU
+[83]: https://github.com/rei-vilo/Galaxia_Library
+[84]: https://github.com/rei-vilo/
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 [//]: # ([200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino)
