@@ -12,12 +12,12 @@
         {
           "name": "TI MSP432P4xx Launchpad boards",
           "architecture": "msp432",
-          "version": "5.29.4",
+          "version": "5.29.5",
           "category": "Energia",
-          "url": "https://github.com/ndroid/msp432-core/raw/main/cores/msp432-5.29.4.tar.bz2",
-          "archiveFileName": "msp432-5.29.4.tar.bz2",
-          "checksum": "SHA-256:1715f96e15a94eb5c26b17853bc17228c41e0619f77833313de557aa7b3970f4",
-          "size": "29829567",
+          "url": "https://github.com/ndroid/msp432-core/raw/main/cores/msp432-5.29.5.tar.bz2",
+          "archiveFileName": "msp432-5.29.5.tar.bz2",
+          "checksum": "SHA-256:a6bf215c7f932fe94b066afb3678f673c5bf57039b2e75e3afc5cb1ca265a692",
+          "size": "29815957",
           "boards": [
             {"name": "MSP_EXP432P401R"},
             {"name": "MSP_EXP432P4111"}

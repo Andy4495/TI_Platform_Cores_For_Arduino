@@ -125,9 +125,9 @@ The Package Index file names need to follow the convention specified in the Ardu
 | `package_energia_minimal_TM4C_103_index.json`           | N/A    | 1.0.3              | TM4C boards only and installs from this repo. |
 | `package_energia_minimal_TM4C_104_index.json`           | N/A    | 1.0.4              | TM4C boards only and installs from this repo. |
 | `package_energia_minimal_TM4C_104_alternate_index.json` | N/A    | 1.0.4              | TM4C boards only, installs from this repo, compiler from Release. |
-| `package_energia_development_MSP432r_index.json`        | 5.29.4 | N/A                | MSP432P401R board only, use with local Arduino IDE/CLI. |
-| `package_energia_minimal_MSP432r_index.json`            | 5.29.4 | N/A                | MSP432P401R board only, installs minimal tools.  |
-| `package_msp432_index.json`                             | 5.29.4 | N/A                | [MPS432 package index][74] created by [ndroid][75] |
+| `package_energia_development_MSP432r_index.json`        | 5.29.5 | N/A                | MSP432P401R board only, use with local Arduino IDE/CLI. |
+| `package_energia_minimal_MSP432r_index.json`            | 5.29.5 | N/A                | MSP432P401R board only, installs minimal tools.  |
+| `package_msp432_index.json`                             | 5.29.5 | N/A                | [MPS432 package index][74] created by [ndroid][75] |
 
 ##### Note
 
@@ -146,7 +146,7 @@ These are copies of the board package files avaialble from Energia (with the exc
 - `msp430elf-2.0.7.tar.bz2`
 - `msp430elf-2.0.10.tar.bz2`
 - `msp432r-5.29.2.tar.bz2`
-- `msp432-5.29.4.tar.bz2`
+- `msp432-5.29.5.tar.bz2`
 - `tivac-1.0.3.tar.bz2`
 - `tivac-1.0.4.tar.bz2`
 
@@ -161,7 +161,7 @@ The tools are specific to the board package platform and version.
 | MSP430 1.0.5   | msp430-gcc 4.6.6                 | 8.2.0.1400 | 0.24     | N/A     |
 | MSP430 2.0.10  | msp430-elf-gcc 9.2.0.50          | 9.3.0.1863 | 0.24     | 1.0.4   |
 | MSP430 2.0.7   | msp430-elf-gcc 8.3.0.16          | 9.3.0.1863 | 0.24     | 1.0.4   |
-| MSP432 5.29.4  | arm-none-eabi-gcc 8.3.1-20190703 | 9.3.0.1863 | N/A      | 1.0.7   |
+| MSP432 5.29.5  | arm-none-eabi-gcc 8.3.1-20190703 | 9.3.0.1863 | N/A      | 1.0.7   |
 | MSP432 5.29.2  | arm-none-eabi-gcc 6.3.1-20170620 | 9.2.0.1793 | N/A      | 1.0.6   |
 | Tiva 1.0.4     | arm-none-eabi-gcc 8.3.1-20190703 | 9.3.0.1863 | N/A      | N/A     |
 | Tiva 1.0.3     | arm-none-eabi-gcc 6.3.1-20170620 | 7.2.0.2096 | N/A      | N/A     |
@@ -227,7 +227,7 @@ You can generally use the latest version of the board package for the platform y
 - `compile_arduino_sketch_minimal-MSP430F5529-107.yml`
   - Compile for MSP430F5529 with minimal package index file and board package 1.0.7 downloaded from this repo.
 - `compile_arduino_sketch_minimal-MSP432R.yml`
-  - Compile for MSP432P401 with minimal package index file and board package 5.29.4 downloaded from this repo.
+  - Compile for MSP432P401 with minimal package index file and board package 5.29.5 downloaded from this repo.
 - `compile_arduino_sketch_minimal-TM4C123-103.yml`
   - Compile for TM4C123 with minimal package index file and tivac board package 1.0.3 downloaded from this repo.
 - `compile_arduino_sketch_minimal-TM4C123-104.yml`
