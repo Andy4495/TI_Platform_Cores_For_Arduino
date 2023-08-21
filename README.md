@@ -29,7 +29,7 @@ Stand-alone repositories for Energia libraries:
 - [LCD_SharpBoosterPack_SPI][25]
 - [OneMsTaskTimer][26]
 
-Energia example sketches packaged into libraries so that they can be loaded into the Arduino GUI:
+Energia example sketches packaged into libraries so that they can be loaded into the Arduino IDE:
 
 - [Energia-EducationalBP_MKII][27]
 - [Energia-MultiTasking][28]
