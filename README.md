@@ -34,6 +34,10 @@ Energia example sketches packaged into libraries so that they can be loaded into
 - [Energia-EducationalBP_MKII][27]
 - [Energia-MultiTasking][28]
 
+## Board Packages and PlatformIO
+
+Per GitHub user [chemmex][85], it is possible to use these processor cores with [PlatformIO][86]. Some manual setup and configuration is required, which includes editing the `platformio.ini` file. For more details, refer to this issue [comment][87] and this PlatformIO [discussion][88].
+
 ## More Detailed Information
 
 The following sections contain more details on the board packages, sample GitHub action files, and the descriptions of the various files included in this repo.
@@ -248,6 +252,7 @@ You can generally use the latest version of the board package for the platform y
 - Unofficial list of Arduino 3rd Party [Board Manager URLs][68]
 - Updated MSP432 [board package repo][74] created by [ndroid][75]
 - [Galaxia multi-tasking library][83] created by [Rei Vilo][84]
+- Info on using Arduino cores with [PlatformIO][86]: [here][87] and [here][88]
 - Board Manager URLs:
   - Optimized LaunchPad URL:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json>
@@ -358,6 +363,10 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [82]: https://www.ti.com/tool/TI-RTOS-MCU
 [83]: https://github.com/rei-vilo/Galaxia_Library
 [84]: https://github.com/rei-vilo/
+[85]: https://github.com/chemmex
+[86]: https://platformio.org
+[87]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/issues/3#issuecomment-1687530096
+[88]: https://community.platformio.org/t/using-different-toolchain-versions/22787
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 [//]: # ([200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino)
