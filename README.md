@@ -70,7 +70,7 @@ Later versions of Energia include support for multi-tasking for MSP432 boards ba
 
 *This section is provided to document the creation of updated MSP432 board packages that turned out to be unnecessary.*
 
-At the time I created this repo, the latest Energia-supplied board package for MSP432 that I could find was version 5.29.0. That version (and all earlier versions) has an issue that made it incompatible with the Arduino build tools, as documented in this [thread][8] and this unmerged [pull request][61]. The issue has to do with accessing a temporary path from within the build scripts. The Energia builder makes use of a variable called "build.project_path" which is not available with the arduino-builder. However, a global predefined property named "build.source.path" is available for use in [`platform.txt`][6] and defines the path needed for building MSP432 with Arduino.
+At the time I created this repo, the latest Energia-supplied board package for MSP432 that I could find was version 5.29.0. That version (and all earlier versions) has an issue that made it incompatible with the Arduino build tools, as documented in this [thread][208] and this unmerged [pull request][61]. The issue has to do with accessing a temporary path from within the build scripts. The Energia builder makes use of a variable called "build.project_path" which is not available with the arduino-builder. However, a global predefined property named "build.source.path" is available for use in [`platform.txt`][6] and defines the path needed for building MSP432 with Arduino.
 
 In addition, the `ino2cpp` tool version 1.0.6 used during the MSP432 build process makes some assumptions on the availability and location of Java during the build process. This can cause issues when building locally with Arduino and when running the [compile-arduino-sketches][20] GitHub action both locally using [nektos/act][63] and on GitHub's servers.
 
@@ -136,7 +136,7 @@ The Package Index file names need to follow the convention specified in the Ardu
 ##### Note
 
 1. This version of the package index is [loaded][12] by Energia23 when using the Board Manager menu item in Energia. Note that the filename loaded as-is (`platform_index.json`) does not conform to the [Package Index Specification][7] naming convention. It is renamed [in this repo][17] with a valid name.
-2. `package_msp430_elf_GCC_index.json` is an alternate package index file which defines 2.0.x versions of the msp430 platform. The 2.0.x vesions are not part of the official Energia application and use a much newer GCC compiler (V2.x) which supports C99. This package index file only includes definitions for msp430 and not any other platforms. This [thread][11] explains the differences and the file can be [downloaded][10] from the Energia.
+2. `package_msp430_elf_GCC_index.json` is an alternate package index file which defines 2.0.x versions of the msp430 platform. The 2.0.x vesions are not part of the official Energia application and use a much newer GCC compiler (V2.x) which supports C99. This package index file only includes definitions for msp430 and not any other platforms. This [thread][211] explains the differences and the file can be [downloaded][10] from the Energia.
 
 #### Board Package Files
 
@@ -267,7 +267,7 @@ You can generally use the latest version of the board package for the platform y
     - This specifies the latest **official** board versions (along with all the older board version). The original file is available [here][12]. The above URL has the same file contents, but the name is changed to conform to the [spec][7].
   - MSP430 boards using later compiler version:
     - <http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json>
-    - [Thread][11] explaining why MSP430 elf compiler option is availble.
+    - [Thread][211] explaining why MSP430 elf compiler option is availble.
   - MSP432 board manager URL when using local Arduino IDE/CLI:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_development_MSP432r_index.json>
     - Includes the MSP432432P401R (red) and MSPP4111 platform definitions.
@@ -292,10 +292,8 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [5]: https://docs.arduino.cc/learn/starting-guide/cores
 [6]: https://arduino.github.io/arduino-cli/0.21/platform-specification/
 [7]: https://arduino.github.io/arduino-cli/0.21/package_index_json-specification/
-[8]: https://forum.43oh.com/topic/13361-add-msp432-support-to-arduino/
 [9]: https://energia.nu/packages/package_energia_index.json
 [10]: http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json
-[11]: https://forum.43oh.com/topic/31134-error-compiling-for-board-msp-exp430f5529lp/
 [12]: https://energia.nu/packages/package_index.json
 [13]: ./json
 [14]: ./boards
@@ -369,6 +367,9 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [88]: https://community.platformio.org/t/using-different-toolchain-versions/22787
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+<!-- markdown-link-check-disable -->
+[208]: https://forum.43oh.com/topic/13361-add-msp432-support-to-arduino/
+[211]: https://forum.43oh.com/topic/31134-error-compiling-for-board-msp-exp430f5529lp/
 [//]: # ([200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino)
 [//]: # ([62]: https://github.com/arduino/arduino-builder/blob/master/README.md)
 
