@@ -52,13 +52,17 @@ This repository contains tested JSON index files and hadware platform cores for 
 
 In addition to being able to use the Arduino IDE/CLI to develop for TI processors, it is also possible to use the `compile-arduino-sketches` [GitHub action][20] to automatically verify that sketches compile whenever they are checked into GitHub. Since the action uses the Arduino CLI, all you need to do is configure the workflow to install the appropriate platform core to have the action compile for TI processors.
 
-Because compiling a sketch does not need all the data and tools required for a full development environment, I created some slimmed-down [platform index files][7] used by Arduino to load the cores. Only boards from a related family are defined, and only the compiler for that family of boards is downloaded (no debugger or other tools are configured).
+Because compiling a sketch does not need all the data and tools required for a full development environment, I created some [slimmed-down platform index files][13] used by Arduino to load the cores. Only boards from a related family are defined, and only the compiler for that family of boards is downloaded (no debugger or other tools are configured).
 
-These "minimal" platform configurations should slightly speed up the run times for the compile-arduino-sketches action and may also help reduce timeout errors when running the compile-sketches action. If your GitHub action exits with the following error when running a build using the official Energial board package file, try replacing it with the corresponding "minimal" file from this repo:
+If your GitHub action exits with a timeout error similar to this:
 
 ```text
-ERRO[0130] Error updating indexes: Error downloading index 'http://energia.nu/packages/package_energia_index.json': Get "http://energia.nu/packages/package_energia_index.json": dial tcp 107.180.20.87:80: connect: connection timed out
+ERRO[0130] Error updating indexes: Error downloading index 'http://energia.nu/packages/package_energia_index.json': 
+Get "http://energia.nu/packages/package_energia_index.json": 
+dial tcp 107.180.20.87:80: connect: connection timed out
 ```
+
+Then try replacing the index file with the corresponding ["minimal" file][13] from this repo. The "minimal" platform configurations should slightly speed up the run times and reduce timeout errors when running the compile-arduino-sketches action.
 
 ### MSP432 Support
 
