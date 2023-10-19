@@ -271,7 +271,7 @@ You can generally use the latest version of the board package for the platform y
     - This specifies the latest **official** board versions (along with all the older board version). The original file is available [here][12]. The above URL has the same file contents, but the name is changed to conform to the [spec][7].
   - MSP430 boards using later compiler version:
     - <http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json>
-    - [Thread][211] explaining why MSP430 elf compiler option is availble.
+    - [Thread][211] ([archived version][11]) explaining why MSP430 elf compiler option is availble.
   - MSP432 board manager URL when using local Arduino IDE/CLI:
     - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_development_MSP432r_index.json>
     - Includes the MSP432432P401R (red) and MSPP4111 platform definitions.
