@@ -95,7 +95,7 @@ Because I was unaware of the Energia MSP432 version 5.29.1, there are two MSP432
 
 If using the latest board package for MPS432 (version 5.29.4 or later), it is not necessary to install Java.
 
-When using an older MSP432 board package, then Java needs to be installed on the build machine. I have successfully tested the 5.29.2 board package with both the [Microsoft][70] and [Temurin][71] Java distributions.
+When using an older MSP432 board package, then Java needs to be installed on the build machine. I have successfully tested the 5.29.2 board package with both the [Microsoft][270] and [Temurin][71] Java distributions.
 
 ##### Details on Generating a Board Package
 
@@ -352,7 +352,6 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [67]: https://github.com/energia/msp432r-core
 [68]: https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-support-urls
 [69]: https://support.arduino.cc/hc/en-us/articles/360016119519-Add-boards-to-Arduino-IDE
-[70]: https://www.microsoft.com/openjdk
 [71]: https://adoptium.net
 [72]: https://arduino.github.io/arduino-cli/0.26/platform-specification/#custom-board-options
 [73]: https://github.com/energia/Energia#readme
@@ -376,6 +375,7 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 <!-- markdown-link-check-disable -->
 [208]: https://forum.43oh.com/topic/13361-add-msp432-support-to-arduino/
 [211]: https://forum.43oh.com/topic/31134-error-compiling-for-board-msp-exp430f5529lp/
+[270]: https://www.microsoft.com/openjdk
 [//]: # ([200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino)
 [//]: # ([62]: https://github.com/arduino/arduino-builder/blob/master/README.md)
 
