@@ -5,9 +5,10 @@ name: Check Markdown Links
 on: 
   push:
   schedule:
-    # Modify the cron time to a somewhat random day/time to avoid having all your repos running at the same time
-    # Run 5th day of every month at 4:41 AM (See https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07)
-    - cron: "41 4 5 * *"
+    # Run monthly 
+    # GitHub actions uses UTC for time zone
+    # crontab format: minute hour day-of-month month day-of-week
+    - cron: "46 4 4 * *"
   workflow_dispatch:
     inputs:
       message:
