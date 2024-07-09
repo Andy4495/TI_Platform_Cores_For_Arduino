@@ -34,6 +34,28 @@ Energia example sketches packaged into libraries so that they can be loaded into
 - [Energia-EducationalBP_MKII][27]
 - [Energia-MultiTasking][28]
 
+## Installing LaunchPad Drivers
+
+Depending on your host machine and the specific board you are programming, you probably need to install drivers in order to communicate with the LaunchPad. If you see a message along the lines of "Error connecting to the target", then a missing driver is likely the cause.
+
+There are two main ways to install the drivers:
+
+1. Install [Code Composer Studio IDE][89] from Texas Instruments.
+
+    Code Compuser Studio is a free professional-level IDE for Texas Instruments processors. It is fully supported and regularly updated by Texas Instruments. However, it is a large download (> 1 GB), and installs many more packages than are needed if you are just using the Arduino IDE. You are essentially installing a full IDE that you won't be using, just to get the drivers.
+
+    Even with this in mind, **I use this method to install the drivers**, because this way I know they are up-to-date and supported.
+
+    Also note, per TI:
+
+    > Code Composer Studio is going through a major update. As part of this major update Code Composer Studio is transitioning from the Eclipse application framework to the much more modern Theia framework. Code Composer Studio Theia is now available for most devices and additional features are being added with each release. The final planned Eclipse-based release is expected to be CCS 12.8.
+
+    I currently have installed the Eclipse-based version of CCS and have not tested the Theia-based version. However, I expect that the drivers installed by either version are the same.
+
+2. Follow the host platform and board-specific instructions from the Energia website - [Windows][90], [MacOS][91], [Linux][92] - to install just the drivers (without the full CCS IDE).
+
+    **These driver packages are no longer supported and will not be updated.** They probably still work, but do not expect any support if you run into issues with them.
+
 ## Board Packages and PlatformIO
 
 Per GitHub user [chemmex][85], it is possible to use these processor cores with [PlatformIO][86]. Some manual setup and configuration is required, which includes editing the `platformio.ini` file. For more details, refer to this issue [comment][87] and this PlatformIO [discussion][88].
@@ -244,6 +266,7 @@ You can generally use the latest version of the board package for the platform y
 ## References
 
 - Energia IDE [application][1] and source code [repo][2]
+- Website [source pages repo][93] for energia.nu
 - Energia MSP430 core [repo][3]
 - Energia MSP432 core [repo][67]
 - Energia Tiva C core [repo][4]
@@ -370,6 +393,11 @@ The majority of the files in this repo are either a copy or a derivation of Ener
 [86]: https://platformio.org
 [87]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/issues/3#issuecomment-1687530096
 [88]: https://community.platformio.org/t/using-different-toolchain-versions/22787
+[89]: https://www.ti.com/tool/CCSTUDIO#downloads
+[90]: https://energia.nu/guide/install/windows/
+[91]: https://energia.nu/guide/install/macos/
+[92]: https://energia.nu/guide/install/linux/
+[93]: https://github.com/energia/energia.nu
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 <!-- markdown-link-check-disable -->
