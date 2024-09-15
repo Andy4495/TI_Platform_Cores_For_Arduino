@@ -38,7 +38,7 @@ Energia example sketches packaged into libraries so that they can be loaded into
 
 Depending on your host machine and the specific board you are programming, you probably need to install drivers in order to communicate with the LaunchPad. If you see a message along the lines of "Error connecting to the target", then a missing driver is likely the cause.
 
-There are two main ways to install the drivers:
+The drivers can be installed using either of the methods below:
 
 1. Install [Code Composer Studio IDE][89] from Texas Instruments.
 
@@ -52,7 +52,7 @@ There are two main ways to install the drivers:
 
     I currently have installed the Eclipse-based version of CCS and have not tested the Theia-based version. However, I expect that the drivers installed by either version are the same.
 
-2. Follow the host platform and board-specific instructions from the Energia website - [Windows][90], [MacOS][91], [Linux][92] - to install just the drivers (without the full CCS IDE).
+2. Or, follow the host platform and board-specific instructions from the Energia website - [Windows][90], [MacOS][91], [Linux][92] - to install just the drivers (without the full CCS IDE).
 
     **These driver packages are no longer supported and will not be updated.** They probably still work, but do not expect any support if you run into issues with them.
 
