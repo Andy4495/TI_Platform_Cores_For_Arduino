@@ -484,8 +484,8 @@
               "host":"x86_64-pc-linux-gnu",
               "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.1.0/dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2",
               "archiveFileName":"dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2",
-              "checksum":"SHA-256:0133023dfac25b25c23c4e628bf37aef8e78bfcd74c9c62437979fac33043222",
-              "size":"176062515"
+              "checksum":"SHA-256:c2343d6da937da9dcb7f852368b74ab2fa3fd13c598db6955fd34442937624e6",
+              "size":"129721418"
             }
           ]
         },
