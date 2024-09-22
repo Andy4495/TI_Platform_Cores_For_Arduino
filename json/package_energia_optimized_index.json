@@ -41,7 +41,7 @@
             {
               "packager":"energia",
               "name":"dslite",
-              "version":"9.3.0.1863"
+              "version":"12.8.0.3522"
             },
             {
               "packager":"energia",
@@ -101,7 +101,7 @@
             {
               "packager":"energia",
               "name":"dslite",
-              "version":"9.3.0.1863"
+              "version":"12.8.0.3522"
             },
             {
               "packager":"energia",
@@ -132,7 +132,7 @@
             {
               "packager":"energia",
               "name":"dslite",
-              "version":"9.3.0.1863"
+              "version":"12.8.0.3522"
             },
             {
               "packager":"energia",
@@ -164,7 +164,7 @@
             {
               "packager":"energia",
               "name":"dslite",
-              "version":"9.3.0.1863"
+              "version":"12.8.0.3522"
             }
           ]
         },
@@ -463,29 +463,29 @@
         },
         {
           "name":"dslite",
-          "version":"9.3.0.1863",
+          "version":"12.8.0.3522",
           "systems":
           [
            {
               "host":"i686-mingw32",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/dslite-9.3.0.1863-i686-mingw32.tar.bz2",
-              "archiveFileName":"dslite-9.3.0.1863-i686-mingw32.tar.bz2",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/dslite-12.8.0.3522-i686-mingw32.tar.bz2",
+              "archiveFileName":"dslite-12.8.0.3522-i686-mingw32.tar.bz2",
               "checksum":"SHA-256:02dc51f3807533ec692b89a459c76f23fc2ffab9c36bc731f84e189477f1602a",
               "size":"35315591"
             },
             {
               "host":"x86_64-apple-darwin",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-9.3.0.1863-x86_64-apple-darwin.tar.bz2",
-              "archiveFileName":"dslite-9.3.0.1863-x86_64-apple-darwin.tar.bz2",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-12.8.0.3522-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"dslite-12.8.0.3522-x86_64-apple-darwin.tar.bz2",
               "checksum":"SHA-256:29c655eae489189fa131cca467141577be05d1017164fcf2d0018358998b72c1",
               "size":"18245589"
             },
             {
               "host":"x86_64-pc-linux-gnu",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-9.3.0.1863-i386-x86_64-pc-linux-gnu.tar.bz2",
-              "archiveFileName":"dslite-9.3.0.1863-i386-x86_64-pc-linux-gnu.tar.bz2",
-              "checksum":"SHA-256:13bd5f340dadebbf5fb4cdf21ab2f6af5b21e4c30fb766d23ab499a68cdd0632",
-              "size":"19698040"
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.1.0/dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:0133023dfac25b25c23c4e628bf37aef8e78bfcd74c9c62437979fac33043222",
+              "size":"176062515"
             }
           ]
         },
