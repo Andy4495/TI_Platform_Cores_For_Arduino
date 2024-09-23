@@ -475,10 +475,10 @@
             },
             {
               "host":"x86_64-apple-darwin",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-12.8.0.3522-x86_64-apple-darwin.tar.bz2",
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.1.0/dslite-12.8.0.3522-x86_64-apple-darwin.tar.bz2",
               "archiveFileName":"dslite-12.8.0.3522-x86_64-apple-darwin.tar.bz2",
-              "checksum":"SHA-256:29c655eae489189fa131cca467141577be05d1017164fcf2d0018358998b72c1",
-              "size":"18245589"
+              "checksum":"SHA-256:281af2a291cf92c8cba301a49821a41f4b0d53b60af0e19d2064ee3945d9a3c4",
+              "size":"128167547"
             },
             {
               "host":"x86_64-pc-linux-gnu",
