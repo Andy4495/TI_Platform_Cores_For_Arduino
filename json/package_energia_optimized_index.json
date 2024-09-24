@@ -470,8 +470,8 @@
               "host":"i686-mingw32",
               "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.1.0/dslite-12.8.0.3522-i686-mingw32.tar.bz2",
               "archiveFileName":"dslite-12.8.0.3522-i686-mingw32.tar.bz2",
-              "checksum":"SHA-256:c74da94982aac9b86b71901261d17668e4b2365d0f1d3b60a239864920e2d1f8",
-              "size":"145505022 "
+              "checksum":"SHA-256:122b3c821132b917328067ce2940e815398d91db7e286ee4c023a6e60f596fe8",
+              "size":"145334863"
             },
             {
               "host":"x86_64-apple-darwin",
