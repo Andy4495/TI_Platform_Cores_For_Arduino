@@ -477,8 +477,8 @@
               "host":"x86_64-apple-darwin",
               "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.1.0/dslite-12.8.0.3522-x86_64-apple-darwin.zip",
               "archiveFileName":"dslite-12.8.0.3522-x86_64-apple-darwin.zip",
-              "checksum":"SHA-256:d180470954d9ea4672ca9dc6b6bd1143a10c239f043e14d481b054fef0a89f67",
-              "size":"154587497"
+              "checksum":"SHA-256:e5dc7a8efd7fa385d79b9b7dd678b089fdcf3dc60670c89ebe1ea3d95d29a67e",
+              "size":"154455757"
             },
             {
               "host":"x86_64-pc-linux-gnu",
