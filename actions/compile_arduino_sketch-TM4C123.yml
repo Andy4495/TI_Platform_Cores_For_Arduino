@@ -15,8 +15,8 @@ jobs:
           fqbn: 'energia:tivac:EK-TM4C123GXL'
           platforms: |
             - name: 'energia:tivac'
-              version: 1.0.3
-              source-url: 'http://energia.nu/packages/package_energia_index.json'
+              version: 1.1.0
+              source-url: 'https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_minimal_tiva_index.json'
           sketch-paths: |
             - .
           verbose: true

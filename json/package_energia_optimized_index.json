@@ -51,6 +51,47 @@
          ]
         },
         {
+          "name": "Energia MSP430 boards",
+          "architecture": "msp430",
+          "version": "1.0.7",
+          "category": "Energia",
+          "url": "http://energia.nu/downloads/download_core.php?file=msp430-1.0.7.tar.bz2",
+          "archiveFileName": "msp430-1.0.7.tar.bz2",
+          "checksum": "SHA-256:c49b885630ffce8c44311f701c322158cc4b8b700d831091cb114d58300922da",
+          "size": "2246999",
+          "boards": [
+            {"name": "MSP-EXP430F5529"},
+            {"name": "MSP-EXP430FR2433"},
+            {"name": "MSP-EXP430FR4133"},
+            {"name": "MSP-EXP430FR5969"},
+            {"name": "MSP-EXP430FR6989"},
+            {"name": "MSP-EXP430FR5739"},
+            {"name": "MSP-EXP430FR2355"},
+            {"name": "MSP-EXP430FR2231"},
+            {"name": "MSP-EXP430G2"},
+            {"name": "MSP-EXP430G2ET"},
+            {"name": "MSP-EXP430FR5994"}
+          ],
+          "toolsDependencies": [
+            {
+
+              "packager":"energia",
+              "name":"msp430-gcc",
+              "version":"4.6.6"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"9.3.0.1863"
+            },
+            {
+              "packager":"energia",
+              "name":"mspdebug",
+              "version":"0.24"
+            }
+         ]
+        },
+        {
           "name": "Energia MSP432E Ethernet RED boards",
           "architecture": "msp432e",
           "version": "5.19.0",
@@ -111,6 +152,36 @@
           ]
         },
         {
+          "name": "Energia MSP432 EMT RED boards",
+          "architecture": "msp432r",
+          "version": "5.29.5",
+          "category": "Energia",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432-5.29.5.tar.bz2",
+          "archiveFileName": "msp432-5.29.5.tar.bz2",
+          "checksum": "SHA-256:a6bf215c7f932fe94b066afb3678f673c5bf57039b2e75e3afc5cb1ca265a692",
+          "size": "29815957",
+          "boards": [
+            {"name": "MSP_EXP432P401R"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager":"energia",
+              "name":"arm-none-eabi-gcc",
+              "version":"8.3.1-20190703"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"9.3.0.1863"
+            },
+            {
+              "packager":"energia",
+              "name":"ino2cpp",
+              "version":"1.0.7"
+            }
+          ]
+        },
+        {
           "name": "TI MSP432P4xx Launchpad boards",
           "architecture": "msp432",
           "version": "5.30.0",
@@ -133,6 +204,37 @@
               "packager":"energia",
               "name":"dslite",
               "version":"12.8.0.3522"
+            },
+            {
+              "packager":"energia",
+              "name":"ino2cpp",
+              "version":"1.0.7"
+            }
+          ]
+        },
+        {
+          "name": "TI MSP432P4xx Launchpad boards",
+          "architecture": "msp432",
+          "version": "5.29.5",
+          "category": "Energia",
+          "url": "https://github.com/ndroid/msp432-core/raw/main/cores/msp432-5.29.5.tar.bz2",
+          "archiveFileName": "msp432-5.29.5.tar.bz2",
+          "checksum": "SHA-256:a6bf215c7f932fe94b066afb3678f673c5bf57039b2e75e3afc5cb1ca265a692",
+          "size": "29815957",
+          "boards": [
+            {"name": "MSP_EXP432P401R"},
+            {"name": "MSP_EXP432P4111"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager":"energia",
+              "name":"arm-none-eabi-gcc",
+              "version":"8.3.1-20190703"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"9.3.0.1863"
             },
             {
               "packager":"energia",
@@ -165,6 +267,33 @@
               "packager":"energia",
               "name":"dslite",
               "version":"12.8.0.3522"
+            }
+          ]
+        },
+        {
+          "name": "Energia TivaC boards",
+          "architecture": "tivac",
+          "version": "1.0.4",
+          "category": "Energia",
+          "url": "http://energia.nu/downloads/download_core.php?file=tivac-1.0.4.tar.bz2",
+          "archiveFileName": "tivac-1.0.4.tar.bz2",
+          "checksum": "SHA-256:5d735138d10a721856787560331022a3eea2ff947caaa7c4512b2d0214d45244",
+          "size": "2763650",
+          "boards": [
+            {"name": "EK-TM4C123GXL"},
+            {"name": "EK-TM4C1294XL"},
+            {"name": "EK-LM4F120XL"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager":"energia",
+              "name":"arm-none-eabi-gcc",
+              "version":"8.3.1-20190703"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"9.3.0.1863"
             }
           ]
         },
@@ -486,6 +615,34 @@
               "archiveFileName":"dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2",
               "checksum":"SHA-256:c2343d6da937da9dcb7f852368b74ab2fa3fd13c598db6955fd34442937624e6",
               "size":"129721418"
+            }
+          ]
+        },
+        {
+          "name":"dslite",
+          "version":"9.3.0.1863",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/dslite-9.3.0.1863-i686-mingw32.tar.bz2",
+              "archiveFileName":"dslite-9.3.0.1863-i686-mingw32.tar.bz2",
+              "checksum":"SHA-256:02dc51f3807533ec692b89a459c76f23fc2ffab9c36bc731f84e189477f1602a",
+              "size":"35315591"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-9.3.0.1863-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"dslite-9.3.0.1863-x86_64-apple-darwin.tar.bz2",
+              "checksum":"SHA-256:29c655eae489189fa131cca467141577be05d1017164fcf2d0018358998b72c1",
+              "size":"18245589"
+            },
+            {
+              "host":"x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-9.3.0.1863-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"dslite-9.3.0.1863-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:13bd5f340dadebbf5fb4cdf21ab2f6af5b21e4c30fb766d23ab499a68cdd0632",
+              "size":"19698040"
             }
           ]
         },

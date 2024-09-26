@@ -15,8 +15,8 @@ jobs:
           fqbn: 'energia:msp430:MSP-EXP430G2553LP'
           platforms: |
             - name: 'energia:msp430'
-              version: 1.0.7
-              source-url: 'http://energia.nu/packages/package_energia_index.json'
+              version: 1.1.0
+              source-url: 'https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Aduino/main/json/package_energia_minimal_msp430_index.json'
           sketch-paths: |
             - .
           verbose: true

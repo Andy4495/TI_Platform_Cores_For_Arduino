@@ -12,13 +12,13 @@
           {
             "name": "Energia MSP430 boards",
             "architecture": "msp430",
-            "version": "1.0.5",
+            "version": "1.1.0",
             "category": "Energia",
-            "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp430-1.0.5.tar.bz2",
-            "archiveFileName": "msp430-1.0.5.tar.bz2",
-            "checksum": "SHA-256:f40371d7e5140be6ce671aa33ca686b6d0fdfe6fd480dcb5d8dd79a87ce23305",
-            "size": "2077472",
-            "boards": [
+            "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/refs/heads/dslite12/boards/msp430-1.1.0.tar.bz2",
+            "archiveFileName": "msp430-1.1.0.tar.bz2",
+            "checksum": "SHA-256:0810e815bb15bd35e9729077b9245f44803a2a321b53d6fb48f815c5472b2a06",
+            "size": "2176231",
+              "boards": [
               {"name": "MSP-EXP430F5529"},
               {"name": "MSP-EXP430FR2433"},
               {"name": "MSP-EXP430FR4133"},
@@ -49,8 +49,8 @@
             [
               {
                 "host": "x86_64-linux-gnu",
-                "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-gcc-4.6.6-i386-x86_64-pc-linux-gnu.tar.bz2",
-                "archiveFileName": "msp430-gcc-4.6.6-i386-x86_64-pc-linux-gnu.tar.bz2",
+                "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.0.0/linux-x86-466.tar.bz2",
+                "archiveFileName": "linux-x86-466.tar.bz2",
                 "checksum": "SHA-256:41fbcb3cc73679186989e1fb27cb4578e9164f07d134e650e23089198b87cbfd",
                 "size": "98503002"
               }

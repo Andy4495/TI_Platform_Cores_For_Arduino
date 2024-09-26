@@ -12,12 +12,12 @@
         {
           "name": "Energia TivaC boards",
           "architecture": "tivac",
-          "version": "1.0.4",
+          "version": "1.1.0",
           "category": "Energia",
-          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/tivac-1.0.4.tar.bz2",
-          "archiveFileName": "tivac-1.0.4.tar.bz2",
-          "checksum": "SHA-256:5d735138d10a721856787560331022a3eea2ff947caaa7c4512b2d0214d45244",
-          "size": "2763650",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/refs/heads/dslite12/boards/tivac-1.1.0.tar.bz2",
+          "archiveFileName": "tivac-1.1.0.tar.bz2",
+          "checksum": "SHA-256:df24f5ed4c9e739c9b63a8906171770b1e88354714730e9b9daedad64f2f75ce",
+          "size": "2764371",
           "boards": [
             {"name": "EK-TM4C123GXL"},
             {"name": "EK-TM4C1294XL"}
@@ -38,8 +38,8 @@
           "systems": [
             {
               "host": "x86_64-pc-linux-gnu",
-              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/gcc-arm-none-eabi-8.3.1-20190703-x86_64-pc-linux-gnu.tar.bz2",
-              "archiveFileName": "gcc-arm-none-eabi-8.3.1-20190703-x86_64-pc-linux-gnu.tar.bz2",
+              "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.0.0/linux-x86-64-831.tar.bz2",
+              "archiveFileName": "linux-x86-64-831.tar.bz2",
               "checksum": "SHA-256:8c9aa2728a12e8fad7dfb2647438e7ea4937dde1c3f771c5970466d8cc7e3397",
               "size": "106503151"
            }

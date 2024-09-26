@@ -12,11 +12,11 @@ jobs:
       - uses: actions/checkout@main
       - uses: arduino/compile-sketches@v1
         with:
-          fqbn: 'energia:tivac:EK-TM4C123GXL'
+          fqbn: 'energia:msp432r:MSP-EXP432P401R'
           platforms: |
-            - name: 'energia:tivac'
-              version: 1.0.4
-              source-url: 'https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_minimal_TM4C_104_index.json'
+            - name: 'energia:msp432r'
+              version: 5.30.0
+              source-url: 'https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_minimal_msp432_index.json'
           sketch-paths: |
             - .
           verbose: true
