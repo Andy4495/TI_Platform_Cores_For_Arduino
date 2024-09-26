@@ -167,14 +167,14 @@ I ran the following steps to create the new board package using MacOS:
 #### Package Index JSON Files (`json` Folder)
 
 **Package index file to use as Arduino Board Manager URL:**
-Use the URL <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json> in the `Additional Boards Manager URLs` field.
+Use the URL `https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json` in the `Additional Boards Manager URLs` field.
 
 | File Name                                   | MSP430 Version  | MSP432 Version | Tiva Version | Notes |
 | ------------------                          | ------          | -----          | -----        | ----- |
 | `package_energia_optimized_index.json`      | 1.1.0           | 5.30.0         | 1.1.0        | Recommended for Arduino IDE. |
 
 **Package index files to use with GitHub Actions.**
-These files include a single platform version and only the tools needed for compilation. This shortens the time needed to run an action, since only the files needed for compilation are installed in the action runner. Use the URL <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Aduino/main/json/File-Name> in the `source-url` field.
+These files include a single platform version and only the tools needed for compilation. This shortens the time needed to run an action, since only the files needed for compilation are installed in the action runner. Use the URL `https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Aduino/main/json/File-Name` in the `source-url` field.
 
 | File Name                                   | MSP430 Version  | MSP432 Version | Tiva Version | Notes |
 | ------------------                          | ------          | -----          | -----        | ----- |
