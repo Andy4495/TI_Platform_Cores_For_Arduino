@@ -10,7 +10,10 @@ https://github.com/energia/msp432e-core
 https://github.com/energia/cc13xx-core
 https://github.com/energia/cc3200emt-core
 
-For consistency, all the files in this repository are licensed per 
+The dslite tool package is licensed per the Texas Instruments Uniflash License. 
+See the separate file "Uniflash_manifest_and_license.html" in this repository.
+
+All the other files in this repository are licensed per 
 the GNU Lesser General Public License as listed below.
 
 .....................................................................
