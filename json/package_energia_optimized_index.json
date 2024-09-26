@@ -14,7 +14,7 @@
           "architecture": "msp430",
           "version": "1.1.0",
           "category": "Energia",
-          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/refs/heads/dslite12/boards/msp430-1.1.0.tar.bz2",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp430-1.1.0.tar.bz2",
           "archiveFileName": "msp430-1.1.0.tar.bz2",
           "checksum": "SHA-256:0810e815bb15bd35e9729077b9245f44803a2a321b53d6fb48f815c5472b2a06",
           "size": "2176231",
@@ -126,7 +126,7 @@
           "architecture": "msp432r",
           "version": "5.30.0",
           "category": "Energia",
-          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/refs/heads/dslite12/boards/msp432-5.30.0.tar.bz2",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432-5.30.0.tar.bz2",
           "archiveFileName": "msp432-5.30.0.tar.bz2",
           "checksum": "SHA-256:f058de0e7885f267d3ea525f2021d865f9a6fac9890cc571ae8d1b53f3a0bba3",
           "size": "29842365",
@@ -186,7 +186,7 @@
           "architecture": "msp432",
           "version": "5.30.0",
           "category": "Energia",
-          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/refs/heads/dslite12/boards/msp432-5.30.0.tar.bz2",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432-5.30.0.tar.bz2",
           "archiveFileName": "msp432-5.30.0.tar.bz2",
           "checksum": "SHA-256:f058de0e7885f267d3ea525f2021d865f9a6fac9890cc571ae8d1b53f3a0bba3",
           "size": "29842365",
@@ -248,7 +248,7 @@
           "architecture": "tivac",
           "version": "1.1.0",
           "category": "Energia",
-          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/refs/heads/dslite12/boards/tivac-1.1.0.tar.bz2",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/tivac-1.1.0.tar.bz2",
           "archiveFileName": "tivac-1.1.0.tar.bz2",
           "checksum": "SHA-256:df24f5ed4c9e739c9b63a8906171770b1e88354714730e9b9daedad64f2f75ce",
           "size": "2764371",
@@ -597,21 +597,21 @@
           [
            {
               "host":"i686-mingw32",
-              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.1.0/dslite-12.8.0.3522-i686-mingw32.tar.bz2",
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-i686-mingw32.tar.bz2",
               "archiveFileName":"dslite-12.8.0.3522-i686-mingw32.tar.bz2",
               "checksum":"SHA-256:122b3c821132b917328067ce2940e815398d91db7e286ee4c023a6e60f596fe8",
               "size":"145334863"
             },
             {
               "host":"x86_64-apple-darwin",
-              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.1.0/dslite-12.8.0.3522-x86_64-apple-darwin.zip",
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-x86_64-apple-darwin.zip",
               "archiveFileName":"dslite-12.8.0.3522-x86_64-apple-darwin.zip",
               "checksum":"SHA-256:e5dc7a8efd7fa385d79b9b7dd678b089fdcf3dc60670c89ebe1ea3d95d29a67e",
               "size":"154455757"
             },
             {
               "host":"x86_64-pc-linux-gnu",
-              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.1.0/dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2",
               "archiveFileName":"dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2",
               "checksum":"SHA-256:c2343d6da937da9dcb7f852368b74ab2fa3fd13c598db6955fd34442937624e6",
               "size":"129721418"

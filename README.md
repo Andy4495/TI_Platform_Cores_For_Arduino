@@ -71,8 +71,8 @@ On Linux, no drivers are required for MSP430, MSP432, or Tiva LaunchPads. Just r
     sudo mv 71-ti-permissions.rules /etc/udev/rules.d/
     ```
 
-3. If your Linux distribution supports the service command you can active the new rules with `sudo service udev restart`. If your Linux distribution does not support this command or if you are not able to upload to the LaunchPad with Energia, then restart your computer to activate the rules.
-4. If your board is pulled in, unplug it and plug it back in. Not needed if you rebooted your computer.
+3. If your Linux distribution supports the service command you can activate the new rules with `sudo service udev restart`. If your board is plugged in, unplug it and plug it back in.
+4. If your Linux distribution does not support the service command, or if you are still unable to upload to the LaunchPad, then restart your computer to activate the rules.
 
 ## Board Packages and PlatformIO
 
@@ -157,7 +157,7 @@ I ran the following steps to create the new board package using MacOS:
 4. Duplicate `platform.txt` and rename the copy to `platform_orig.txt`
 5. Update `platform.txt` as noted above
 6. Rename the parent folder to `msp432r-core-5.29.2`
-7. Recompress the updated folder: `tar cvyf msp432r-5.29.2.tar.bz2 msp432r-core-5.29.2`
+7. Recompress the updated folder: `tar cvjf msp432r-5.29.2.tar.bz2 msp432r-core-5.29.2`
 8. Calculate SHA-256 checksum: `shasum -a 256 msp432r-5.29.2.tar.bz2`
 9. Note the new file's size: `ls -l msp432r-5.29.2.tar.bz2`
 10. Udpate appropriate key values `url`, `archiveFileName`, `checksum`, and `size` in the package index file
@@ -407,9 +407,9 @@ See the file [`LICENSE.txt`][101] in this repository.
 [93]: https://github.com/energia/energia.nu
 [94]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/issues/6
 [95]: ./Uniflash_manifest_and_license.html
-[96]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.1.0/dslite-12.8.0.3522-i686-mingw32.tar.bz2
-[97]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.1.0/dslite-12.8.0.3522-x86_64-apple-darwin.zip
-[98]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.1.0/dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2
+[96]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-i686-mingw32.tar.bz2
+[97]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-x86_64-apple-darwin.zip
+[98]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2
 [99]: https://www.ti.com/tool/UNIFLASH
 [201]: ./extras/71-ti-permissions.rules
 [101]: ./LICENSE.txt

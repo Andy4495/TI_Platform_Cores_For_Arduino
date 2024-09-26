@@ -14,7 +14,7 @@
           "architecture": "msp432",
           "version": "5.30.0",
           "category": "Energia",
-          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/refs/heads/dslite12/boards/msp432-5.30.0.tar.bz2",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432-5.30.0.tar.bz2",
           "archiveFileName": "msp432-5.30.0.tar.bz2",
           "checksum": "SHA-256:f058de0e7885f267d3ea525f2021d865f9a6fac9890cc571ae8d1b53f3a0bba3",
           "size": "29842365",
