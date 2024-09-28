@@ -10,17 +10,21 @@ Energia was originally developed in 2012 as a fork from Arduino specifically to 
 
 ## Loading a LaunchPad Board into Arduino IDE
 
-1. Open the Arduino Preferences pane.
-2. Click on the box next to the text field labeled `Additional Boards Manager URLs`.
-3. Add the following URL (on a line of its own) to the list:
-  `https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json`
+1. Open the Arduino Preferences pane
+2. Click on the box next to the text field labeled `Additional Boards Manager URLs`
+3. Add the following URL to the list (on a line of its own):
+
+    ```text
+    https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json`
+    ```
+
 4. Click OK to close the window and OK to close the Preferences pane
 5. Open `Tools->Board->Boards Manager...` menu item
 6. Select the board platform you wish to install:
     - Use the search box at the top to make it easier to find the board (e.g., "MSP430")
     - Hover the mouse over the board platform you want, and click "Install"
     - It can take several minutes to install a board package
-7. Once the board package is installed, you can select the board you want with the `Tools->Board` menu.
+7. Once the board package is installed, you can select the board you want with the `Tools->Board` menu
 
 ## Energia Application Libraries and Examples
 
@@ -166,14 +170,16 @@ I ran the following steps to create the new board package using MacOS:
 
 #### Package Index JSON Files (`json` Folder)
 
-**Package index file to use as Arduino Board Manager URL:**
-Use the URL `https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json` in the `Additional Boards Manager URLs` field.
+##### Package index file to use as Arduino Board Manager URL
+
+Use this URL in the *Additional Boards Manager URLs* field: `https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json`
 
 | File Name                                   | MSP430 Version  | MSP432 Version | Tiva Version | Notes |
 | ------------------                          | ------          | -----          | -----        | ----- |
 | `package_energia_optimized_index.json`      | 1.1.0           | 5.30.0         | 1.1.0        | Recommended for Arduino IDE. |
 
-**Package index files to use with GitHub Actions.**
+##### Package index files to use with GitHub Actions
+
 These files include a single platform version and only the tools needed for compilation. This shortens the time needed to run an action, since only the files needed for compilation are installed in the action runner. Use the URL `https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Aduino/main/json/File-Name` in the `source-url` field.
 
 | File Name                                   | MSP430 Version  | MSP432 Version | Tiva Version | Notes |
@@ -182,7 +188,7 @@ These files include a single platform version and only the tools needed for comp
 | `package_energia_minimal_msp432_index.json` | N/A             | 5.30.0         | N/A          | MSP432 boards only. |
 | `package_energia_minimal_tiva_index.json`   | N/A             | N/A            | 1.1.0        | Tiva boards only.   |
 
-**Package index files kept for historical reference or specialized applications.**
+##### Package index files kept for historical reference or specialized applications
 
 | File Name                                   | MSP430 Version  | MSP432 Version | Tiva Version | Notes |
 | ------------------                          | ------          | -----          | -----        | ----- |
@@ -297,13 +303,17 @@ The files in the [`actions`][15] directory contain examples for [arduino-compile
 - [Galaxia multi-tasking library][83] created by [Rei Vilo][84]
 - Info on using Arduino cores with [PlatformIO][86]: [here][87] and [here][88]
 - Board Manager URLs:
-  - Optimized LaunchPad URL. **Use this URL with the Arduino IDE**:
-    - <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json>
-    - Streamlined version including all the board platforms and tools, including updates after Energia ended support.
+  - Optimized LaunchPad URL. Streamlined file including all the LaunchPad board platforms and tools, including updates after Energia ended support. **Use this URL with the Arduino IDE**:
+
+    ```text
+    https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json
+    ```
+
   - MSP430 boards using later compiler version:
     - <http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json>
+    - Or, <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/refs/heads/main/json/package_msp430_elf_GCC_index.json>
     - [Thread][911] ([archived version][11]) explaining why MSP430 elf compiler option is available.
-    - Note that this version has not been updated with the latest dslite tool, and therefore Arduino will not be able to upload files on Ubuntu 24.
+    - Note that this file has not been updated with the latest dslite tool, and therefore Arduino will not be able to upload files on Ubuntu 24.
   - ESP8266 board manager URL:
     - <http://arduino.esp8266.com/stable/package_esp8266com_index.json>
   - Arduino board manager URL (can be useful when configuring build matrix in an action):
