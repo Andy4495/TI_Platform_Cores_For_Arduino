@@ -1,0 +1,36 @@
+# https://github.com/lycheeverse/lychee-action
+# https://github.com/lycheeverse/lychee
+name: Check Links
+
+on:
+  push:
+  schedule:
+    # Run monthly
+    # GitHub actions uses UTC for time zone
+    # crontab format: minute hour day-of-month month day-of-week
+    - cron: "46 4 4 * *"
+  workflow_dispatch:
+    inputs:
+      message:
+        description: Message to display in job summary
+        required: false
+        type: string
+      override-args:
+        description: Override default arguments (see https://github.com/lycheeverse/lychee#commandline-parameters)
+        required: false
+        type: string
+
+jobs:
+  link-checker:
+    name: Call Link Checker
+    uses: Andy4495/.github/.github/workflows/check-links.yml@main 
+    with:
+      message: ${{ inputs.message }}
+      override-args: ${{ inputs.override-args }}
+      # Use the following to exclude certain URLs from the check. Need to include "--exclude" in the definition.
+      # For example, --exclude '43oh.com'
+      exclude: --exclude '43oh.com'
+    
+
+
+

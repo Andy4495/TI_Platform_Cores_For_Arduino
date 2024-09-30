@@ -1,6 +1,6 @@
 # Using Arduino to Develop With Texas Instruments Processors
 
-[![Check Markdown Links](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/CheckMarkdownLinks.yml/badge.svg)](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/CheckMarkdownLinks.yml)
+[![Check Markdown Links](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/check-links.yml/badge.svg)](https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/actions/workflows/check-links.yml)
 
 **Use Arduino as a replacement for Energia** to develop on Texas Instruments LaunchPad products.
 
@@ -424,7 +424,6 @@ See the file [`LICENSE.txt`][101] in this repository.
 [201]: ./extras/71-ti-permissions.rules
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-<!-- markdown-link-check-disable -->
 [908]: https://forum.43oh.com/topic/13361-add-msp432-support-to-arduino/
 [911]: https://forum.43oh.com/topic/31134-error-compiling-for-board-msp-exp430f5529lp/
 [970]: https://www.microsoft.com/openjdk
