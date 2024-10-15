@@ -104,6 +104,8 @@ This repository contains tested JSON index files and hadware platform cores for 
 
 [Platform cores][6] are used to add support for boards to the [Arduino development software][5]. The cores in this repo were originally developed for the [Energia IDE][1], which is a fork of the Arduino IDE specifically for Texas Instruments processors. Software for many TI processors can now be developed directly using the Arduino IDE once the appropriate platform core is installed.
 
+### Using the TI Cores with GitHub Actions
+
 In addition to being able to use the Arduino IDE/CLI to develop for TI processors, it is also possible to use the `compile-arduino-sketches` [GitHub action][20] to automatically verify that sketches compile whenever they are checked into GitHub. Since the action uses the Arduino CLI, all you need to do is configure the workflow to install the appropriate platform core to have the action compile for TI processors.
 
 Because compiling a sketch does not need all the data and tools required for a full development environment, I created some [slimmed-down platform index files][13] used by Arduino to load the cores. Only boards from a related family are defined, and only the compiler for that family of boards is downloaded (no debugger or other tools are configured).
@@ -116,7 +118,7 @@ Get "http://energia.nu/packages/package_energia_index.json":
 dial tcp 107.180.20.87:80: connect: connection timed out
 ```
 
-Then try replacing the index file with the corresponding ["minimal" file][13] from this repo. The "minimal" platform configurations should slightly speed up the run times and reduce timeout errors when running the compile-arduino-sketches action.
+Then try replacing the index file with the corresponding ["minimal" file][13] from this repo. The "minimal" platform configurations should speed up the run times and reduce timeout errors when running the `compile-arduino-sketches` action.
 
 ### MSP432 Support
 
@@ -324,7 +326,7 @@ The files in the [`actions`][15] directory contain examples for [arduino-compile
 
 ## License
 
-The DSLite tool is licensed per the Texas Instruments [Uniflash License][95]. DSLite is available for download in the Assets area on the Releases page.
+The DSLite tool is licensed per the Texas Instruments [Uniflash License][95]. DSLite is available for download in the Assets area on the [Releases page][202].
 
 The majority of the remaining files in this repo are either a copy or a derivation of Energia platform cores, which are licensed under the GNU [Lesser General Public License v2.1][102] per [Energia][19]. The other non-Energia derived software and files in this repository are also released released under LGPL v2.1.
 
@@ -422,6 +424,7 @@ See the file [`LICENSE.txt`][101] in this repository.
 [98]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2
 [99]: https://www.ti.com/tool/UNIFLASH
 [201]: ./extras/71-ti-permissions.rules
+[202]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/tag/v1.2.0
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 [908]: https://forum.43oh.com/topic/13361-add-msp432-support-to-arduino/
