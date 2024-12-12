@@ -15,7 +15,7 @@ Energia was originally developed in 2012 as a fork from Arduino specifically to 
 3. Add the following URL to the list (on a line of its own):
 
     ```text
-    https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json`
+    https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json
     ```
 
 4. Click OK to close the window and OK to close the Preferences pane
