@@ -203,7 +203,7 @@ These files include a single platform version and only the tools needed for comp
 ##### Note
 
 1. This version of the package index is [loaded][12] by Energia23 when using the Board Manager menu item in Energia. Note that the filename from the Energia repo (`platform_index.json`) does not conform to the [Package Index Specification][7] naming convention. Specifically, the file name needs be of the form `package_YOURNAME_PACKAGENAME_index.json`. The prefix `package_` and suffix `_index.json` are mandatory, while the choice of `YOURNAME_PACKAGENAME` is left to the packager. The file has been renamed [in this repo][17] with a valid name.
-2. `package_msp430_elf_GCC_index.json` is an alternate package index file which defines 2.0.x versions of the msp430 platform. The 2.0.x vesions are not part of the official Energia application and use a much newer GCC compiler (V2.x) which supports C99. This package index file only includes definitions for msp430 and not any other platforms. This [thread][911] ([archived version][11]) explains the differences and the file can be [downloaded][10] from the Energia.
+2. `package_msp430_elf_GCC_index.json` is an alternate package index file which defines 2.0.x versions of the msp430 platform. The 2.0.x vesions are not part of the official Energia application and use a much newer GCC compiler (V2.x) which supports C99. This package index file only includes definitions for msp430 and not any other platforms. This [thread][911] ([archived version][11]) explains the differences and the file can be [downloaded][100] from this repo or [directly from the Energia][10].
 
 #### Board Package Files
 
@@ -311,10 +311,13 @@ The files in the [`actions`][15] directory contain examples for [arduino-compile
     https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json
     ```
 
-  - MSP430 boards using later compiler version:
-    - <http://s3.amazonaws.com/energiaUS/packages/package_msp430_elf_GCC_index.json>
-    - Or, <https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/refs/heads/main/json/package_msp430_elf_GCC_index.json>
-    - [Thread][911] ([archived version][11]) explaining why MSP430 elf compiler option is available.
+  - MSP430 boards using later compiler version (GCC 9.2):
+
+    ```text
+    https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/refs/heads/main/json/package_msp430_elf_GCC_index.json
+    ```
+
+    - [Thread][911] ([archived version][11]) explaining why this branch of the core was created.
     - Note that this file has not been updated with the latest dslite tool, and therefore Arduino will not be able to upload files on Ubuntu 24.
   - ESP8266 board manager URL:
     - <http://arduino.esp8266.com/stable/package_esp8266com_index.json>
@@ -423,6 +426,7 @@ See the file [`LICENSE.txt`][101] in this repository.
 [97]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-x86_64-apple-darwin.zip
 [98]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2
 [99]: https://www.ti.com/tool/UNIFLASH
+[100]: https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/refs/heads/main/json/package_msp430_elf_GCC_index.json
 [201]: ./extras/71-ti-permissions.rules
 [202]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/tag/v1.2.0
 [101]: ./LICENSE.txt
