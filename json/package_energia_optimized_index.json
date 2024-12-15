@@ -442,11 +442,11 @@
           "version": "9.3.1.11", 
           "systems": [
             {
-              "url": "https://s3.amazonaws.com/energiaUS/tools/windows/msp430-elf-gcc-8.3.0.16_win32.tar.bz2", 
-              "checksum": "SHA-256:", 
+              "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-gcc-9.3.1.11_win64.zip", 
+              "checksum": "SHA-256:1D087B7F19B9A69214E83C9671DCEB5B5D261287807C8E55CD523FFD57016F29", 
               "host": "i686-mingw32", 
               "archiveFileName": "msp430-elf-gcc-9.3.1.11_win32.tar.bz2", 
-              "size": "1"
+              "size": "114591102"
             }, 
             {
               "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-elf-gcc-9.3.1.11_macos.tar.bz2", 
