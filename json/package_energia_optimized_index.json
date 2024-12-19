@@ -2,16 +2,16 @@
   "packages": [
     {
       "name": "energia",
-      "maintainer": "Energia",
-      "websiteURL": "http://www.energia.nu/",
-      "email": "make@energia.nu",
+      "maintainer": "Andy4495",
+      "websiteURL": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino",
+      "email": "Submit issue on GitHub",
       "help": {
         "online": "http://energia.nu/reference"
       },
       "platforms": [
         {
-          "name": "Energia MSP430 boards",
-          "architecture": "msp430",
+          "name": "Energia MSP430 boards (GCCv9)",
+          "architecture": "msp430gcc9",
           "version": "3.0.0",
           "category": "Energia",
           "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/gcc93/boards/msp430-3.0.0.tar.bz2",
