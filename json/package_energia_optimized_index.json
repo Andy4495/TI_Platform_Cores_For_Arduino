@@ -459,7 +459,7 @@
               "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-elf-gcc-9.3.1.11_linux64.tar.bz2", 
               "checksum": "SHA-256:070d277bb0f5c07826f2fcf77204d442397dc98558ec7ce03a7bf35baaaaa65d", 
               "host": "x86_64-pc-linux-gnu", 
-              "archiveFileName": "msp430-elf-gcc-9.3.1.11_linux64.tar.bz2, 
+              "archiveFileName": "msp430-elf-gcc-9.3.1.11_linux64.tar.bz2",
               "size": "77364170"
             }
           ]
