@@ -78,6 +78,32 @@ On Linux, no drivers are required for MSP430, MSP432, or Tiva LaunchPads. Just r
 3. If your Linux distribution supports the service command you can activate the new rules with `sudo service udev restart`. If your board is plugged in, unplug it and plug it back in.
 4. If your Linux distribution does not support the service command, or if you are still unable to upload to the LaunchPad, then restart your computer to activate the rules.
 
+## MSP430 Compiler Versions
+
+There are two different platform cores available for MSP430 processors. The older GCC 4.6 compiler is the last version officially published by Energia. A newer GCC version 9.3 was published by Texas Instruments, but was never included in the official Energia MSP430 platform core.
+
+The older GCC 4.6 compiler was released in 2012 and does not support some newer features in the C++ language. GCC 9.3 supports C++11 and C++14 by default.
+
+The package index listed [above](#loading-a-launchpad-board-into-arduino-ide) includes two MSP430 platform packages:
+
+- "Energia MSP430 boards" - Installs MSP430 boards with the old GCC 4.6 compiler
+- "Energia MSP430 boards (GCCv9)" - Installs MSP430 boards with the newer GCC 9.3 compiler
+
+This allows you to have both compilers installed so that you can easily switch between them. There are some compatibility issues when using the GCC 9.3 compiler as outlined in this [migration README][203].
+
+Be sure to select the correct board and compiler version from the Tools->Board menu.
+
+Note that the MSP432 and Tiva platforms install GCC 8.3, which support C++11 and C++14 by default.
+
+### GitHub Actions and Arduino Command Line
+
+In order to select the GCC 9.3 compiler from a workflow or when using the Arduino command line directly, be sure to use the following parameters:
+
+```text
+fqbn: energia:msp430gcc9:<LaunchPad-Board-Name>
+platforms.name: energia:msp430gcc9
+```
+
 ## Board Packages and PlatformIO
 
 Per GitHub user [chemmex][85], it is possible to use these processor cores with [PlatformIO][86]. Some manual setup and configuration is required, which includes editing the `platformio.ini` file. For more details, refer to this issue [comment][87] and this PlatformIO [discussion][88].
@@ -176,9 +202,9 @@ I ran the following steps to create the new board package using MacOS:
 
 Use this URL in the *Additional Boards Manager URLs* field: `https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json`
 
-| File Name                                   | MSP430 Version  | MSP432 Version | Tiva Version | Notes |
-| ------------------                          | ------          | -----          | -----        | ----- |
-| `package_energia_optimized_index.json`      | 1.1.0           | 5.30.0         | 1.1.0        | Recommended for Arduino IDE. |
+| File Name                              | MSP430 (GCC 4.6) | MSP430 (GCC 9.3) | MSP432 | Tiva  | Notes |
+| ------------------                     | ------           | -----            | -----  | ----- | ----- |
+| `package_energia_optimized_index.json` | 1.1.0            | 3.0.0            | 5.30.0 | 1.1.0 | Recommended for Arduino IDE. |
 
 ##### Package index files to use with GitHub Actions
 
@@ -186,7 +212,7 @@ These files include a single platform version and only the tools needed for comp
 
 | File Name                                   | MSP430 Version  | MSP432 Version | Tiva Version | Notes |
 | ------------------                          | ------          | -----          | -----        | ----- |
-| `package_energia_minimal_msp430_index.json` | 1.1.0           | N/A            | N/A          | MSP430 boards only. |
+| `package_energia_minimal_msp430_index.json` | 1.1.0 and 3.0.0 | N/A            | N/A          | MSP430 boards only. |
 | `package_energia_minimal_msp432_index.json` | N/A             | 5.30.0         | N/A          | MSP432 boards only. |
 | `package_energia_minimal_tiva_index.json`   | N/A             | N/A            | 1.1.0        | Tiva boards only.   |
 
@@ -203,7 +229,7 @@ These files include a single platform version and only the tools needed for comp
 ##### Note
 
 1. This version of the package index is [loaded][12] by Energia23 when using the Board Manager menu item in Energia. Note that the filename from the Energia repo (`platform_index.json`) does not conform to the [Package Index Specification][7] naming convention. Specifically, the file name needs be of the form `package_YOURNAME_PACKAGENAME_index.json`. The prefix `package_` and suffix `_index.json` are mandatory, while the choice of `YOURNAME_PACKAGENAME` is left to the packager. The file has been renamed [in this repo][17] with a valid name.
-2. `package_msp430_elf_GCC_index.json` is an alternate package index file which defines 2.0.x versions of the msp430 platform. The 2.0.x vesions are not part of the official Energia application and use a much newer GCC compiler (V2.x) which supports C99. This package index file only includes definitions for msp430 and not any other platforms. This [thread][911] ([archived version][11]) explains the differences and the file can be [downloaded][100] from this repo or [directly from the Energia][10].
+2. `package_msp430_elf_GCC_index.json` is an alternate package index file which defines 2.0.x versions of the msp430 platform. The 2.0.x vesions are not part of the official Energia application and use a much newer GCC compiler (V2.x) which supports C99. This package index file only includes definitions for msp430 and not any other platforms. This [thread][911] ([archived version][11]) explains the differences and the file can be [downloaded][100] from this repo or [directly from the Energia][10]. Now that GCC 9.3 is included in the standard platform index file, there would normally not be a reason to use this file any more.
 
 #### Board Package Files
 
@@ -215,6 +241,7 @@ These are copies of the board package files avaialble from Energia (except as no
 - `msp430-1.0.6.tar.bz2`
 - `msp430-1.0.7.tar.bz2`
 - `msp430-1.1.0.tar.bz2`  (Updated from 1.0.7 by me to use dslite 12.8.0.3522)
+- `msp430-3.0.0.tar.bz2`  (Updated from 1.1.0 by me to add msp430 with GCC 9.3)
 - `msp430elf-2.0.7.tar.bz2`
 - `msp430elf-2.0.10.tar.bz2`
 - `msp432r-5.29.2.tar.bz2`
@@ -230,6 +257,7 @@ The tools are specific to the board package platform and version.
 
 | Board Version  | Compiler                         | dslite      | mspdebug | ino2cpp |
 | -------------- | --------                         | ------      | -------- | ------- |
+| MSP430 3.0.0   | msp430-elf-gcc 9.3.1.11          | 12.8.0.3352 | 0.24     | N/A     |
 | MSP430 1.1.0   | msp430-gcc 4.6.6                 | 12.8.0.3522 | 0.24     | N/A     |
 | MSP430 1.0.7   | msp430-gcc 4.6.6                 |  9.3.0.1863 | 0.24     | N/A     |
 | MSP430 1.0.6   | msp430-gcc 4.6.6                 |  9.2.0.1793 | 0.24     | N/A     |
@@ -248,6 +276,7 @@ The tools are specific to the board package platform and version.
 | msp430-gcc 4.6.6                 | [Wndows][30] | [MacOS][31] | [Linux][32] |
 | msp430-elf-gcc 9.2.0.50          | [Wndows][55] | [MacOS][56] | [Linux][57] |
 | msp430-elf-gcc 8.3.0.16          | [Wndows][58] | [MacOS][59] | [Linux][60] |
+| msp430-elf-gcc 9.3.1.1           | [Wndows][204]| [MacOS][205]| [Linux][206]|
 | arm-none-eabi-gcc 8.3.1-20190703 | [Wndows][33] | [MacOS][34] | [Linux][35] |
 | arm-none-eabi-gcc 6.3.1-20170620 | [Wndows][36] | [MacOS][37] | [Linux][38] |
 | dslite 12.8.0.3522               | [Wndows][96] | [MacOS][97] | [Linux][98] |
@@ -282,6 +311,7 @@ And these are included for historical purposes:
 
 The files in the [`actions`][15] directory contain examples for [arduino-compile-sketches][23] GitHub [actions][24] for MSP and Tiva platforms.
 
+- `compile_arduino_sketch-MSP430F5529-GCC9.yml`
 - `compile_arduino_sketch-MSP430G2.yml`
 - `compile_arduino_sketch-MSP430F5529.yml`
 - `compile_arduino_sketch-MSP432P401R.yml`
@@ -305,20 +335,12 @@ The files in the [`actions`][15] directory contain examples for [arduino-compile
 - [Galaxia multi-tasking library][83] created by [Rei Vilo][84]
 - Info on using Arduino cores with [PlatformIO][86]: [here][87] and [here][88]
 - Board Manager URLs:
-  - Optimized LaunchPad URL. Streamlined file including all the LaunchPad board platforms and tools, including updates after Energia ended support. **Use this URL with the Arduino IDE**:
+  - Optimized Texas Instruments LaunchPad URL. Streamlined file including all the LaunchPad board platforms and tools, including updates after Energia ended support. **Use this URL with the Arduino IDE**:
 
     ```text
     https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json
     ```
 
-  - MSP430 boards using later compiler version (GCC 9.2):
-
-    ```text
-    https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/refs/heads/main/json/package_msp430_elf_GCC_index.json
-    ```
-
-    - [Thread][911] ([archived version][11]) explaining why this branch of the core was created.
-    - Note that this file has not been updated with the latest dslite tool, and therefore Arduino will not be able to upload files on Ubuntu 24.
   - ESP8266 board manager URL:
     - <http://arduino.esp8266.com/stable/package_esp8266com_index.json>
   - Arduino board manager URL (can be useful when configuring build matrix in an action):
@@ -332,6 +354,8 @@ The files in the [`actions`][15] directory contain examples for [arduino-compile
 The DSLite tool is licensed per the Texas Instruments [Uniflash License][95]. DSLite is available for download in the Assets area on the [Releases page][202].
 
 The majority of the remaining files in this repo are either a copy or a derivation of Energia platform cores, which are licensed under the GNU [Lesser General Public License v2.1][102] per [Energia][19]. The other non-Energia derived software and files in this repository are also released released under LGPL v2.1.
+
+GCC is distributed per the [GNU General Public License v3][103].
 
 See the file [`LICENSE.txt`][101] in this repository.
 
@@ -427,10 +451,15 @@ See the file [`LICENSE.txt`][101] in this repository.
 [98]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2
 [99]: https://www.ti.com/tool/UNIFLASH
 [100]: https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/refs/heads/main/json/package_msp430_elf_GCC_index.json
-[201]: ./extras/71-ti-permissions.rules
-[202]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/tag/v1.2.0
 [101]: ./LICENSE.txt
 [102]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+[103]: https://www.gnu.org/licenses/gpl-3.0.html#license-text
+[201]: ./extras/71-ti-permissions.rules
+[202]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/tag/v1.2.0
+[203]: ./README-Migrating_from_GCC_4_to_9.md
+[204]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-gcc-9.3.1.11_win64.zip
+[205]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-elf-gcc-9.3.1.11_macos.tar.bz2
+[206]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-elf-gcc-9.3.1.11_linux64.tar.bz2
 [908]: https://forum.43oh.com/topic/13361-add-msp432-support-to-arduino/
 [911]: https://forum.43oh.com/topic/31134-error-compiling-for-board-msp-exp430f5529lp/
 [970]: https://www.microsoft.com/openjdk

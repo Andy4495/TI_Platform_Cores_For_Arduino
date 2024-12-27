@@ -1,0 +1,25 @@
+# From: https://github.com/marketplace/actions/compile-arduino-sketches
+# Uses: https://github.com/arduino/compile-sketches
+name: Arduino Compile Sketches
+
+on: 
+  push:
+
+jobs:
+  compile-sketches: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: arduino/compile-sketches@v1
+        with:
+          fqbn: 'energia:msp430gcc9:MSP-EXP430F5529LP'
+          platforms: |
+            - name: 'energia:msp430gcc9'
+              version: 1.1.0
+              source-url: 'https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Aduino/main/json/package_energia_minimal_msp430_index.json'
+          sketch-paths: |
+            - .
+          verbose: true
+          enable-warnings-report: true
+          libraries: |
+            - source-path: ./
