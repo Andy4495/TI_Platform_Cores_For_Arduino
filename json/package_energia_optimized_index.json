@@ -16,8 +16,8 @@
           "category": "Energia",
           "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/gcc93/boards/msp430-3.0.0.tar.bz2",
           "archiveFileName": "msp430-3.0.0.tar.bz2",
-          "checksum": "SHA-256:5d0b72a45af738164af2e7b989eb058fd2529f6f3c0a5c3f7f22200b1c12bc86",
-          "size": "2206716",
+          "checksum": "SHA-256:c919d1c33f2a7d672005bf4a12e215024ebd21590315b3585fd7fd1edd3a5740",
+          "size": "2205965",
           "boards": [
             {"name": "MSP-EXP430F5529"},
             {"name": "MSP-EXP430FR2433"},
@@ -26,10 +26,12 @@
             {"name": "MSP-EXP430FR6989"},
             {"name": "MSP-EXP430FR5739"},
             {"name": "MSP-EXP430FR2355"},
-            {"name": "MSP-EXP430FR2231"},
+            {"name": "MSP-EXP430FR2311"},
             {"name": "MSP-EXP430G2"},
             {"name": "MSP-EXP430G2ET"},
-            {"name": "MSP-EXP430FR5994"}
+            {"name": "MSP-EXP430FR5994"},
+            {"name": "MSP-EXP430FR2476"},
+            {"name": "MSP-EXP430FR5739"}
           ],
           "toolsDependencies": [
             {
@@ -67,7 +69,7 @@
             {"name": "MSP-EXP430FR6989"},
             {"name": "MSP-EXP430FR5739"},
             {"name": "MSP-EXP430FR2355"},
-            {"name": "MSP-EXP430FR2231"},
+            {"name": "MSP-EXP430FR2311"},
             {"name": "MSP-EXP430G2"},
             {"name": "MSP-EXP430G2ET"},
             {"name": "MSP-EXP430FR5994"}
