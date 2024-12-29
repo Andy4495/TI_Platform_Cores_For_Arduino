@@ -2,13 +2,56 @@
   "packages": [
     {
       "name": "energia",
-      "maintainer": "Energia",
-      "websiteURL": "http://www.energia.nu/",
-      "email": "make@energia.nu",
+      "maintainer": "Andy4495",
+      "websiteURL": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino",
+      "email": "Submit issue on GitHub",
       "help": {
         "online": "http://energia.nu/reference"
       },
       "platforms": [
+        {
+          "name": "Energia MSP430 boards (GCCv9)",
+          "architecture": "msp430gcc9",
+          "version": "3.0.0",
+          "category": "Energia",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp430-3.0.0.tar.bz2",
+          "archiveFileName": "msp430-3.0.0.tar.bz2",
+          "checksum": "SHA-256:c919d1c33f2a7d672005bf4a12e215024ebd21590315b3585fd7fd1edd3a5740",
+          "size": "2205965",
+          "boards": [
+            {"name": "MSP-EXP430F5529"},
+            {"name": "MSP-EXP430FR2433"},
+            {"name": "MSP-EXP430FR4133"},
+            {"name": "MSP-EXP430FR5969"},
+            {"name": "MSP-EXP430FR6989"},
+            {"name": "MSP-EXP430FR5739"},
+            {"name": "MSP-EXP430FR2355"},
+            {"name": "MSP-EXP430FR2311"},
+            {"name": "MSP-EXP430G2"},
+            {"name": "MSP-EXP430G2ET"},
+            {"name": "MSP-EXP430FR5994"},
+            {"name": "MSP-EXP430FR2476"},
+            {"name": "MSP-EXP430FR5739"}
+          ],
+          "toolsDependencies": [
+            {
+
+              "packager":"energia",
+              "name":"msp430-elf-gcc",
+              "version":"9.3.1.11"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"12.8.0.3522"
+            },
+            {
+              "packager":"energia",
+              "name":"mspdebug",
+              "version":"0.25"
+            }
+         ]
+        },        
         {
           "name": "Energia MSP430 boards",
           "architecture": "msp430",
@@ -26,7 +69,7 @@
             {"name": "MSP-EXP430FR6989"},
             {"name": "MSP-EXP430FR5739"},
             {"name": "MSP-EXP430FR2355"},
-            {"name": "MSP-EXP430FR2231"},
+            {"name": "MSP-EXP430FR2311"},
             {"name": "MSP-EXP430G2"},
             {"name": "MSP-EXP430G2ET"},
             {"name": "MSP-EXP430FR5994"}
@@ -46,7 +89,7 @@
             {
               "packager":"energia",
               "name":"mspdebug",
-              "version":"0.24"
+              "version":"0.25"
             }
          ]
         },
@@ -397,6 +440,33 @@
         }
       ],
       "tools": [
+        {
+          "name": "msp430-elf-gcc", 
+          "version": "9.3.1.11", 
+          "systems": [
+            {
+              "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-gcc-9.3.1.11_win64.zip", 
+              "checksum": "SHA-256:1D087B7F19B9A69214E83C9671DCEB5B5D261287807C8E55CD523FFD57016F29", 
+              "host": "i686-mingw32", 
+              "archiveFileName": "msp430-elf-gcc-9.3.1.11_win32.tar.bz2", 
+              "size": "114591102"
+            }, 
+            {
+              "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-elf-gcc-9.3.1.11_macos.tar.bz2", 
+              "checksum": "SHA-256:b87248f2a135b8b21a85f97b48befd8dbee86023226c8e05026c9832e6279926", 
+              "host": "x86_64-apple-darwin", 
+              "archiveFileName": "msp430-elf-gcc-9.3.1.11_macos.tar.bz2", 
+              "size": "93455401"
+            }, 
+            {
+              "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-elf-gcc-9.3.1.11_linux64.tar.bz2", 
+              "checksum": "SHA-256:070d277bb0f5c07826f2fcf77204d442397dc98558ec7ce03a7bf35baaaaa65d", 
+              "host": "x86_64-pc-linux-gnu", 
+              "archiveFileName": "msp430-elf-gcc-9.3.1.11_linux64.tar.bz2",
+              "size": "77364170"
+            }
+          ]
+        }, 
         {
           "name":"msp430-gcc",
           "version":"4.6.6",
@@ -776,6 +846,34 @@
               "archiveFileName":"mspdebug-0.24-x86_64-apple-darwin.tar.bz2",
               "checksum":"SHA-256:5e0dc170ff259c4fc50a2bd591b1c10c648b9d8ad5770c03ed4228128e206fc0",
               "size":"171307"
+            },
+            {
+              "host":"x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:ec6131053a4ddd35b43d44591732313182e3487ffd77181df02ce23f0860a2e5",
+              "size":"147947"
+            }
+          ]
+        },
+        {
+          "name":"mspdebug",
+          "version":"0.25",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+             "url":"https://s3.amazonaws.com/energiaUS/tools/windows/mspdebug-0.24-i686-mingw32.tar.bz2",
+              "archiveFileName":"mspdebug-0.24-i686-mingw32.tar.bz2",
+              "checksum":"SHA-256:7b3dfb269b58f692d03080a641f543dfe01bcfcef43935c2bb31e2839e284e73",
+              "size":"1058435"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/mspdebug-0.25-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"mspdebug-0.25-x86_64-apple-darwin.tar.bz2",
+              "checksum":"SHA-256:61b4a8faebe60b602794335fb614c80c1ad51ceefd306333188fd476ba8cd087",
+              "size":"161394"
             },
             {
               "host":"x86_64-pc-linux-gnu",

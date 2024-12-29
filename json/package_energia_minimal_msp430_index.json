@@ -10,6 +10,37 @@
         },
         "platforms": [
           {
+            "name": "Energia MSP430 boards (GCCv9)",
+            "architecture": "msp430gcc9",
+            "version": "3.0.0",
+            "category": "Energia",
+            "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp430-3.0.0.tar.bz2",
+            "archiveFileName": "msp430-3.0.0.tar.bz2",
+            "checksum": "SHA-256:5d0b72a45af738164af2e7b989eb058fd2529f6f3c0a5c3f7f22200b1c12bc86",
+            "size": "2206716",
+            "boards": [
+              {"name": "MSP-EXP430F5529"},
+              {"name": "MSP-EXP430FR2433"},
+              {"name": "MSP-EXP430FR4133"},
+              {"name": "MSP-EXP430FR5969"},
+              {"name": "MSP-EXP430FR6989"},
+              {"name": "MSP-EXP430FR5739"},
+              {"name": "MSP-EXP430FR2355"},
+              {"name": "MSP-EXP430FR2231"},
+              {"name": "MSP-EXP430G2"},
+              {"name": "MSP-EXP430G2ET"},
+              {"name": "MSP-EXP430FR5994"}
+            ],
+            "toolsDependencies": [
+              {
+  
+                "packager":"energia",
+                "name":"msp430-elf-gcc",
+                "version":"9.3.1.11"
+              }
+           ]
+          }, 
+          {
             "name": "Energia MSP430 boards",
             "architecture": "msp430",
             "version": "1.1.0",
@@ -43,6 +74,19 @@
         ],
         "tools": [
           {
+            "name": "msp430-elf-gcc", 
+            "version": "9.3.1.11", 
+            "systems": [
+              {
+                "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-elf-gcc-9.3.1.11_linux64.tar.bz2", 
+                "checksum": "SHA-256:070d277bb0f5c07826f2fcf77204d442397dc98558ec7ce03a7bf35baaaaa65d", 
+                "host": "x86_64-pc-linux-gnu", 
+                "archiveFileName": "msp430-elf-gcc-9.3.1.11_linux64.tar.bz2",
+                "size": "77364170"
+              }
+            ]
+          }, 
+          {
             "name":"msp430-gcc",
             "version":"4.6.6",
             "systems":
@@ -60,3 +104,4 @@
       }
     ]
 }
+
