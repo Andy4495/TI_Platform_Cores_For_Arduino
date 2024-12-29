@@ -48,7 +48,7 @@
             {
               "packager":"energia",
               "name":"mspdebug",
-              "version":"0.24"
+              "version":"0.25"
             }
          ]
         },        
@@ -89,7 +89,7 @@
             {
               "packager":"energia",
               "name":"mspdebug",
-              "version":"0.24"
+              "version":"0.25"
             }
          ]
         },
@@ -846,6 +846,34 @@
               "archiveFileName":"mspdebug-0.24-x86_64-apple-darwin.tar.bz2",
               "checksum":"SHA-256:5e0dc170ff259c4fc50a2bd591b1c10c648b9d8ad5770c03ed4228128e206fc0",
               "size":"171307"
+            },
+            {
+              "host":"x86_64-pc-linux-gnu",
+              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "archiveFileName":"mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "checksum":"SHA-256:ec6131053a4ddd35b43d44591732313182e3487ffd77181df02ce23f0860a2e5",
+              "size":"147947"
+            }
+          ]
+        },
+        {
+          "name":"mspdebug",
+          "version":"0.25",
+          "systems":
+          [
+           {
+              "host":"i686-mingw32",
+             "url":"https://s3.amazonaws.com/energiaUS/tools/windows/mspdebug-0.24-i686-mingw32.tar.bz2",
+              "archiveFileName":"mspdebug-0.24-i686-mingw32.tar.bz2",
+              "checksum":"SHA-256:7b3dfb269b58f692d03080a641f543dfe01bcfcef43935c2bb31e2839e284e73",
+              "size":"1058435"
+            },
+            {
+              "host":"x86_64-apple-darwin",
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/mspdebug-0.25-x86_64-apple-darwin.tar.bz2",
+              "archiveFileName":"mspdebug-0.25-x86_64-apple-darwin.tar.bz2",
+              "checksum":"SHA-256:61b4a8faebe60b602794335fb614c80c1ad51ceefd306333188fd476ba8cd087",
+              "size":"161394"
             },
             {
               "host":"x86_64-pc-linux-gnu",
