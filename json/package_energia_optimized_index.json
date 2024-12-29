@@ -14,7 +14,7 @@
           "architecture": "msp430gcc9",
           "version": "3.0.0",
           "category": "Energia",
-          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/gcc93/boards/msp430-3.0.0.tar.bz2",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp430-3.0.0.tar.bz2",
           "archiveFileName": "msp430-3.0.0.tar.bz2",
           "checksum": "SHA-256:c919d1c33f2a7d672005bf4a12e215024ebd21590315b3585fd7fd1edd3a5740",
           "size": "2205965",
