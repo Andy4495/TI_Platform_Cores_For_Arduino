@@ -872,8 +872,8 @@
               "host":"x86_64-apple-darwin",
               "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/mspdebug-0.25-x86_64-apple-darwin.tar.bz2",
               "archiveFileName":"mspdebug-0.25-x86_64-apple-darwin.tar.bz2",
-              "checksum":"SHA-256:61b4a8faebe60b602794335fb614c80c1ad51ceefd306333188fd476ba8cd087",
-              "size":"161394"
+              "checksum":"SHA-256:45be0c11c1eeb145d736860e07acdec64b21e79397d41e8e2658d3abefa427bb",
+              "size":"161465"
             },
             {
               "host":"x86_64-pc-linux-gnu",
