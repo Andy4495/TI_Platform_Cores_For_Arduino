@@ -23,7 +23,7 @@ Energia was originally developed in 2012 as a fork from Arduino specifically to 
 6. Select the board platform you wish to install:
     - Use the search box at the top to make it easier to find the board (e.g., "MSP430")
     - Hover the mouse over the board platform you want, and click "Install"
-    - It can take several minutes to install a board package
+    - It can take several minutes to download and install a board package
 7. Once the board package is installed, you can select the board you want with the `Tools->Board` menu
 
 ## Energia Application Libraries and Examples
@@ -40,6 +40,8 @@ Energia example sketches packaged into libraries so that they can be loaded into
 - [Energia-EducationalBP_MKII][27]
 - [Energia-MultiTasking][28]
 
+The above four libraries are included in the Arduino Library Manager registry, so they can easily be installed from the `Sketch->Include Library->Manage Libraries...` menu.
+
 ## Installing LaunchPad Drivers
 
 Depending on your host machine and the specific board you are programming, you probably need to install drivers and/or configuration files in order to communicate with the LaunchPad. If you see a message along the lines of "Error connecting to the target", then a missing driver or configuration file is likely the cause.
@@ -48,7 +50,7 @@ Depending on your host machine and the specific board you are programming, you p
 
 No drivers should be needed for MSP432, Tiva, or the newer MSP430 LaunchPads (including the MSP430G2ET).
 
-Drivers *may* be needed for the old MSP430G2 (non-ET) LaunchPads, but in my tests, the new version 0.25 of the `mspdebug` tool included with the msp430 v1.1.0 and msp430gcc9 v3.0.0 cores does not need a separate driver installed.
+The old MSP430G2 (non-ET) LaunchPads work without drivers when using version 0.25 of the `mspdebug` tool included with the msp430 v1.1.0 and msp430gcc9 v3.0.0 cores. Versions of `mspdebug` included with older versions of the MSP430 cores required separate drivers to be installed.
 
 ### Windows
 
@@ -86,20 +88,20 @@ On Linux, no drivers are required for MSP430, MSP432, or Tiva LaunchPads. Just r
 
 ## MSP430 Compiler Versions
 
-There are two different platform cores available for MSP430 processors. The older GCC 4.6 compiler is the last version officially published by Energia. A newer GCC version 9.3 was published by Texas Instruments, but was never included in the official Energia MSP430 platform core.
-
-The older GCC 4.6 compiler was released in 2012 and does not support some newer features in the C++ language. GCC 9.3 supports C++11 and C++14 by default.
-
-The package index listed [above](#loading-a-launchpad-board-into-arduino-ide) includes two MSP430 platform packages:
+There are two different platform cores available for MSP430 processors. The main difference between them is the compiler version:
 
 - "Energia MSP430 boards" - Installs MSP430 boards with the old GCC 4.6 compiler
 - "Energia MSP430 boards (GCCv9)" - Installs MSP430 boards with the newer GCC 9.3 compiler
 
-This allows you to have both compilers installed so that you can easily switch between them. There are some compatibility issues when using the GCC 9.3 compiler as outlined in this [migration README][203].
+The GCC 4.6 compiler is the last version officially published by Energia. GCC 4.6 was released in 2012 and does not support C++11 or C++14.
 
-Be sure to select the correct board and compiler version from the Tools->Board menu.
+GCC 9.3 fully supports C++11 and C++14 by default. GCC9.3 is the last MSP430 GCC compiler version released by Texas Instruments.
 
-Note that the MSP432 and Tiva platforms install GCC 8.3, which support C++11 and C++14 by default.
+Having two distinct platform cores allows you to have both compilers installed so that you can easily switch between them. Code which was originally compiled with GCC 4.6 may run into some compatibility issues when compiled with GCC 9.3, as outlined in this [migration README][203].
+
+If you install both platforms, be sure to select the correct platform core and board from the Tools->Board menu.
+
+Note that the MSP432 and Tiva platforms install GCC 8.3, which fully support C++11 and C++14 by default.
 
 ### GitHub Actions and Arduino Command Line
 
@@ -356,18 +358,21 @@ The files in the [`actions`][15] directory contain examples for [arduino-compile
 - Energia IDE [application][1] and source code [repo][2]
 - Website [source pages repo][93] for energia.nu
 - Energia MSP430 core [repo][3]
+  - Information on [migrating from GCC 4.6 to GCC 9.3][203]
+  - GCC [release history][gcc-releases]
+  - GCC [standards support][gcc-standards]
 - Energia MSP432 core [repo][67]
 - Energia Tiva C core [repo][4]
-- Arduino [Platform Specification][6]
 - Arduino instructions for [installing cores][5]
-- Arduino [Package Index JSON Specification][7]
 - GitHub documentation for managing GitHub Actions [workflows][22]
 - Compile Arduino Sketches GitHub [action][20]
-- Arduino JSON package index [file][16]
 - Unofficial list of Arduino 3rd Party [Board Manager URLs][68]
 - Updated MSP432 [board package repo][74] created by [ndroid][75]
 - [Galaxia multi-tasking library][83] created by [Rei Vilo][84]
 - Info on using Arduino cores with [PlatformIO][86]: [here][87] and [here][88]
+- Arduino JSON package index [file][16]
+- Arduino [Platform Specification][6]
+- Arduino [Package Index JSON Specification][7]
 - Board Manager URLs:
   - Optimized Texas Instruments LaunchPad URL. Streamlined file including all the LaunchPad board platforms and tools, including updates after Energia ended support. **Use this URL with the Arduino IDE**:
 
@@ -505,6 +510,8 @@ See the file [`LICENSE.txt`][101] in this repository.
 [908]: https://forum.43oh.com/topic/13361-add-msp432-support-to-arduino/
 [911]: https://forum.43oh.com/topic/31134-error-compiling-for-board-msp-exp430f5529lp/
 [970]: https://www.microsoft.com/openjdk
+[gcc-standards]: https://gcc.gnu.org/projects/cxx-status.html
+[gcc-releases]: https://gcc.gnu.org/releases.html
 [//]: # ([200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino)
 [//]: # ([62]: https://github.com/arduino/arduino-builder/blob/master/README.md)
 [//]: # ([9]: https://energia.nu/packages/package_energia_index.json)
