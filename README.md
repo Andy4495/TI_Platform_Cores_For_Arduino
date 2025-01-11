@@ -4,9 +4,9 @@
 
 **Use Arduino as a replacement for Energia** to develop on Texas Instruments LaunchPad products.
 
-The [Arduino Boards Manager][69] makes it possible to load other processor families besides the original AVR-based Arduino boards. This repo contains instructions and relevant files for loading processor cores for Texas Instruments LaunchPad products in the MSP430, MSP432, and Tiva families. This allows development for TI LaunchPads using the Arduino [IDE][80] or [CLI][81] instead of the [Energia IDE][1].
+[Energia][1] was originally created in 2012 as a fork from Arduino specifically to support Texas Instruments LaunchPads. However, it is [no longer maintained][73]. The last version was released in 2019.
 
-Energia was originally developed in 2012 as a fork from Arduino specifically to support Texas Instruments LaunchPads. Unfortunately, it is [no longer maintained][73], with the last version released in 2019. The good news is that the processor cores used by Energia are compatible with Arduino.
+Fortunately, **Texas Instruments processor cores can be loaded into Arduino** using the [Arduino Boards Manager][69]. I created this repo to maintain the Energia MSP430, MSP432, and Tiva cores so that they can continue to be used with Arduino.
 
 ## Loading a LaunchPad Board into Arduino IDE
 
@@ -28,29 +28,28 @@ Energia was originally developed in 2012 as a fork from Arduino specifically to 
 
 ## Energia Application Libraries and Examples
 
-The Energia IDE includes several libraries and examples at the application level of the IDE instead of in the platform cores. This means that if you use the Arduino IDE/CLI and install an MSP or Tiva core, you don't end up getting every library and example sketch that you would when using the Energia IDE. Most of the libraries and examples included with the Energia application are either readily available with Arduino or are obsolete. However, some are particular to the platforms supported by Energia and are not directly available with Arduino, so I have published standalone libraries to allow them to be loaded into Arduino.
+Energia includes several libraries and example sketches at the application level of the IDE instead of in the platform cores. This means that if you install an MSP or Tiva core into Arduino, you don't end up getting every library and example sketch that you would when using the Energia IDE.
 
-Stand-alone repositories for Energia libraries:
+Most of the libraries and examples included with the Energia application are either readily available with Arduino or are obsolete. However, some are particular to the platforms supported by Energia and are not directly available with Arduino. I have published standalone libraries to allow them to be loaded into Arduino.
 
-- [LCD_SharpBoosterPack_SPI][25]
-- [OneMsTaskTimer][26]
+These libraries are included in the Arduino Library Manager registry, so they can easily be installed from the `Sketch->Include Library->Manage Libraries...` menu. Note that some of the library names needed to be shortened to meet the registry name length recommendation.
 
-Energia example sketches packaged into libraries so that they can be loaded into the Arduino IDE:
-
-- [Energia-EducationalBP_MKII][27]
-- [Energia-MultiTasking][28]
-
-The above four libraries are included in the Arduino Library Manager registry, so they can easily be installed from the `Sketch->Include Library->Manage Libraries...` menu.
+| Repository                       | Name in Arduino Library Manager | Notes                                   |
+| -------------------------------- | ------------------------------- | --------------------------------------- |
+| [LCD_SharpBoosterPack_SPI][25]   | LCD_SharpBP_SPI                 | Energia application library             |
+| [OneMsTaskTimer][26]             | OneMsTaskTimer                  | Energia application library             |
+| [Energia-EducationalBP_MKII][27] | Energia-EBP_MKII                | Example sketches packaged into library  |
+| [Energia-MultiTasking][28]       | Energia-MultiTas                | Example sketches packaged into library  |
 
 ## Installing LaunchPad Drivers
 
-Depending on your host machine and the specific board you are programming, you probably need to install drivers and/or configuration files in order to communicate with the LaunchPad. If you see a message along the lines of "Error connecting to the target", then a missing driver or configuration file is likely the cause.
+Depending on your host machine and the specific board you are programming, you may need to install drivers and/or configuration files in order to communicate with the LaunchPad. If you see a message along the lines of "Error connecting to the target", then a missing driver or configuration file is likely the cause.
 
 ### MacOS
 
-No drivers should be needed for MSP432, Tiva, or the newer MSP430 LaunchPads (including the MSP430G2ET).
+No drivers should be needed for MSP432, Tiva, or the newer MSP430 LaunchPads (including the [MSP430G2ET][210]).
 
-The old MSP430G2 (non-ET) LaunchPads work without drivers when using version 0.25 of the `mspdebug` tool included with the msp430 v1.1.0 and msp430gcc9 v3.0.0 cores. Versions of `mspdebug` included with older versions of the MSP430 cores required separate drivers to be installed.
+The [old MSP430G2][211] (non-ET) LaunchPads work without drivers when using version 0.25 of the `mspdebug` tool, which is included with the msp430 v1.1.0 and msp430gcc9 v3.0.0 cores. Versions of `mspdebug` included with older MSP430 cores required separate drivers to be installed.
 
 ### Windows
 
@@ -58,7 +57,7 @@ On Windows, the drivers can be installed using either of the methods below:
 
 1. Install [Code Composer Studio IDE][89] from Texas Instruments.
 
-    Code Compuser Studio is a free professional-level IDE for Texas Instruments processors. It is fully supported and regularly updated by Texas Instruments. However, it is a large download (> 1 GB), and installs many more packages than are needed if you are just using the Arduino IDE. You are essentially installing a full IDE that you won't be using, just to get the drivers.
+    Code Composer Studio is a free professional-level IDE for Texas Instruments processors. It is fully supported and regularly updated by Texas Instruments. However, it is a large download (> 1 GB), and installs many more packages than are needed if you are just using the Arduino IDE. You are essentially installing a full IDE that you won't be using, just to get the drivers.
 
     Even with this in mind, **I use this method to install the drivers**, because this way I know they are up-to-date and supported.
 
@@ -99,7 +98,7 @@ GCC 9.3 fully supports C++11 and C++14 by default. GCC9.3 is the last MSP430 GCC
 
 Having two distinct platform cores allows you to have both compilers installed so that you can easily switch between them. Code which was originally compiled with GCC 4.6 may run into some compatibility issues when compiled with GCC 9.3, as outlined in this [migration README][203].
 
-If you install both platforms, be sure to select the correct platform core and board from the Tools->Board menu.
+If you install both platforms, be sure to select the correct platform core and board from the `Tools->Board` menu.
 
 Note that the MSP432 and Tiva platforms install GCC 8.3, which fully support C++11 and C++14 by default.
 
@@ -293,8 +292,8 @@ The tools are specific to the board package platform and version.
 
 | Board Version  | Compiler                         | dslite      | mspdebug | ino2cpp |
 | -------------- | --------                         | ------      | -------- | ------- |
-| MSP430 3.0.0   | msp430-elf-gcc 9.3.1.11          | 12.8.0.3352 | 0.24     | N/A     |
-| MSP430 1.1.0   | msp430-gcc 4.6.6                 | 12.8.0.3522 | 0.24     | N/A     |
+| MSP430 3.0.0   | msp430-elf-gcc 9.3.1.11          | 12.8.0.3352 | 0.25     | N/A     |
+| MSP430 1.1.0   | msp430-gcc 4.6.6                 | 12.8.0.3522 | 0.25     | N/A     |
 | MSP430 1.0.7   | msp430-gcc 4.6.6                 |  9.3.0.1863 | 0.24     | N/A     |
 | MSP430 1.0.6   | msp430-gcc 4.6.6                 |  9.2.0.1793 | 0.24     | N/A     |
 | MSP430 1.0.5   | msp430-gcc 4.6.6                 |  8.2.0.1400 | 0.24     | N/A     |
@@ -307,23 +306,26 @@ The tools are specific to the board package platform and version.
 | Tiva 1.0.4     | arm-none-eabi-gcc 8.3.1-20190703 |  9.3.0.1863 | N/A      | N/A     |
 | Tiva 1.0.3     | arm-none-eabi-gcc 6.3.1-20170620 |  7.2.0.2096 | N/A      | N/A     |
 
-| Tool Download Links              |              |             |             |
-| :------------------------------- | ------------ | ----------- | ----------- |
-| msp430-gcc 4.6.6                 | [Wndows][30] | [MacOS][31] | [Linux][32] |
-| msp430-elf-gcc 9.2.0.50          | [Wndows][55] | [MacOS][56] | [Linux][57] |
-| msp430-elf-gcc 8.3.0.16          | [Wndows][58] | [MacOS][59] | [Linux][60] |
-| msp430-elf-gcc 9.3.1.1           | [Wndows][204]| [MacOS][205]| [Linux][206]|
-| arm-none-eabi-gcc 8.3.1-20190703 | [Wndows][33] | [MacOS][34] | [Linux][35] |
-| arm-none-eabi-gcc 6.3.1-20170620 | [Wndows][36] | [MacOS][37] | [Linux][38] |
-| dslite 12.8.0.3522               | [Wndows][96] | [MacOS][97] | [Linux][98] |
-| dslite 9.3.0.1863                | [Wndows][39] | [MacOS][40] | [Linux][41] |
-| dslite 9.2.0.1793                | [Wndows][42] | [MacOS][43] | [Linux][44] |
-| dslite 8.2.0.1400                | [Wndows][45] | [MacOS][46] | [Linux][47] |
-| dslite 7.2.0.2096                | [Wndows][48] | [MacOS][49] | [Linux][50] |
-| mspdebug 0.24                    | [Wndows][51] | [MacOS][52] | [Linux][53] |
-| ino2cpp 1.0.4                    | [Wndows][54] | [MacOS][54] | [Linux][54] |
-| ino2cpp 1.0.6                    | [Wndows][64] | [MacOS][64] | [Linux][64] |
-| ino2cpp 1.0.7                    | [Wndows][76] | [MacOS][77] | [Linux][78] |
+| Tool Download Links              |              |              |             |
+| :------------------------------- | ------------ | ------------ | ----------- |
+| msp430-gcc 4.6.6                 | [Wndows][30] | [MacOS][31]  | [Linux][32] |
+| msp430-elf-gcc 8.3.0.16          | [Wndows][58] | [MacOS][59]  | [Linux][60] |
+| msp430-elf-gcc 9.2.0.50          | [Wndows][55] | [MacOS][56]  | [Linux][57] |
+| msp430-elf-gcc 9.3.1.1           | [Wndows][204]| [MacOS][205] | [Linux][206]|
+| arm-none-eabi-gcc 8.3.1-20190703 | [Wndows][33] | [MacOS][34]  | [Linux][35] |
+| arm-none-eabi-gcc 6.3.1-20170620 | [Wndows][36] | [MacOS][37]  | [Linux][38] |
+| dslite 12.8.0.3522               | [Wndows][96] | [MacOS][97]  | [Linux][98] |
+| dslite 9.3.0.1863                | [Wndows][39] | [MacOS][40]  | [Linux][41] |
+| dslite 9.2.0.1793                | [Wndows][42] | [MacOS][43]  | [Linux][44] |
+| dslite 8.2.0.1400                | [Wndows][45] | [MacOS][46]  | [Linux][47] |
+| dslite 7.2.0.2096                | [Wndows][48] | [MacOS][49]  | [Linux][50] |
+| mspdebug 0.24                    | [Wndows][51] | [MacOS][52]  | [Linux][53] |
+| mspdebug 0.25 (see Note below)   | [Wndows][51] | [MacOS][213] | [Linux][53] |
+| ino2cpp 1.0.4                    | [Wndows][54] | [MacOS][54]  | [Linux][54] |
+| ino2cpp 1.0.6                    | [Wndows][64] | [MacOS][64]  | [Linux][64] |
+| ino2cpp 1.0.7                    | [Wndows][76] | [MacOS][77]  | [Linux][78] |
+
+Note that mspdebug 0.25 was only created for MacOS; the Linux and Windows download links point to version 0.24.
 
 ##### Additional Board Package Files
 
@@ -357,16 +359,16 @@ The files in the [`actions`][15] directory contain examples for [arduino-compile
 
 - Energia IDE [application][1] and source code [repo][2]
 - Website [source pages repo][93] for energia.nu
-- Energia MSP430 core [repo][3]
+- Energia MSP430 platform core [repo][3]
   - Information on [migrating from GCC 4.6 to GCC 9.3][203]
   - GCC [release history][gcc-releases]
   - GCC [standards support][gcc-standards]
-- Energia MSP432 core [repo][67]
-- Energia Tiva C core [repo][4]
+  - Texas Instruments [MSP430 GCC compiler][212]
+- Energia MSP432 platform core [repo][67]
+- Energia Tiva C platform core [repo][4]
 - Arduino instructions for [installing cores][5]
 - GitHub documentation for managing GitHub Actions [workflows][22]
 - Compile Arduino Sketches GitHub [action][20]
-- Unofficial list of Arduino 3rd Party [Board Manager URLs][68]
 - Updated MSP432 [board package repo][74] created by [ndroid][75]
 - [Galaxia multi-tasking library][83] created by [Rei Vilo][84]
 - Info on using Arduino cores with [PlatformIO][86]: [here][87] and [here][88]
@@ -387,6 +389,7 @@ The files in the [`actions`][15] directory contain examples for [arduino-compile
   - STM32 board manager URL:
     - <https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json>
     - Note that many of the devices in this package require [additional options][72] as part of the FQBN, for example: `STMicroelectronics:stm32:GenF1:pnum=BLUEPILL_F103C8`
+  - Unofficial list of Arduino 3rd Party [Board Manager URLs][68]
 
 ## License
 
@@ -473,8 +476,6 @@ See the file [`LICENSE.txt`][101] in this repository.
 [77]: https://s3.amazonaws.com/energiaUS/tools/macosx/ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2
 [78]: https://s3.amazonaws.com/energiaUS/tools/linux64/ino2cpp-1.0.7-x86_64-pc-linux-gnu.tar.bz2
 [79]: https://github.com/ndroid/msp432-core/tree/main#change-log
-[80]: https://www.arduino.cc/en/software
-[81]: https://arduino.github.io/arduino-cli/
 [82]: https://www.ti.com/tool/TI-RTOS-MCU
 [83]: https://github.com/rei-vilo/Galaxia_Library
 [84]: https://github.com/rei-vilo/
@@ -507,6 +508,10 @@ See the file [`LICENSE.txt`][101] in this repository.
 [207]: https://github.com/dlbeer/mspdebug
 [208]: https://brew.sh
 [209]: https://github.com/dlbeer/mspdebug/releases/tag/v0.25
+[210]: https://www.ti.com/tool/MSP-EXP430G2ET
+[211]: https://embeddedcomputing.weebly.com/launchpad-msp430g2.html
+[212]: https://www.ti.com/tool/MSP430-GCC-OPENSOURCE
+[213]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/mspdebug-0.25-x86_64-apple-darwin.tar.bz2
 [908]: https://forum.43oh.com/topic/13361-add-msp432-support-to-arduino/
 [911]: https://forum.43oh.com/topic/31134-error-compiling-for-board-msp-exp430f5529lp/
 [970]: https://www.microsoft.com/openjdk
@@ -515,6 +520,8 @@ See the file [`LICENSE.txt`][101] in this repository.
 [//]: # ([200]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino)
 [//]: # ([62]: https://github.com/arduino/arduino-builder/blob/master/README.md)
 [//]: # ([9]: https://energia.nu/packages/package_energia_index.json)
+[//]: # ([80]: https://www.arduino.cc/en/software)
+[//]: # ([81]: https://arduino.github.io/arduino-cli/)
 
 [//]: # (This is a way to hack a comment in Markdown. This will not be displayed when rendered.)
 [//]: # (The board download links from energia.nu are not consistently working. Previous link for board msp432r 5.29.0 was: http://energia.nu/downloads/download_core.php?file=msp432r-5.29.0.tar.bz2 )
