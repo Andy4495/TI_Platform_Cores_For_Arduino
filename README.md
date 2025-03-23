@@ -51,6 +51,21 @@ No drivers should be needed for MSP432, Tiva, or the newer MSP430 LaunchPads (in
 
 The [old MSP430G2][211] (non-ET) LaunchPads work without drivers when using version 0.25 of the `mspdebug` tool, which is included with the msp430 v1.1.0 and msp430gcc9 v3.0.0 cores. Versions of `mspdebug` included with older MSP430 cores required separate drivers to be installed.
 
+> [!NOTE]  
+> While you don't need drivers, the `mspdebug` tool used to connect to the old MSP430G2 (non-ET) LaunchPads requires some libraries to be installed.
+
+In particular, if you get a "no such file" error similar to the following:
+
+```text
+Reason: tried: '/usr/local/opt/hidapi/lib/libhidapi.0.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/usr/local/opt/hidapi/lib/libhidapi.0.dylib' (no such file), '/usr/local/opt/hidapi/lib/libhidapi.0.dylib' (no such file)
+```
+
+Then you need to install the hidapi and libusb-compat libraries. I use the [Homebrew][208] tool:
+
+```shell
+brew install hidapi libusb-compat
+```
+
 ### Windows
 
 On Windows, the drivers can be installed using either of the methods below:
@@ -84,6 +99,14 @@ On Linux, no drivers are required for MSP430, MSP432, or Tiva LaunchPads. Just r
 
 3. If your Linux distribution supports the service command you can activate the new rules with `sudo service udev restart`. If your board is plugged in, unplug it and plug it back in.
 4. If your Linux distribution does not support the service command, or if you are still unable to upload to the LaunchPad, then restart your computer to activate the rules.
+
+## MSP432G2 (non-ET) LaunchPads
+
+If you are having trouble uploading to one of the [older "non-ET" versions of the MSP-EXP430G2 LaunchPads][211], try the following:
+
+1. Disconnect and re-connect the USB plug from the LaunchPad board two or three times, and make sure to insert the plug fully for a solid connection. Since these LaunchPads are over ten years old, it is possible that some oxidation or corrosion on the either the board or USB connection is causing intermittent contact.
+
+2. On Windows, try selecting "MSP432G2ET" in the `Tools->Board` menu. That is, choose the ET board instead of the non-ET board. The `dslite` tool used to program the newer LauchPads also works with the non-GT G2 LaunchPads on Windows (this does not work for Linux or MacOS).
 
 ## MSP430 Compiler Versions
 
@@ -228,6 +251,14 @@ I compiled version 0.25 for MacOS, and tested it on MacOS 15 Sequoia. The board 
   ```shell
   ./mspdebug --version
   ```
+
+#### Running `mspdebug` on MacOS
+
+Version 0.25 of `mspdebug` requires libraries to be installed in order to run the tool:
+
+```shell
+brew install hidapi libusb-compat
+```
 
 ### Repository Contents
 
