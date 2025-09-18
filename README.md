@@ -140,13 +140,19 @@ Per GitHub user [chemmex][85], it is possible to use these processor cores with 
 
 ## New Board Package Versions to Remove Python 2 Dependency
 
-Python 2 has long since reached its end of life, and recent Linux distros no longer include it (Debian 12, Ubuntu 24.04, Mint 22, etc.). Unfortunately, the version of the DSLite tool used by the Energia-created board packages has a dependency on Python 2. Attempting to upload and Arduino sketch on these newer distros will create an error similar to the following (see [issue #6][94]):
+Python 2 has long since reached its end of life, and recent Linux distros (Debian 12, Ubuntu 24.04, Mint 22, etc.) no longer include it. Unfortunately, the version of the DSLite tool used by the Energia-created board packages has a dependency on Python 2. Attempting to upload an Arduino sketch on these newer distros will create an error similar to the following (see [issue #6][94]):
 
 ```text
 /home/user/.arduino15/packages/energia/tools/dslite/9.3.0.1863/DebugServer/bin/DSLite: error while loading shared libraries: libpython2.7.so.1.0: cannot open shared object file: No such file or directory
 ```
 
-I have created a new DSLite tool package using the latest version of TI's [UniFlash][99]. I have also created MSP430, MSP432, and Tiva board packages and associated board manager JSON files to reference the updated board packages and DSLite tool. The new DSLite tool and board packages continue to be compatible with Windows, MacOS, and older Linux distros, in addition to now supporting the most recent distros that no longer include Python 2.
+The following board package verions contain an updated DSLite tool based on the latest version of TI's [UniFlash][99] and do not have a Python 2 dependency. These are compatible with current Linux distros and continue to be compatible with Windows, MacOS, and older Linux distros.
+
+| Platform | Version Not Dependent on Python 2 |
+| -------- | --------------------------------- |
+| MSP430   | 1.1.0 and later                   |
+| MSP432   | 5.30.0 and later                  |
+| Tiva     | 1.1.0 and later                   |
 
 ## More Detailed Information
 
@@ -402,7 +408,7 @@ The files in the [`actions`][15] directory contain examples for [arduino-compile
 - Compile Arduino Sketches GitHub [action][20]
 - Updated MSP432 [board package repo][74] created by [ndroid][75]
 - [Galaxia multi-tasking library][83] created by [Rei Vilo][84]
-- Info on using Arduino cores with [PlatformIO][86]: [here][87] and [here][88]
+- Info on using Arduino cores with [PlatformIO][86]: [Issue #3][87] and [PlatformIO forum][88]
 - Arduino JSON package index [file][16]
 - Arduino [Platform Specification][6]
 - Arduino [Package Index JSON Specification][7]
