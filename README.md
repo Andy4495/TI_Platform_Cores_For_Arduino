@@ -138,7 +138,7 @@ platforms.name: energia:msp430gcc9
 
 Per GitHub user [chemmex][85], it is possible to use these processor cores with [PlatformIO][86]. Some manual setup and configuration is required, which includes editing the `platformio.ini` file. For more details, refer to this issue [comment][87] and this PlatformIO [discussion][88].
 
-## New Board Package Versions to Remove Python 2 Dependency
+## Updated Board Package Versions to Remove Python 2 Dependency
 
 Python 2 has long since reached its end of life, and recent Linux distros (Debian 12, Ubuntu 24.04, Mint 22, etc.) no longer include it. Unfortunately, the version of the DSLite tool used by the Energia-created board packages has a dependency on Python 2. Attempting to upload an Arduino sketch on these newer distros will create an error similar to the following (see [issue #6][94]):
 
