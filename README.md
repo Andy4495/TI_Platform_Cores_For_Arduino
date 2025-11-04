@@ -432,11 +432,11 @@ The files in the [`actions`][15] directory contain examples for [arduino-compile
 
 The DSLite tool is licensed per the Texas Instruments [Uniflash License][95]. DSLite is available for download in the Assets area on the [Releases page][202].
 
-GCC is distributed per the [GNU General Public License v3][103].
+GCC is distributed per the [GNU General Public License v3][103] ([plain text version][215]).
 
-[`mspdebug`][207] is Copyright (C) Daniel Beer and distributed per [GNU General Public License v2][104].
+[`mspdebug`][207] is Copyright (C) Daniel Beer and distributed per [GNU General Public License v2][104] ([plain text version][214]).
 
-The majority of the remaining files in this repo are either a copy or a derivation of Energia platform cores, which are licensed under the GNU [Lesser General Public License v2.1][102] per [Energia][19].
+The majority of the remaining files in this repo are either a copy or a derivation of Energia platform cores, which are licensed under the GNU [Lesser General Public License v2.1][102] ([plain text version][216]) per [Energia][19].
 
 The other non-Energia derived software and files in this repository are also released released under LGPL v2.1.
 
@@ -549,6 +549,9 @@ See the file [`LICENSE.txt`][101] in this repository.
 [211]: https://embeddedcomputing.weebly.com/launchpad-msp430g2.html
 [212]: https://www.ti.com/tool/MSP430-GCC-OPENSOURCE
 [213]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/mspdebug-0.25-x86_64-apple-darwin.tar.bz2
+[214]: ./extras/gpl-2.0.txt
+[215]: ./extras/gpl-3.0.txt
+[216]: ./extras/lgpl-2.1.txt
 [908]: https://forum.43oh.com/topic/13361-add-msp432-support-to-arduino/
 [911]: https://forum.43oh.com/topic/31134-error-compiling-for-board-msp-exp430f5529lp/
 [970]: https://www.microsoft.com/openjdk
