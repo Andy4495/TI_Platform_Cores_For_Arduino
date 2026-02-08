@@ -141,8 +141,8 @@
           "category": "Energia",
           "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432e-core-5.19.1.tar.bz2",
           "archiveFileName": "msp432e-5.19.0.tar.bz2",
-          "checksum": "SHA-256:bce928020c5fd59962b9c451078521643a94a32bb73823b61b808caef9f6d1de",
-          "size": "36084979",
+          "checksum": "SHA-256:f4d00731b1597aba846cac276cb61eadeba03c93d444dc00584406bb27a5bbbb",
+          "size": "36088527",
           "boards": [
             {"name": "MSP_EXP432E401Y"}
           ],
