@@ -139,8 +139,8 @@
           "architecture": "msp432e",
           "version": "5.20.0",
           "category": "Energia",
-          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432e-core-5.19.2.tar.bz2",
-          "archiveFileName": "msp432e-5.19.2.tar.bz2",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432e-core-5.20.0.tar.bz2",
+          "archiveFileName": "msp432e-core-5.20.0.tar.bz2",
           "checksum": "SHA-256:4e3b69472b18ad26809209c1496b0cc1b82219af70e8b76acef06f8f63f7a2ed",
           "size": "35766174",
           "boards": [
@@ -170,7 +170,7 @@
           "version": "5.19.2",
           "category": "Energia",
           "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432e-core-5.19.2.tar.bz2",
-          "archiveFileName": "msp432e-5.19.2.tar.bz2",
+          "archiveFileName": "msp432e-core-5.19.2.tar.bz2",
           "checksum": "SHA-256:4e3b69472b18ad26809209c1496b0cc1b82219af70e8b76acef06f8f63f7a2ed",
           "size": "35766174",
           "boards": [
@@ -200,7 +200,7 @@
           "version": "5.19.1",
           "category": "Energia",
           "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432e-core-5.19.1.tar.bz2",
-          "archiveFileName": "msp432e-5.19.1.tar.bz2",
+          "archiveFileName": "msp432e-core-5.19.1.tar.bz2",
           "checksum": "SHA-256:f4d00731b1597aba846cac276cb61eadeba03c93d444dc00584406bb27a5bbbb",
           "size": "36088527",
           "boards": [
