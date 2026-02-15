@@ -274,29 +274,35 @@ brew install hidapi libusb-compat
 
 Use this URL in the *Additional Boards Manager URLs* field: `https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/main/json/package_energia_optimized_index.json`
 
-| File Name                              | MSP430 (GCC 4.6) | MSP430 (GCC 9.3) | MSP432 | Tiva  | Notes |
-| ------------------                     | ------           | -----            | -----  | ----- | ----- |
-| `package_energia_optimized_index.json` | 1.1.0            | 3.0.0            | 5.30.0 | 1.1.0 | Recommended for Arduino IDE. |
+The latest platform core versions referenced by `package_energia_optimized_index.json`:
+
+| Platform         | Version |
+| ---------------- | ------- |
+| MSP430 (GCC 4.6) | 1.1.0   |
+| MSP430 (GCC 9.3) | 3.0.0   |
+| MSP432           | 5.30.0  |
+| MSP432E          | 5.20.0  |
+| Tiva             | 1.1.0   |
 
 ##### Package index files to use with GitHub Actions
 
 These files include a single platform version and only the tools needed for compilation. This shortens the time needed to run an action, since only the files needed for compilation are installed in the action runner. Use the URL `https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Aduino/main/json/File-Name` in the `source-url` field.
 
-| File Name                                   | MSP430 Version  | MSP432 Version | Tiva Version | Notes |
-| ------------------                          | ------          | -----          | -----        | ----- |
-| `package_energia_minimal_msp430_index.json` | 1.1.0 and 3.0.0 | N/A            | N/A          | MSP430 boards only. |
-| `package_energia_minimal_msp432_index.json` | N/A             | 5.30.0         | N/A          | MSP432 boards only. |
-| `package_energia_minimal_tiva_index.json`   | N/A             | N/A            | 1.1.0        | Tiva boards only.   |
+| File Name                                   | MSP430 Version  | MSP432 Version | Tiva Version | Notes              |
+| ------------------------------------------- | --------------- | -------------- | ------------ | ------------------ |
+| `package_energia_minimal_msp430_index.json` | 1.1.0 and 3.0.0 | N/A            | N/A          | MSP430 boards only |
+| `package_energia_minimal_msp432_index.json` | N/A             | 5.30.0         | N/A          | MSP432 boards only |
+| `package_energia_minimal_tiva_index.json`   | N/A             | N/A            | 1.1.0        | Tiva boards only   |
 
 ##### Package index files kept for historical reference or specialized applications
 
-| File Name                                   | MSP430 Version  | MSP432 Version | Tiva Version | Notes |
-| ------------------                          | ------          | -----          | -----        | ----- |
-| `package_energia_index.json`                | 1.0.5           | 5.23.1         | 1.0.3        | Last official board manager URL published by Energia. |
-| `package_Energia23_index.json`              | 1.0.6           | 5.25.2         | 1.0.3        | Version installed by Energia23. |
-| `package_energia_latest_index.json`         | 1.0.7           | 5.29.0         | 1.0.4        | See [Note 1](#note) below. |
-| `package_msp430_elf_GCC_index.json`         | 2.0.10          | N/A            | N/A          | See [Note 2](#note) below. |
-| `package_msp432_index.json`                 | N/A             | 5.29.5         | N/A          | [MPS432 package index][74] created by [ndroid][75]. |
+| File Name                           | MSP430 Version | MSP432 Version | Tiva Version | Notes                                                |
+| ----------------------------------- | -------------- | -------------- | ------------ | ---------------------------------------------------- |
+| `package_energia_index.json`        | 1.0.5          | 5.23.1         | 1.0.3        | Last official board manager URL published by Energia |
+| `package_Energia23_index.json`      | 1.0.6          | 5.25.2         | 1.0.3        | Version installed by Energia23                       |
+| `package_energia_latest_index.json` | 1.0.7          | 5.29.0         | 1.0.4        | See [Note 1](#note) below                            |
+| `package_msp430_elf_GCC_index.json` | 2.0.10         | N/A            | N/A          | See [Note 2](#note) below                            |
+| `package_msp432_index.json`         | N/A            | 5.29.5         | N/A          | [MPS432 package index][74] created by [ndroid][75]   |
 
 ##### Note
 
@@ -319,6 +325,10 @@ These are copies of the board package files avaialble from Energia (except as no
 - `msp432r-5.29.2.tar.bz2`
 - `msp432-5.29.5.tar.bz2` (Created by GitHub user [ndroid][75])
 - `msp432-5.30.0.tar.bz2` (Updated from 5.29.5 by me to use dslite 12.8.0.3522)
+- `msp432e-5.19.0.tar.bz2` (This core is not compatible with Arduino)
+- `msp432e-core-5.19.1.tar.bz2` (Updated from 5.19.0 by me for Arduino compatiblity; uses GCC 6.3.1, dslite 12, ino2cpp 1.0.7)
+- `msp432e-core-5.19.2.tar.bz2` (Updated from 5.19.1 by me to fix some compiler warnings)
+- `msp432e-core-5.20.0.tar.bz2` (Updated from 5.19.2 by me to use GCC 8.3.1; no other changes from 5.19.2)
 - `tivac-1.0.3.tar.bz2`
 - `tivac-1.0.4.tar.bz2`
 - `tivac-1.1.0.tar.bz2`  (Updated from 1.0.4 by me to use dslite 12.8.0.3522)
@@ -339,6 +349,9 @@ The tools are specific to the board package platform and version.
 | MSP432 5.30.0  | arm-none-eabi-gcc 8.3.1-20190703 | 12.8.0.3522 | N/A      | 1.0.7   |
 | MSP432 5.29.5  | arm-none-eabi-gcc 8.3.1-20190703 |  9.3.0.1863 | N/A      | 1.0.7   |
 | MSP432 5.29.2  | arm-none-eabi-gcc 6.3.1-20170620 |  9.2.0.1793 | N/A      | 1.0.6   |
+| MSP432E 5.20.0 | arm-none-eabi-gcc 8.3.1-20190703 | 12.8.0.3522 | N/A      | 1.0.7   |
+| MSP432E 5.19.2 | arm-none-eabi-gcc 6.3.1-20170620 | 12.8.0.3522 | N/A      | 1.0.7   |
+| MSP432E 5.19.1 | arm-none-eabi-gcc 6.3.1-20170620 | 12.8.0.3522 | N/A      | 1.0.7   |
 | Tiva 1.1.0     | arm-none-eabi-gcc 8.3.1-20190703 | 12.8.0.3522 | N/A      | N/A     |
 | Tiva 1.0.4     | arm-none-eabi-gcc 8.3.1-20190703 |  9.3.0.1863 | N/A      | N/A     |
 | Tiva 1.0.3     | arm-none-eabi-gcc 6.3.1-20170620 |  7.2.0.2096 | N/A      | N/A     |
@@ -371,7 +384,7 @@ In addition to the board package files listed above, the following untested boar
 - `cc13xx-4.9.1.tar.bz2`
 - `cc3200-1.0.3.tar.bz2`
 - `cc3220emt-5.6.2.tar.bz2`
-- `msp432e-5.19.0.tar.bz2`
+- `msp432e-5.19.0.tar.bz2` (this version is not compatible with Arduino)
 
 And these are included for historical purposes:
 
