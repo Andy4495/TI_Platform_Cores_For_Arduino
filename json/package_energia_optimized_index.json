@@ -137,10 +137,40 @@
         {
           "name": "Energia MSP432E Ethernet RED boards",
           "architecture": "msp432e",
+          "version": "5.20.0",
+          "category": "Energia",
+          "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432e-core-5.20.0.tar.bz2",
+          "archiveFileName": "msp432e-core-5.20.0.tar.bz2",
+          "checksum": "SHA-256:aee13b9a0ae2d207b406bad0a7df1171db9250034ffcae0dd83a5ef8b349f6d9",
+          "size": "35766962",
+          "boards": [
+            {"name": "MSP_EXP432E401Y"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager":"energia",
+              "name":"arm-none-eabi-gcc",
+              "version":"8.3.1-20190703"
+            },
+            {
+              "packager":"energia",
+              "name":"dslite",
+              "version":"12.8.0.3522"
+            },
+            {
+              "packager":"energia",
+              "name":"ino2cpp",
+              "version":"1.0.7"
+            }
+          ]
+        },
+        {
+          "name": "Energia MSP432E Ethernet RED boards",
+          "architecture": "msp432e",
           "version": "5.19.2",
           "category": "Energia",
           "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432e-core-5.19.2.tar.bz2",
-          "archiveFileName": "msp432e-5.19.2.tar.bz2",
+          "archiveFileName": "msp432e-core-5.19.2.tar.bz2",
           "checksum": "SHA-256:4e3b69472b18ad26809209c1496b0cc1b82219af70e8b76acef06f8f63f7a2ed",
           "size": "35766174",
           "boards": [
@@ -170,7 +200,7 @@
           "version": "5.19.1",
           "category": "Energia",
           "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/raw/main/boards/msp432e-core-5.19.1.tar.bz2",
-          "archiveFileName": "msp432e-5.19.1.tar.bz2",
+          "archiveFileName": "msp432e-core-5.19.1.tar.bz2",
           "checksum": "SHA-256:f4d00731b1597aba846cac276cb61eadeba03c93d444dc00584406bb27a5bbbb",
           "size": "36088527",
           "boards": [
