@@ -356,26 +356,28 @@ The tools are specific to the board package platform and version.
 | Tiva 1.0.4     | arm-none-eabi-gcc 8.3.1-20190703 |  9.3.0.1863 | N/A      | N/A     |
 | Tiva 1.0.3     | arm-none-eabi-gcc 6.3.1-20170620 |  7.2.0.2096 | N/A      | N/A     |
 
-| Tool Download Links              |              |              |             |
-| :------------------------------- | ------------ | ------------ | ----------- |
-| msp430-gcc 4.6.6                 | [Wndows][30] | [MacOS][31]  | [Linux][32] |
-| msp430-elf-gcc 8.3.0.16          | [Wndows][58] | [MacOS][59]  | [Linux][60] |
-| msp430-elf-gcc 9.2.0.50          | [Wndows][55] | [MacOS][56]  | [Linux][57] |
-| msp430-elf-gcc 9.3.1.1           | [Wndows][204]| [MacOS][205] | [Linux][206]|
-| arm-none-eabi-gcc 8.3.1-20190703 | [Wndows][33] | [MacOS][34]  | [Linux][35] |
-| arm-none-eabi-gcc 6.3.1-20170620 | [Wndows][36] | [MacOS][37]  | [Linux][38] |
-| dslite 12.8.0.3522               | [Wndows][96] | [MacOS][97]  | [Linux][98] |
-| dslite 9.3.0.1863                | [Wndows][39] | [MacOS][40]  | [Linux][41] |
-| dslite 9.2.0.1793                | [Wndows][42] | [MacOS][43]  | [Linux][44] |
-| dslite 8.2.0.1400                | [Wndows][45] | [MacOS][46]  | [Linux][47] |
-| dslite 7.2.0.2096                | [Wndows][48] | [MacOS][49]  | [Linux][50] |
-| mspdebug 0.24                    | [Wndows][51] | [MacOS][52]  | [Linux][53] |
-| mspdebug 0.25 (see Note below)   | [Wndows][51] | [MacOS][213] | [Linux][53] |
-| ino2cpp 1.0.4                    | [Wndows][54] | [MacOS][54]  | [Linux][54] |
-| ino2cpp 1.0.6                    | [Wndows][64] | [MacOS][64]  | [Linux][64] |
-| ino2cpp 1.0.7                    | [Wndows][76] | [MacOS][77]  | [Linux][78] |
+Note that mspdebug 0.25 was only created for MacOS. For Linux and Windows, version 0.24 is downloaded when version 0.25 is selected by the platform index.
 
-Note that mspdebug 0.25 was only created for MacOS; the Linux and Windows download links point to version 0.24.
+[//]: # ( The Amazon AWS account serving up the Energia tools no longer appears to be active. )
+[//]: # ( The following table is no longer useful, but is kept here hidden for historical purposes. )
+[//]: # ( | Tool Download Links              |               |              |             | )
+[//]: # ( | :------------------------------- | ------------- | ------------ | ----------- | )
+[//]: # ( | msp430-gcc 4.6.6                 | [Windows][30] | [MacOS][31]  | [Linux][32] | )
+[//]: # ( | msp430-elf-gcc 8.3.0.16          | [Windows][58] | [MacOS][59]  | [Linux][60] | )
+[//]: # ( | msp430-elf-gcc 9.2.0.50          | [Windows][55] | [MacOS][56]  | [Linux][57] | )
+[//]: # ( | msp430-elf-gcc 9.3.1.1           | [Windows][204]| [MacOS][205] | [Linux][206]| )
+[//]: # ( | arm-none-eabi-gcc 8.3.1-20190703 | [Windows][33] | [MacOS][34]  | [Linux][35] | )
+[//]: # ( | arm-none-eabi-gcc 6.3.1-20170620 | [Windows][36] | [MacOS][37]  | [Linux][38] | )
+[//]: # ( | dslite 12.8.0.3522               | [Windows][96] | [MacOS][97]  | [Linux][98] | )
+[//]: # ( | dslite 9.3.0.1863                | [Windows][39] | [MacOS][40]  | [Linux][41] | )
+[//]: # ( | dslite 9.2.0.1793                | [Windows][42] | [MacOS][43]  | [Linux][44] | )
+[//]: # ( | dslite 8.2.0.1400                | [Windows][45] | [MacOS][46]  | [Linux][47] | )
+[//]: # ( | dslite 7.2.0.2096                | [Windows][48] | [MacOS][49]  | [Linux][50] | )
+[//]: # ( | mspdebug 0.24                    | [Windows][51] | [MacOS][52]  | [Linux][53] | )
+[//]: # ( | mspdebug 0.25                    | [Windows][51] | [MacOS][213] | [Linux][53] | )
+[//]: # ( | ino2cpp 1.0.4                    | [Windows][54] | [MacOS][54]  | [Linux][54] | )
+[//]: # ( | ino2cpp 1.0.6                    | [Windows][64] | [MacOS][64]  | [Linux][64] | )
+[//]: # ( | ino2cpp 1.0.7                    | [Windows][76] | [MacOS][77]  | [Linux][78] | )
 
 ##### Additional Board Package Files
 
@@ -480,40 +482,40 @@ See the file [`LICENSE.txt`][101] in this repository.
 [26]: https://github.com/Andy4495/OneMsTaskTimer
 [27]: https://github.com/Andy4495/Energia-EducationalBP_MKII
 [28]: https://github.com/Andy4495/Energia-MultiTasking
-[30]: https://s3.amazonaws.com/energiaUS/tools/windows/msp430-gcc-4.6.6-i686-mingw32.tar.bz2
-[31]: https://s3.amazonaws.com/energiaUS/tools/macosx/msp430-gcc-4.6.6-i386-apple-darwin11.tar.bz2
-[32]: https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-gcc-4.6.6-i386-x86_64-pc-linux-gnu.tar.bz2
-[33]: https://s3.amazonaws.com/energiaUS/tools/windows/gcc-arm-none-eabi-8.3.1-20190703-windows.tar.bz2
-[34]: https://s3.amazonaws.com/energiaUS/tools/macosx/gcc-arm-none-eabi-8.3.1-20190703-mac.tar.bz2
-[35]: https://s3.amazonaws.com/energiaUS/tools/linux64/gcc-arm-none-eabi-8.3.1-20190703-x86_64-pc-linux-gnu.tar.bz2
-[36]: https://s3.amazonaws.com/energiaUS/tools/windows/gcc-arm-none-eabi-6.3.1-20170620-windows.tar.bz2
-[37]: https://s3.amazonaws.com/energiaUS/tools/macosx/gcc-arm-none-eabi-6.3.1-20170620-mac.tar.bz2
-[38]: https://s3.amazonaws.com/energiaUS/tools/linux64/gcc-arm-none-eabi-6.3.1-20170620-x86_64-pc-linux-gnu.tar.bz2
-[39]: https://s3.amazonaws.com/energiaUS/tools/windows/dslite-9.3.0.1863-i686-mingw32.tar.bz2
-[40]: https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-9.3.0.1863-x86_64-apple-darwin.tar.bz2
-[41]: https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-9.3.0.1863-i386-x86_64-pc-linux-gnu.tar.bz2
-[42]: https://s3.amazonaws.com/energiaUS/tools/windows/dslite-9.2.0.1793-i686-mingw32.tar.bz2
-[43]: https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-9.2.0.1793-x86_64-apple-darwin.tar.bz2
-[44]: https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-9.2.0.1793-i386-x86_64-pc-linux-gnu.tar.bz2
-[45]: https://s3.amazonaws.com/energiaUS/tools/windows/dslite-8.2.0.1400-i686-mingw32.tar.bz2
-[46]: https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-8.2.0.1400-x86_64-apple-darwin.tar.bz2
-[47]: https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-8.2.0.1400-i386-x86_64-pc-linux-gnu.tar.bz2
-[48]: https://s3.amazonaws.com/energiaUS/tools/windows/dslite-7.2.0.2096-i686-mingw32.tar.bz2
-[49]: https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-7.2.0.2096-x86_64-apple-darwin.tar.bz2
-[50]: https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-7.2.0.2096-i386-x86_64-pc-linux-gnu.tar.bz2
-[51]: https://s3.amazonaws.com/energiaUS/tools/windows/mspdebug-0.24-i686-mingw32.tar.bz2
-[52]: https://s3.amazonaws.com/energiaUS/tools/macosx/mspdebug-0.24-x86_64-apple-darwin.tar.bz2
-[53]: https://s3.amazonaws.com/energiaUS/tools/linux64/mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2
-[54]: https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.4.tar.bz2
-[55]: https://s3.amazonaws.com/energiaUS/tools/windows/msp430-elf-gcc-9.2.0.50_win32.tar.bz2
-[56]: https://s3.amazonaws.com/energiaUS/tools/macosx/msp430-elf-gcc-9.2.0.50_macos.tar.bz2
-[57]: https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-elf-gcc-9.2.0.50_linux64.tar.bz2
-[58]: https://s3.amazonaws.com/energiaUS/tools/windows/msp430-elf-gcc-8.3.0.16_win32.tar.bz2
-[59]: https://s3.amazonaws.com/energiaUS/tools/macosx/msp430-elf-gcc-8.3.0.16_macos.tar.bz2
-[60]: https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-elf-gcc-8.3.0.16_linux64.tar.bz2
+[//]: # ( [30]: https://s3.amazonaws.com/energiaUS/tools/windows/msp430-gcc-4.6.6-i686-mingw32.tar.bz2 )
+[//]: # ( [31]: https://s3.amazonaws.com/energiaUS/tools/macosx/msp430-gcc-4.6.6-i386-apple-darwin11.tar.bz2 )
+[//]: # ( [32]: https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-gcc-4.6.6-i386-x86_64-pc-linux-gnu.tar.bz2 )
+[//]: # ( [33]: https://s3.amazonaws.com/energiaUS/tools/windows/gcc-arm-none-eabi-8.3.1-20190703-windows.tar.bz2 )
+[//]: # ( [34]: https://s3.amazonaws.com/energiaUS/tools/macosx/gcc-arm-none-eabi-8.3.1-20190703-mac.tar.bz2 )
+[//]: # ( [35]: https://s3.amazonaws.com/energiaUS/tools/linux64/gcc-arm-none-eabi-8.3.1-20190703-x86_64-pc-linux-gnu.tar.bz2 )
+[//]: # ( [36]: https://s3.amazonaws.com/energiaUS/tools/windows/gcc-arm-none-eabi-6.3.1-20170620-windows.tar.bz2 )
+[//]: # ( [37]: https://s3.amazonaws.com/energiaUS/tools/macosx/gcc-arm-none-eabi-6.3.1-20170620-mac.tar.bz2 )
+[//]: # ( [38]: https://s3.amazonaws.com/energiaUS/tools/linux64/gcc-arm-none-eabi-6.3.1-20170620-x86_64-pc-linux-gnu.tar.bz2 )
+[//]: # ( [39]: https://s3.amazonaws.com/energiaUS/tools/windows/dslite-9.3.0.1863-i686-mingw32.tar.bz2 )
+[//]: # ( [40]: https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-9.3.0.1863-x86_64-apple-darwin.tar.bz2 )
+[//]: # ( [41]: https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-9.3.0.1863-i386-x86_64-pc-linux-gnu.tar.bz2 )
+[//]: # ( [42]: https://s3.amazonaws.com/energiaUS/tools/windows/dslite-9.2.0.1793-i686-mingw32.tar.bz2 )
+[//]: # ( [43]: https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-9.2.0.1793-x86_64-apple-darwin.tar.bz2 )
+[//]: # ( [44]: https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-9.2.0.1793-i386-x86_64-pc-linux-gnu.tar.bz2 )
+[//]: # ( [45]: https://s3.amazonaws.com/energiaUS/tools/windows/dslite-8.2.0.1400-i686-mingw32.tar.bz2 )
+[//]: # ( [46]: https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-8.2.0.1400-x86_64-apple-darwin.tar.bz2 )
+[//]: # ( [47]: https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-8.2.0.1400-i386-x86_64-pc-linux-gnu.tar.bz2 )
+[//]: # ( [48]: https://s3.amazonaws.com/energiaUS/tools/windows/dslite-7.2.0.2096-i686-mingw32.tar.bz2 )
+[//]: # ( [49]: https://s3.amazonaws.com/energiaUS/tools/macosx/dslite-7.2.0.2096-x86_64-apple-darwin.tar.bz2 )
+[//]: # ( [50]: https://s3.amazonaws.com/energiaUS/tools/linux64/dslite-7.2.0.2096-i386-x86_64-pc-linux-gnu.tar.bz2 )
+[//]: # ( [51]: https://s3.amazonaws.com/energiaUS/tools/windows/mspdebug-0.24-i686-mingw32.tar.bz2 )
+[//]: # ( [52]: https://s3.amazonaws.com/energiaUS/tools/macosx/mspdebug-0.24-x86_64-apple-darwin.tar.bz2 )
+[//]: # ( [53]: https://s3.amazonaws.com/energiaUS/tools/linux64/mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2 )
+[//]: # ( [54]: https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.4.tar.bz2 )
+[//]: # ( [55]: https://s3.amazonaws.com/energiaUS/tools/windows/msp430-elf-gcc-9.2.0.50_win32.tar.bz2 )
+[//]: # ( [56]: https://s3.amazonaws.com/energiaUS/tools/macosx/msp430-elf-gcc-9.2.0.50_macos.tar.bz2 )
+[//]: # ( [57]: https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-elf-gcc-9.2.0.50_linux64.tar.bz2 )
+[//]: # ( [58]: https://s3.amazonaws.com/energiaUS/tools/windows/msp430-elf-gcc-8.3.0.16_win32.tar.bz2 )
+[//]: # ( [59]: https://s3.amazonaws.com/energiaUS/tools/macosx/msp430-elf-gcc-8.3.0.16_macos.tar.bz2 )
+[//]: # ( [60]: https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-elf-gcc-8.3.0.16_linux64.tar.bz2 )
 [61]: https://github.com/arduino/arduino-builder/pull/119
 [63]: https://github.com/nektos/act
-[64]: https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2
+[//]: # ( [64]: https://s3.amazonaws.com/energiaUS/tools/ino2cpp-1.0.6.tar.bz2 )
 [67]: https://github.com/energia/msp432r-core
 [68]: https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-support-urls
 [69]: https://support.arduino.cc/hc/en-us/articles/360016119519-Add-boards-to-Arduino-IDE
@@ -522,9 +524,9 @@ See the file [`LICENSE.txt`][101] in this repository.
 [73]: https://github.com/energia/Energia#readme
 [74]: https://github.com/ndroid/msp432-core/
 [75]: https://github.com/ndroid
-[76]: https://s3.amazonaws.com/energiaUS/tools/windows/ino2cpp-1.0.7-i686-mingw32.tar.bz2
-[77]: https://s3.amazonaws.com/energiaUS/tools/macosx/ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2
-[78]: https://s3.amazonaws.com/energiaUS/tools/linux64/ino2cpp-1.0.7-x86_64-pc-linux-gnu.tar.bz2
+[//]: # ( [76]: https://s3.amazonaws.com/energiaUS/tools/windows/ino2cpp-1.0.7-i686-mingw32.tar.bz2 )
+[//]: # ( [77]: https://s3.amazonaws.com/energiaUS/tools/macosx/ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2 )
+[//]: # ( [78]: https://s3.amazonaws.com/energiaUS/tools/linux64/ino2cpp-1.0.7-x86_64-pc-linux-gnu.tar.bz2 )
 [79]: https://github.com/ndroid/msp432-core/tree/main#change-log
 [82]: https://www.ti.com/tool/TI-RTOS-MCU
 [83]: https://github.com/rei-vilo/Galaxia_Library
@@ -540,9 +542,9 @@ See the file [`LICENSE.txt`][101] in this repository.
 [93]: https://github.com/energia/energia.nu
 [94]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/issues/6
 [95]: ./Uniflash_manifest_and_license.html
-[96]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-i686-mingw32.tar.bz2
-[97]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-x86_64-apple-darwin.zip
-[98]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2
+[//]: # ( [96]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-i686-mingw32.tar.bz2 )
+[//]: # ( [97]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-x86_64-apple-darwin.zip )
+[//]: # ( [98]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.2.0/dslite-12.8.0.3522-i386-x86_64-pc-linux-gnu.tar.bz2 )
 [99]: https://www.ti.com/tool/UNIFLASH
 [100]: https://raw.githubusercontent.com/Andy4495/TI_Platform_Cores_For_Arduino/refs/heads/main/json/package_msp430_elf_GCC_index.json
 [101]: ./LICENSE.txt
@@ -552,16 +554,16 @@ See the file [`LICENSE.txt`][101] in this repository.
 [201]: ./extras/71-ti-permissions.rules
 [202]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/tag/v1.2.0
 [203]: ./README-Migrating_from_GCC_4_to_9.md
-[204]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-gcc-9.3.1.11_win64.zip
-[205]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-elf-gcc-9.3.1.11_macos.tar.bz2
-[206]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-elf-gcc-9.3.1.11_linux64.tar.bz2
+[//]: # ( [204]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-gcc-9.3.1.11_win64.zip )
+[//]: # ( [205]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-elf-gcc-9.3.1.11_macos.tar.bz2 )
+[//]: # ( [206]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/msp430-elf-gcc-9.3.1.11_linux64.tar.bz2 )
 [207]: https://github.com/dlbeer/mspdebug
 [208]: https://brew.sh
 [209]: https://github.com/dlbeer/mspdebug/releases/tag/v0.25
 [210]: https://www.ti.com/tool/MSP-EXP430G2ET
 [211]: https://embeddedcomputing.weebly.com/launchpad-msp430g2.html
 [212]: https://www.ti.com/tool/MSP430-GCC-OPENSOURCE
-[213]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/mspdebug-0.25-x86_64-apple-darwin.tar.bz2
+[//]: # ( [213]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.3.0/mspdebug-0.25-x86_64-apple-darwin.tar.bz2 )
 [214]: ./extras/gpl-2.0.txt
 [215]: ./extras/gpl-3.0.txt
 [216]: ./extras/lgpl-2.1.txt
