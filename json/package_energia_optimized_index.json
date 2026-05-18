@@ -564,21 +564,21 @@
           [
             {
               "host":"i686-mingw32",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/msp430-gcc-4.6.6-i686-mingw32.tar.bz2",
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.5.0/msp430-gcc-4.6.6-i686-mingw32.tar.bz2",
               "archiveFileName":"msp430-gcc-4.6.6-i686-mingw32.tar.bz2",
               "checksum":"SHA-256:3dbfe6453f461ae5d7599c3cf1144dc400852b6d788d298f3dd0004283a9202a",
               "size":"30818330"
             },
             {
               "host":"x86_64-apple-darwin",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/msp430-gcc-4.6.6-i386-apple-darwin11.tar.bz2",
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.5.0/msp430-gcc-4.6.6-i386-apple-darwin11.tar.bz2",
               "archiveFileName":"msp430-gcc-4.6.6-i386-apple-darwin11.tar.bz2",
               "checksum":"SHA-256:82d4df153a9d64a507a48ed3b5db9e21eeb069809976c8b69946801252b622bb",
               "size":"32574759"
             },
             {
               "host": "x86_64-linux-gnu",
-              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/msp430-gcc-4.6.6-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.5.0/msp430-gcc-4.6.6-i386-x86_64-pc-linux-gnu.tar.bz2",
               "archiveFileName": "msp430-gcc-4.6.6-i386-x86_64-pc-linux-gnu.tar.bz2",
               "checksum": "SHA-256:41fbcb3cc73679186989e1fb27cb4578e9164f07d134e650e23089198b87cbfd",
               "size": "98503002"
@@ -591,21 +591,21 @@
           "systems": [
             {
               "host": "i686-mingw32",
-              "url": "https://s3.amazonaws.com/energiaUS/tools/windows/gcc-arm-none-eabi-8.3.1-20190703-windows.tar.bz2",
+              "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.5.0/gcc-arm-none-eabi-8.3.1-20190703-windows.tar.bz2",
               "archiveFileName": "gcc-arm-none-eabi-8.3.1-20190703-windows.tar.bz2",
               "checksum": "SHA-256:3f0440376df0c66bd4c9ce7de78e6c4155c92fdb6758c7f5b699c357a618c9e8",
               "size": "115480830"
             },
             {
               "host": "x86_64-apple-darwin",
-              "url": "https://s3.amazonaws.com/energiaUS/tools/macosx/gcc-arm-none-eabi-8.3.1-20190703-mac.tar.bz2",
+              "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.5.0/gcc-arm-none-eabi-8.3.1-20190703-mac.tar.bz2",
               "archiveFileName": "gcc-arm-none-eabi-8.3.1-20190703-mac.tar.bz2",
               "checksum": "SHA-256:fba079fcb5350fbb838b8310d5b61499c962861583091060e13ce0d21827d6e7",
               "size": "110983957"
             },
             {
               "host": "x86_64-pc-linux-gnu",
-              "url": "https://s3.amazonaws.com/energiaUS/tools/linux64/gcc-arm-none-eabi-8.3.1-20190703-x86_64-pc-linux-gnu.tar.bz2",
+              "url": "https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.5.0/gcc-arm-none-eabi-8.3.1-20190703-x86_64-pc-linux-gnu.tar.bz2",
               "archiveFileName": "gcc-arm-none-eabi-8.3.1-20190703-x86_64-pc-linux-gnu.tar.bz2",
               "checksum": "SHA-256:8c9aa2728a12e8fad7dfb2647438e7ea4937dde1c3f771c5970466d8cc7e3397",
               "size": "106503151"
@@ -673,21 +673,21 @@
           [
            {
               "host":"i686-mingw32",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/windows/ino2cpp-1.0.7-i686-mingw32.tar.bz2",
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.5.0/ino2cpp-1.0.7-i686-mingw32.tar.bz2",
               "archiveFileName":"ino2cpp-1.0.7-i686-mingw32.tar.bz2",
               "checksum":"SHA-256:29b3d8d4bdf2b78410af56bc831d6aa16eae5dfc3e5f4826f4fc5f2db1c31085",
               "size":"274575"
             },
             {
               "host":"x86_64-apple-darwin",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/macosx/ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2",
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.5.0/ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2",
               "archiveFileName":"ino2cpp-1.0.7-x86_64-apple-darwin.tar.bz2",
               "checksum":"SHA-256:be0219394a6a4ea99a715435f54ad5047c7ece9f9b70f6fa118ff61f9107a044",
               "size":"101988"
             },
             {
               "host": "x86_64-pc-linux-gnu",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/ino2cpp-1.0.7-x86_64-pc-linux-gnu.tar.bz2",
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.5.0/ino2cpp-1.0.7-x86_64-pc-linux-gnu.tar.bz2",
               "archiveFileName":"ino2cpp-1.0.7-x86_64-pc-linux-gnu.tar.bz2",
               "checksum":"SHA-256:d48160d8cd18936a989aaa83d494c1300ddcff4104cd386a52b9b369cf361d35",
               "size":"115559"
@@ -953,7 +953,7 @@
           [
            {
               "host":"i686-mingw32",
-             "url":"https://s3.amazonaws.com/energiaUS/tools/windows/mspdebug-0.24-i686-mingw32.tar.bz2",
+             "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.5.0/mspdebug-0.24-i686-mingw32.tar.bz2",
               "archiveFileName":"mspdebug-0.24-i686-mingw32.tar.bz2",
               "checksum":"SHA-256:7b3dfb269b58f692d03080a641f543dfe01bcfcef43935c2bb31e2839e284e73",
               "size":"1058435"
@@ -967,7 +967,7 @@
             },
             {
               "host":"x86_64-pc-linux-gnu",
-              "url":"https://s3.amazonaws.com/energiaUS/tools/linux64/mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2",
+              "url":"https://github.com/Andy4495/TI_Platform_Cores_For_Arduino/releases/download/v1.5.0/mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2",
               "archiveFileName":"mspdebug-0.24-i386-x86_64-pc-linux-gnu.tar.bz2",
               "checksum":"SHA-256:ec6131053a4ddd35b43d44591732313182e3487ffd77181df02ce23f0860a2e5",
               "size":"147947"
